@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+  Cangkang untuk demo modul (Bagian 5).
+
+  PERHATIAN: file ini TIDAK JALAN kalau dibuka langsung lewat double-click
+  (alamatnya file://...). Browser memblokir import antar-file demi keamanan.
+
+  Jalankan lewat server lokal:
+    VS Code → klik kanan file ini → "Open with Live Server"
+    (butuh extension "Live Server" dari Ritwick Dey)
+
+  Ini satu-satunya bagian P1 yang butuh setup. Kalau tidak sempat,
+  lewati saja — sampaikan konsep import/export lewat penjelasan dan
+  analogi lemari berlaci. Materi P1 memang hanya menuntut idenya.
+-->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo Modul — P1</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        max-width: 40rem;
+        margin: 4rem auto;
+        padding: 0 1.5rem;
+        line-height: 1.6;
+        color: #1a1a1a;
+        background: #fafafa;
+      }
+      code {
+        background: #ececec;
+        padding: 0.15em 0.4em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Demo Modul</h1>
+    <p>
+      Halaman ini sengaja kosong. Buka <strong>Console</strong>
+      (<code>F12</code> → tab Console) untuk melihat hasilnya.
+    </p>
+    <p>
+      Yang berjalan: <code>main.js</code> meminjam dua fungsi dari
+      <code>utils.js</code> lewat <code>import</code>.
+    </p>
+
+    <!-- type="module" wajib, ini yang mengaktifkan import/export -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

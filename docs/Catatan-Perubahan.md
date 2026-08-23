@@ -58,6 +58,19 @@ Terbaru di atas.
 
 ### 23 Agustus 2026
 
+**P1 — menambah file demo, tugas, dan kunci jawaban**
+- *Alasan:* checklist H-3 dan H-1 di dokumen materi menyuruh menyiapkan file data demo, contoh "cara lama vs cara modern", serta 5 soal beserta kuncinya — tapi filenya belum ada. Yang tersedia baru dokumen panduan mengajarnya.
+- Struktur baru: `P1/demo/` (mentor), `P1/tugas/` (dibagikan ke peserta), `P1/kunci-jawaban/` (mentor), masing-masing dengan README sendiri
+- Tetap tanpa Node/build sesuai batasan P1. Peserta cukup double-click `tugas/index.html`; satu-satunya yang butuh Live Server adalah demo modul, dan itu bagian opsional untuk mentor
+- Data tugas memakai **mahasiswa** (10 item), berbeda dari data demo yang memakai **produk** (3 item). Disengaja supaya jawaban tugas tidak bisa disalin langsung dari contoh di kelas
+- Tiga perangkap sengaja dipasang di soal: dua orang bernilai di bawah 60 (menguji apakah `.find()` dipahami sebagai "yang pertama", bukan "yang paling ekstrem"), dua syarat di soal 5, dan urutan chaining yang menghasilkan array kosong kalau dibalik
+- Seluruh kunci jawaban diverifikasi dengan Node: 10 nama · 5 orang bernilai ≥80 · `true` · Dimas Ardiansyah · 76.2 · 4 nama
+
+**Perbaikan tabrakan `const produk`**
+- *Masalah:* `demo/00-data-demo.js` dan `demo/03-array-methods.js` sama-sama mendeklarasikan `const produk`. Kalau mentor mem-paste keduanya di sesi console yang sama, muncul `SyntaxError: Identifier 'produk' has already been declared` dan seluruh paste gagal — tepat di tengah kelas.
+- *Kenapa tidak disatukan saja:* `03` sengaja dibuat mandiri supaya bisa dipakai tanpa membuka file lain. Menghapus datanya justru memindahkan kegagalan ke arah sebaliknya (`produk is not defined`).
+- *Solusi:* peringatan eksplisit di header `03` dan di `demo/README.md`, lengkap dengan cara pulihnya (tekan F5). Ditambah saran menjadikannya bahan mengajar dadakan — kejadian ini persis mendemonstrasikan Bagian 2 tentang `const` yang menolak deklarasi ulang.
+
 **Inisiasi repositori**
 - `git init` pada branch `main`, remote `origin` → `github.com/samythh/Bootcamp_Metro`
 - Commit awal `1345dc7` — 14 file
