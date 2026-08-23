@@ -22,10 +22,11 @@ Bootcamp_Metro_S2/
 ├── CLAUDE.md            # Instruksi penulisan materi (gaya, struktur, prinsip pedagogis)
 ├── README.md            # Dokumen ini
 │
-├── docs/                # Dokumen acuan resmi program
-│   ├── Silabus.md       # Kurikulum 8 pertemuan, kompetensi, roadmap Capstone, penilaian
-│   ├── Timeline.md      # Jadwal P1–P16, fase program, PIC, SOP rapat sprint
-│   └── Portofolio.md    # Profil mentor
+├── docs/                       # Dokumen acuan resmi program
+│   ├── Silabus.md              # Kurikulum 8 pertemuan, kompetensi, roadmap Capstone, penilaian
+│   ├── Timeline.md             # Jadwal P1–P16, fase program, PIC, SOP rapat sprint
+│   ├── Catatan-Perubahan.md    # Temuan terbuka + log perubahan dokumen
+│   └── Portofolio.md           # Profil mentor
 │
 └── P1/ ... P8/          # Materi per pertemuan
     └── P1-Materi-Mentor-Frontend-JS.md
@@ -39,9 +40,12 @@ Bootcamp_Metro_S2/
 |---|---|
 | [docs/Silabus.md](docs/Silabus.md) | **Sumber kebenaran isi materi** — apa yang wajib diajarkan di tiap pertemuan |
 | [docs/Timeline.md](docs/Timeline.md) | Jadwal dan urutan pelaksanaan, dari rekrutmen sampai Demo Day |
+| [docs/Catatan-Perubahan.md](docs/Catatan-Perubahan.md) | Temuan yang belum diputuskan + log perubahan dokumen beserta alasannya |
 | [CLAUDE.md](CLAUDE.md) | Aturan cara menulis materi — struktur tiga lapis, gaya bahasa, hal yang dihindari |
 
 Kalau ada pertentangan: **fakta** (tanggal, item materi, bobot nilai) mengikuti `docs/`; **cara menyampaikan** mengikuti `CLAUDE.md`.
+
+> ⚠️ Ada satu temuan yang masih terbuka: **Silabus dan Timeline berbeda soal jadwal Demo Day** (selisih ~2 minggu). Detail dan buktinya di [T-001](docs/Catatan-Perubahan.md#t-001--silabus-dan-timeline-berbeda-soal-jadwal-demo-day).
 
 ---
 

@@ -23,6 +23,7 @@ Saya bukan sekadar minta jawaban benar — saya minta jawaban yang **mengajari s
 |---|---|---|
 | `docs/Silabus.md` | Kurikulum resmi 8 pertemuan, kompetensi lulusan, roadmap Capstone, bobot penilaian | **Sumber kebenaran isi materi** |
 | `docs/Timeline.md` | Jadwal P1–P16, fase program, PIC tiap aktivitas, SOP rapat sprint | Tanggal, urutan, dan siapa penanggung jawab |
+| `docs/Catatan-Perubahan.md` | Temuan terbuka yang belum diputuskan + log perubahan dokumen | **Wajib dibaca** — supaya tidak melaporkan temuan yang sudah tercatat, dan tahu keputusan apa yang sudah diambil |
 | `docs/Portofolio.md` | Profil & pengalaman saya | Konteks kredibilitas saat menyusun cara penyampaian |
 
 ### Kapan wajib membaca
@@ -43,6 +44,11 @@ Baca juga **file materi pertemuan sebelumnya** di folder `P1/`–`P8/` supaya ad
 ### Setelah selesai membuat materi
 
 Cocokkan ulang tiap poin di `docs/Silabus.md` untuk pertemuan itu dengan materi yang dihasilkan. **Laporkan eksplisit** poin silabus mana yang belum tercover — beserta alasan kalau memang sengaja tidak dimasukkan (misal: akan overload pemula). Jangan diamkan kekosongan.
+
+Lalu **catat di `docs/Catatan-Perubahan.md`**:
+- Perubahan dokumen apa pun → tambah entri di bagian **C. Log Perubahan** di bawah tanggal hari ini, sebutkan **kenapa**-nya bukan cuma apa-nya.
+- Temuan baru (pertentangan antar dokumen, kekosongan materi, hal yang butuh keputusan saya) → tambah entri bernomor di bagian **A. Temuan Terbuka**, lengkap dengan bukti: dokumen mana, bagian mana, dan apa bunyinya.
+- Temuan yang sudah saya putuskan → pindahkan ke bagian **B. Temuan Selesai** beserta keputusan dan alasannya. Jangan dihapus.
 
 ---
 

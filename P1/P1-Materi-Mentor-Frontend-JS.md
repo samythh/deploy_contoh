@@ -443,9 +443,26 @@ Beri satu array of objects (misal data mahasiswa atau produk), lalu 5 soal:
 
 1. Ambil semua nama (→ `.map()`)
 2. Saring yang memenuhi syarat tertentu, misal nilai ≥ 80 (→ `.filter()`)
-3. Cari satu item spesifik (→ `.find()`)
+3. **Dua pertanyaan berurutan tentang hal yang sama:**
+   a. Ada nggak mahasiswa yang nilainya di bawah 60? (→ `.some()`)
+   b. Kalau ada, siapa orang pertamanya? (→ `.find()`)
 4. Hitung total/rata-rata (→ `.reduce()`)
 5. Gabungan: saring lalu ambil nama, dalam satu rantai (→ `.filter().map()`)
+
+**Kenapa soal 3 dibuat berpasangan, bukan dipisah jadi dua soal:** karena justru
+perbedaan keduanya yang ingin diuji. Dua pertanyaan ini terdengar mirip, tapi
+menuntut jawaban dengan bentuk berbeda — `.some()` menjawab **"ada nggak?"**
+(hasilnya `true`/`false`), `.find()` menjawab **"yang mana?"** (hasilnya satu
+object). Peserta yang memakai `.find()` untuk kedua-duanya belum menangkap
+bedanya. Menaruhnya bersebelahan memaksa mereka menyadari itu sendiri.
+
+Cara ini juga menjaga jumlah soal tetap **5** sesuai silabus.
+
+> **CARA SAMPAIKAN untuk soal 3:**
+> "Perhatikan baik-baik: dua pertanyaan ini beda. Yang pertama cuma minta jawaban
+> **iya atau nggak** — kayak saya nanya 'ada yang belum ngumpulin?'. Yang kedua minta
+> **orangnya** — 'siapa?'. Pertanyaan beda, alat beda. Jangan pakai satu alat buat dua
+> pertanyaan cuma karena kebetulan hasilnya kelihatan benar."
 
 **Deliverable pembeda (gaya reasoning kita):**
 Di tiap jawaban, tulis komentar 1 baris: **kenapa** memilih method itu.
