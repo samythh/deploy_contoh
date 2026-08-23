@@ -58,10 +58,11 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 - CSS Fundamentals: cara menempelkan gaya, selector, penamaan class berbasis fungsi, dan Box Model.
 - **Deep-dive CSS Layouting:** Flexbox (Axis, Alignment, Gap) & CSS Grid (Template Columns, `auto-fit`).
 - Strategi *Mobile-First Design* & breakpoints responsif.
+- Pengenalan *Utility-First CSS* dengan **TailwindCSS** (via CDN) sebagai penutup — diberikan setelah CSS manual dikuasai, bukan sebelumnya.
 
 **Praktik Live**
 
-- Membangun halaman *Landing Page* responsif dari nol menggunakan CSS murni, plus praktik DevTools & Emmet.
+- Membangun halaman *Landing Page* responsif dari nol menggunakan CSS murni, lalu mengonversi satu komponen ke TailwindCSS. Plus praktik DevTools & Emmet.
 
 > **Output / Tugas 1** — Satu halaman web responsif dengan Navbar, Hero Section, Cards Grid, dan Footer rapi, disertai komentar alasan pemilihan tag dan layout.
 
@@ -97,7 +98,7 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 **Materi**
 
 - Pengenalan ekosistem React.js & inisialisasi project kilat menggunakan Vite.
-- Penerapan *Utility-First CSS* menggunakan **TailwindCSS** (instalasi via Vite, Custom Theme, Utility Classes, breakpoints `sm`/`md`/`lg`/`xl`).
+- Pemasangan **TailwindCSS** yang benar lewat Vite (Custom Theme, Utility Classes, breakpoints `sm`/`md`/`lg`/`xl`) — lanjutan dari pengenalan via CDN di P1.
 - Anatomi Component, sintaks JSX, dan Virtual DOM.
 - Komunikasi data antar-komponen via Props (*props drilling*, *children props*, *default props*).
 - *Conditional Rendering* (ternary operator, short-circuit `&&`) dan *List Rendering* menggunakan `.map()` dengan `key`.

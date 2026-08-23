@@ -56,9 +56,9 @@ Kalau ada pertentangan: **fakta** (tanggal, item materi, bobot nilai) mengikuti 
 
 | Kode | Pertemuan | Topik | Status |
 |:--:|---|---|:--:|
-| **P1** | Fundamental Struktur & Tampilan | HTML5 Semantic, CSS Layout, Flexbox, Grid, Mobile-First | ✅ Selesai |
+| **P1** | Fundamental Struktur & Tampilan | HTML5 Semantic, CSS Layout, Flexbox, Grid, Mobile-First, TailwindCSS | ✅ Selesai |
 | **P2** | Praktik Logika Dasar | Modern JavaScript (ES6+) & Web Architecture | ✅ Selesai |
-| **P3** | Studi Kasus & Latihan Terbimbing | React.js Fundamentals, Component Architecture, **TailwindCSS** | ⬜ Belum |
+| **P3** | Studi Kasus & Latihan Terbimbing | React.js Fundamentals, Component Architecture, Tailwind via Vite | ⬜ Belum |
 | **P4** | Pengembangan Fitur Dasar | State, Lifecycle Hooks & Controlled Forms | ⬜ Belum |
 | **P5** | Integrasi Konsep Lanjutan | Routing & Custom Hooks | ⬜ Belum |
 | **P6** | Studi Kasus Tingkat Menengah | REST API Consumption & Async UI | ⬜ Belum |

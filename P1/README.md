@@ -1,9 +1,9 @@
 # Pertemuan 1 — HTML5 Semantic & CSS Layout
 
 **Durasi:** 120 menit · **Jadwal:** Oktober W1 (1–7 Okt 2026)
-**Topik:** Struktur Dokumen, Semantic Tags, CSS Fundamentals, Box Model, Flexbox, Grid, Mobile-First
+**Topik:** Struktur Dokumen, Semantic Tags, CSS Fundamentals, Box Model, Flexbox, Grid, Mobile-First, TailwindCSS
 
-> **Catatan revisi:** Sejak 23 Agustus 2026, HTML/CSS naik dari P2 ke P1, bertukar dengan JavaScript. **TailwindCSS tidak diajarkan di sini** — dipindah ke P3 bersama setup Vite.
+> **Catatan revisi:** Sejak 23 Agustus 2026, HTML/CSS naik dari P2 ke P1, bertukar dengan JavaScript. **TailwindCSS diajarkan di Bagian 6** — paling akhir, setelah CSS manual dikuasai.
 
 ---
 
@@ -18,7 +18,8 @@ P1/
 │   ├── 02-semantic/             # divsoup.html vs semantic.html
 │   ├── 03-box-model.html
 │   ├── 04-flexbox.html
-│   └── 05-grid-responsif.html
+│   ├── 05-grid-responsif.html
+│   └── 06-tailwind.html
 │
 ├── tugas/                       # Dibagikan ke peserta          [peserta]
 │   ├── soal.md                  # soal + rubrik + aturan AI
@@ -51,16 +52,19 @@ Saat membagikan tugas, kirim **isi folder `tugas/` saja** — ketiga filenya sek
 | Menit | Bagian | File demo |
 |:--:|---|---|
 | 0–10 | Pembuka, peta program, **kemenangan pertama** | — |
-| 10–25 | Anatomi dokumen HTML | `01-kerangka.html` |
-| 25–50 | **HTML5 Semantic** — inti pedagogis hari ini | `02-semantic/` |
-| 50–75 | CSS: cara menempel, selector, box model | `03-box-model.html` |
-| 75–100 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
-| 100–112 | Grid & mobile-first | `05-grid-responsif.html` |
-| 112–120 | Rangkuman & pembagian tugas | `tugas/` |
+| 10–22 | Anatomi dokumen HTML | `01-kerangka.html` |
+| 22–45 | **HTML5 Semantic** — inti pedagogis hari ini | `02-semantic/` |
+| 45–65 | CSS: cara menempel, selector, box model | `03-box-model.html` |
+| 65–90 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
+| 90–102 | Grid & mobile-first | `05-grid-responsif.html` |
+| 102–115 | **TailwindCSS** — diberikan paling akhir, sebagai hadiah | `06-tailwind.html` |
+| 115–120 | Rangkuman & pembagian tugas | `tugas/` |
 
 ---
 
 ## Situasi Khusus P1
+
+**Padat — tujuh bagian dalam 120 menit.** Kalau waktu habis, **Bagian 6 (Tailwind) yang paling aman dipotong**; cukup tunjukkan tabel pemetaannya dan sampaikan praktik penuhnya di P3. Yang wajib nempel hari ini tetap HTML semantic dan Flexbox.
 
 **Ini pertemuan pertama, dan taruhannya motivasi.** Sebagian peserta belum pernah menulis satu baris kode, dan sebagian sedang diam-diam bertanya apakah mereka salah masuk kelas.
 
@@ -81,6 +85,8 @@ Karena ini pertemuan pertama, kirim panduan instalasi **H-3** lengkap dengan tau
 ## Tugas 1
 
 **Deliverable:** `index.html` + `style.css` berisi landing page responsif — navbar, hero, grid minimal 6 kartu, footer. Dengan **komentar alasan**: minimal 2 di HTML, minimal 4 di CSS.
+
+Ada **bonus opsional +10 poin**: konversi satu kartu saja ke Tailwind, disertai komentar pemetaan CSS → class Tailwind.
 
 | Bobot | Aspek |
 |:--:|---|
@@ -110,4 +116,4 @@ Tampilan cantik sengaja cuma 20%. Detailnya di [soal.md](tugas/soal.md).
 - [ ] VS Code font minimal 18pt, **tema terang** — tema gelap sering tidak terbaca lewat proyektor
 - [ ] Browser + DevTools terbuka berdampingan dengan editor
 - [ ] Sediakan 10 menit di awal khusus membantu instalasi yang gagal
-- [ ] Siapkan folder `tugas/` untuk dibagikan di menit ke-112
+- [ ] Siapkan folder `tugas/` untuk dibagikan di menit ke-115

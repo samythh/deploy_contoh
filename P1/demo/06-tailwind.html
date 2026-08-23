@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+  BAGIAN 6 — TAILWINDCSS  (102–115 menit)
+
+  POSISINYA DISENGAJA PALING AKHIR. Peserta baru saja menulis CSS
+  manual selama satu jam. Sekarang mereka punya rasa sakit yang bisa
+  diobati — dan itu satu-satunya cara Tailwind terasa masuk akal.
+
+  Prinsip yang sama dengan Emmet di Bagian 1: shortcut diberikan
+  SETELAH paham manual, sebagai hadiah, bukan jalan pintas.
+
+  ------------------------------------------------------------
+  CATATAN: file ini memuat kartu yang SAMA dalam dua versi,
+  bersebelahan. Buka di browser dan tunjukkan bahwa hasilnya identik.
+-->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tailwind vs CSS Manual — Demo P1</title>
+
+    <!--
+      Cara pasang Tailwind di P1: satu baris, tanpa Node, tanpa build.
+
+      SEBUT SEKALI bahwa cara CDN ini hanya untuk belajar, bukan untuk
+      produksi — lalu lanjut. Jangan jadikan bahasan panjang. Di P3
+      mereka memasangnya dengan benar lewat Vite, dan di situ
+      perbedaannya baru relevan.
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* ------------------------------------------------------------
+         VERSI CSS MANUAL — persis yang mereka tulis di Bagian 3–5
+         ------------------------------------------------------------ */
+
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: #fafafa;
+        padding: 2rem;
+        color: #1a1a1a;
+      }
+
+      .kartu-manual {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+      }
+
+      .judul { font-weight: 600; }
+      .harga { color: #6b7280; }
+    </style>
+  </head>
+
+  <body>
+    <h2>1. CSS manual — butuh file CSS terpisah</h2>
+
+    <article class="kartu-manual">
+      <span class="judul">Laptop</span>
+      <span class="harga">Rp 8.000.000</span>
+    </article>
+
+    <h2>2. Tailwind — hasil sama, tanpa satu baris pun CSS</h2>
+
+    <!--
+      Petakan satu per satu di layar. Ini bagian terpenting:
+      peserta harus melihat bahwa Tailwind bukan sistem baru,
+      cuma nama pendek untuk yang sudah mereka kuasai.
+
+        display: flex                    →  flex
+        justify-content: space-between   →  justify-between
+        align-items: center              →  items-center
+        padding: 1.5rem                  →  p-6
+        background: #fff                 →  bg-white
+        border: 1px solid #e5e7eb        →  border border-gray-200
+        border-radius: 8px               →  rounded-lg
+    -->
+    <article class="flex justify-between items-center p-6 bg-white border border-gray-200 rounded-lg">
+      <span class="font-semibold">Laptop</span>
+      <span class="text-gray-500">Rp 8.000.000</span>
+    </article>
+
+    <h2>3. Grid responsif versi Tailwind</h2>
+    <p class="text-gray-500">Bandingkan dengan 05-grid-responsif.html — idenya sama persis.</p>
+
+    <!-- grid-cols-1 = default HP · md: = mulai tablet · lg: = mulai laptop
+         Perhatikan urutannya: HP dulu, baru naik. Itu mobile-first yang
+         barusan mereka pelajari, cuma ditulis lebih pendek. -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="p-6 bg-white border border-gray-200 rounded-lg">Mouse</article>
+      <article class="p-6 bg-white border border-gray-200 rounded-lg">Keyboard</article>
+      <article class="p-6 bg-white border border-gray-200 rounded-lg">Monitor</article>
+    </div>
+
+    <h2>4. Sisi jeleknya — sebutkan dengan jujur</h2>
+
+    <article class="flex flex-col justify-between items-start gap-3 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-md transition">
+      <span class="font-semibold">Lihat panjangnya class di baris ini</span>
+      <span class="text-gray-500">Satu elemen, sebelas class.</span>
+    </article>
+
+    <!--
+      ============================================================
+      CARA SAMPAIKAN — pembuka bagian ini:
+
+      "Satu jam terakhir kalian nulis CSS manual, dan sebagian dari
+       kalian mikir 'kok ribet banget'. Bagus — itu memang ribet.
+       Sekarang saya kasih obatnya.
+
+       Tapi ingat: saya kasih obatnya SETELAH kalian ngerasain
+       sakitnya. Kalau saya kasih dari tadi, kalian nggak bakal ngerti
+       obatnya buat apa."
+
+      ------------------------------------------------------------
+      CARA SAMPAIKAN — saat memetakan tabel:
+
+      "Nggak ada satu pun konsep baru di versi Tailwind. Semuanya CSS
+       yang tadi, cuma dipendekin. `justify-between` itu ya
+       `justify-content: space-between`. Sama persis.
+
+       Makanya kita belajar yang panjang dulu. Kalau kalian ngerti yang
+       panjang, yang pendek cuma soal hafalan nama — dan hafalan itu
+       gampang, tinggal buka dokumentasi."
+
+      ------------------------------------------------------------
+      CARA SAMPAIKAN — kelemahannya (JANGAN DILEWATI):
+
+      "Jujur ya, contoh nomor 4 itu jelek dilihat. Ada yang bilang ini
+       nggak beda sama inline style yang tadi kita bilang buruk.
+
+       Sebagian benar. Bedanya: inline style bebas nulis apa aja,
+       Tailwind terbatas pada pilihan yang sudah disediakan — jadi
+       seluruh tim otomatis konsisten. Tapi soal panjangnya? Iya,
+       memang panjang.
+
+       Dua-duanya dipakai di industri. Yang penting kalian tahu
+       keduanya dan bisa milih, bukan cuma bisa satu."
+
+      ------------------------------------------------------------
+      KALAU WAKTU HABIS:
+
+      Bagian ini yang paling aman dipotong. Cukup tunjukkan contoh 1
+      dan 2 berdampingan, sebutkan bahwa praktik penuhnya di P3 saat
+      setup Vite. Yang WAJIB nempel hari ini tetap HTML semantic dan
+      Flexbox — bukan Tailwind.
+      ============================================================
+    -->
+  </body>
+</html>

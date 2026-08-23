@@ -84,7 +84,7 @@ Nama slotnya terbalik dengan isinya: "logika" sekarang berisi tampilan, "sintaks
 **Ditemukan & diputuskan:** 23 Agustus 2026
 **Status:** ✅ Selesai — sudah dijalankan
 
-**Keputusan:** P1 menjadi HTML5 Semantic & CSS Layout, P2 menjadi Modern JavaScript. TailwindCSS dikeluarkan dari pertemuan HTML/CSS dan dipindah ke P3.
+**Keputusan:** P1 menjadi HTML5 Semantic & CSS Layout, P2 menjadi Modern JavaScript. TailwindCSS tetap berada di P1, ditaruh di bagian paling akhir (lihat catatan posisi Tailwind di bawah).
 
 **Alasan yang menang:** risiko motivasi di pertemuan pertama. Dengan JavaScript di depan, seluruh praktik P1 terjadi di console — tidak ada yang terlihat di layar, tepat di sesi ketika peserta paling gampang mundur. Dengan HTML/CSS di depan, peserta melihat hasil kerjanya sendiri dalam 10 menit pertama.
 
@@ -94,9 +94,15 @@ Mitigasi yang disepakati, bukan mengubah urutan lagi:
 - P2 harus menutup dengan latihan `.map` dan `.filter` yang benar-benar nempel
 - P3 harus membuka dengan pengulangan singkat `.map` sebelum masuk *list rendering*
 
-**Kenapa Tailwind dipindah ke P3:** dua alasan. Pertama, mengajarkan Tailwind sebelum peserta paham CSS biasa melanggar prinsip yang dipegang di CLAUDE.md — shortcut diberikan *setelah* paham manual, sebagai hadiah. Kedua, Tailwind paling wajar dipasang saat setup Vite di P3; memasangnya via CDN di P1 hanya untuk dibuang lagi di P3 itu pemborosan waktu kelas.
+**Posisi TailwindCSS — direvisi 23 Agustus 2026, setelah sempat salah tempat.**
 
-**Konsekuensi yang perlu diawasi:** P3 sekarang padat — React + Vite + JSX + props + rendering + Tailwind dalam 120 menit. Pertimbangkan ini saat menyusun materinya; kemungkinan ada yang perlu digeser ke P4.
+Awalnya Tailwind dikeluarkan dari P1 dan dipindah ke P3. Itu **salah baca instruksi mentor** dan sudah dikoreksi: Tailwind **tetap di P1**, tapi ditaruh di **bagian paling akhir** (menit 102–115), setelah peserta menulis CSS manual satu jam penuh.
+
+Kenapa posisi akhir, bukan awal: kalau Tailwind diberikan di awal, peserta menulis `flex justify-center` tanpa tahu itu singkatan dari apa, dan tidak punya pegangan saat hasilnya melenceng. Ini prinsip yang sama dengan Emmet di Bagian 1 — shortcut diberikan *setelah* paham manual, sebagai hadiah. Menaruhnya di akhir juga membuat Tailwind terasa sebagai obat, bukan sebagai cara lain yang membingungkan.
+
+Pemasangan di P1 cukup via CDN satu baris, belum perlu Node. Pemasangan yang benar lewat Vite tetap di P3 sebagai lanjutan.
+
+**Konsekuensi yang perlu diawasi:** P1 jadi padat — tujuh bagian dalam 120 menit. Alokasi bagian lain dirapatkan untuk memberi ruang 13 menit. Kalau waktu habis di kelas, Bagian 6 (Tailwind) yang paling aman dipotong; yang wajib nempel tetap HTML semantic dan Flexbox.
 
 **Efek samping yang muncul:** nama pertemuan di Timeline jadi tidak cocok dengan isinya. Dicatat terpisah sebagai T-002.
 
@@ -107,6 +113,14 @@ Mitigasi yang disepakati, bukan mengubah urutan lagi:
 Terbaru di atas.
 
 ### 23 Agustus 2026
+
+**Koreksi posisi TailwindCSS — dikembalikan ke P1**
+- *Penyebab:* salah membaca instruksi mentor "html css tetap dipertama, karena langsung tailwind saja belajarnya". Dibaca sebagai alasan mengeluarkan Tailwind dari P1, padahal maksudnya sebaliknya — Tailwind memang dipelajari langsung di P1.
+- Ditambahkan **Bagian 6 — TailwindCSS** (menit 102–115) di materi P1, beserta `demo/06-tailwind.html` yang memuat kartu sama dalam dua versi bersebelahan dan tabel pemetaan CSS → class Tailwind
+- Alokasi menit bagian lain dirapatkan untuk memberi ruang 13 menit; Penutup jadi Bagian 7
+- Tugas 1 mendapat **bonus opsional +10 poin**: konversi satu kartu ke Tailwind disertai komentar pemetaannya. Sengaja cuma satu kartu — tujuannya membuktikan bahwa Tailwind cuma nama pendek untuk CSS yang sudah ditulis, bukan menguasainya hari itu.
+- `docs/Silabus.md`: Tailwind kembali ke daftar materi P1; entri P3 diubah jadi "pemasangan yang benar lewat Vite, lanjutan dari pengenalan via CDN di P1"
+- `CLAUDE.md` dan `README.md` disesuaikan
 
 **REVISI BESAR — urutan P1 dan P2 ditukar**
 - *Keputusan & alasan lengkap:* lihat B-001 di bagian B.

@@ -90,6 +90,33 @@ Ini yang membedakan tugas ini dari sekadar "bikin halaman".
 
 ---
 
+## Bonus (Opsional) — Konversi Satu Kartu ke Tailwind
+
+Setelah bagian wajib selesai, **ubah SATU kartu saja** dari CSS manual jadi TailwindCSS. Satu, bukan seluruh halaman.
+
+Tambahkan baris ini di `<head>`:
+
+```html
+<script src="https://cdn.tailwindcss.com"></script>
+```
+
+Lalu tulis komentar berisi **pemetaannya** — CSS mana jadi class Tailwind apa:
+
+```html
+<!-- konversi Tailwind:
+     display: flex                  -> flex
+     justify-content: space-between -> justify-between
+     padding: 1.5rem                -> p-6
+     border-radius: 8px             -> rounded-lg -->
+<article class="flex justify-between items-center p-6 bg-white rounded-lg">
+```
+
+**Kenapa cuma satu kartu:** tujuannya bukan menguasai Tailwind sekarang, tapi membuktikan ke diri sendiri bahwa Tailwind cuma nama pendek untuk CSS yang sudah kalian tulis. Di Pertemuan 3 kalian memakainya dengan serius.
+
+Bonus ini menambah nilai maksimal **10 poin**, dan hanya dihitung kalau bagian wajibnya sudah lengkap.
+
+---
+
 ## Kriteria Penilaian
 
 | Bobot | Aspek |

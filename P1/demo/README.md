@@ -10,11 +10,12 @@ Semua file berdiri sendiri — cukup double-click, tidak perlu server atau insta
 
 | File | Bagian di materi | Menit |
 |---|---|:--:|
-| [01-kerangka.html](01-kerangka.html) | Bagian 1 — Anatomi Dokumen HTML | 10–25 |
-| [02-semantic/](02-semantic/) | Bagian 2 — HTML5 Semantic | 25–50 |
-| [03-box-model.html](03-box-model.html) | Bagian 3 — CSS & Box Model | 50–75 |
-| [04-flexbox.html](04-flexbox.html) | Bagian 4 — Flexbox | 75–100 |
-| [05-grid-responsif.html](05-grid-responsif.html) | Bagian 5 — Grid & Mobile-First | 100–112 |
+| [01-kerangka.html](01-kerangka.html) | Bagian 1 — Anatomi Dokumen HTML | 10–22 |
+| [02-semantic/](02-semantic/) | Bagian 2 — HTML5 Semantic | 22–45 |
+| [03-box-model.html](03-box-model.html) | Bagian 3 — CSS & Box Model | 45–65 |
+| [04-flexbox.html](04-flexbox.html) | Bagian 4 — Flexbox | 65–90 |
+| [05-grid-responsif.html](05-grid-responsif.html) | Bagian 5 — Grid & Mobile-First | 90–102 |
+| [06-tailwind.html](06-tailwind.html) | Bagian 6 — TailwindCSS | 102–115 |
 
 ---
 
@@ -43,6 +44,14 @@ Sebelum membuka versi semantic, tanyakan ke kelas: *"tanpa scroll ke atas, ada y
 **`04-flexbox.html`** — Porsi terbesar hari ini. **Jangan langsung ke Flexbox.** Tunjukkan bagian float dulu, lalu minta peserta membuat tiga kotak berdampingan rata tengah secara tegak dengan cara lama. Biarkan mereka gagal 3 menit — itu 3 menit paling berharga di bagian ini. Baru tunjukkan obatnya.
 
 **`05-grid-responsif.html`** — Kalau waktu menipis, cukup ajarkan contoh 1 (grid `auto-fit`). Itu yang mereka butuhkan untuk tugas. Media query manual bisa disebut sekilas.
+
+**`06-tailwind.html`** — **Posisinya paling akhir, dan itu disengaja.** Peserta baru menulis CSS manual satu jam penuh; sekarang mereka punya rasa sakit yang bisa diobati. Kalau Tailwind diberikan di awal, mereka akan menulis `flex justify-center` tanpa tahu itu singkatan dari apa — sama seperti Emmet, shortcut diberikan *setelah* paham manual.
+
+Yang paling penting di file ini: **petakan tabel CSS → Tailwind satu per satu di layar.** Peserta harus melihat bahwa tidak ada konsep baru, cuma nama pendek.
+
+Jangan lewati contoh nomor 4 (class yang panjangnya sebelas). Kelemahan Tailwind harus Anda sebut duluan — peserta akan melihatnya sendiri dalam 5 menit, dan kalau Anda diam, kredibilitas Anda yang turun.
+
+**Ini bagian yang paling aman dipotong** kalau waktu habis.
 
 ---
 

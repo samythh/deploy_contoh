@@ -1,9 +1,9 @@
 # PERTEMUAN 1 — HTML5 Semantic & CSS Layout
 ### Panduan Materi & Cara Penyampaian untuk Mentor
 **Metro Institute Season 2 — Divisi Frontend**
-Durasi: 120 menit | Topik: Struktur Dokumen, Semantic Tags, CSS Fundamentals, Box Model, Flexbox, Grid, Mobile-First
+Durasi: 120 menit | Topik: Struktur Dokumen, Semantic Tags, CSS Fundamentals, Box Model, Flexbox, Grid, Mobile-First, TailwindCSS
 
-> **CATATAN VERSI:** Sejak revisi 23 Agustus 2026, HTML/CSS naik dari Pertemuan 2 ke Pertemuan 1, bertukar dengan JavaScript. Alasannya: peserta butuh umpan balik visual di pertemuan pertama, saat mereka paling gampang mundur. **TailwindCSS tidak diajarkan di sini** — dipindah ke P3 bersama setup Vite. Lihat `docs/Catatan-Perubahan.md` untuk konsekuensi lengkapnya.
+> **CATATAN VERSI:** Sejak revisi 23 Agustus 2026, HTML/CSS naik dari Pertemuan 2 ke Pertemuan 1, bertukar dengan JavaScript. Alasannya: peserta butuh umpan balik visual di pertemuan pertama, saat mereka paling gampang mundur. **TailwindCSS diajarkan di akhir pertemuan ini** (Bagian 6), setelah peserta menulis CSS manual — sebagai "hadiah", bukan jalan pintas. Lihat `docs/Catatan-Perubahan.md` untuk konsekuensi lengkapnya.
 
 ---
 
@@ -85,7 +85,7 @@ Jangan tunggu sampai Bagian 2. Sebelum teori apa pun, minta semua orang:
 
 ---
 
-# BAGIAN 1 — Anatomi Dokumen HTML (10–25 menit)
+# BAGIAN 1 — Anatomi Dokumen HTML (10–22 menit)
 
 ## APA
 
@@ -145,7 +145,7 @@ Peserta akan menemukan sendiri bahwa mengetik kerangka ini melelahkan. Bagus —
 
 ---
 
-# BAGIAN 2 — HTML5 Semantic (25–50 menit)
+# BAGIAN 2 — HTML5 Semantic (22–45 menit)
 > Inti pedagogis P1. Beri porsi penuh — ini contoh terbaik dari "kenapa", bukan sekadar "apa".
 
 ## APA
@@ -236,7 +236,7 @@ Satu halaman hanya boleh punya satu `<main>` — itu penanda "ini isi utamanya".
 
 ---
 
-# BAGIAN 3 — CSS: Menempelkan Gaya (50–75 menit)
+# BAGIAN 3 — CSS: Menempelkan Gaya (45–65 menit)
 
 ## BANDINGKAN — Tiga cara menempelkan CSS
 
@@ -337,7 +337,7 @@ Buka `F12` → pilih elemen → panel **Computed**. Di situ box model tampil seb
 
 ---
 
-# BAGIAN 4 — Flexbox (75–100 menit)
+# BAGIAN 4 — Flexbox (65–90 menit)
 > **PORSI TERBESAR HARI INI.** Ini alat tata letak yang mereka pakai setiap hari, termasuk nanti di React.
 
 ## BANDINGKAN — Cara lama menata elemen berdampingan
@@ -420,7 +420,7 @@ Lima baris menghasilkan navbar yang di era `float` butuh 20 baris plus tambalan.
 
 ---
 
-# BAGIAN 5 — Grid & Mobile-First (100–112 menit)
+# BAGIAN 5 — Grid & Mobile-First (90–102 menit)
 > Singkat dan fokus. Tujuannya cukup satu: peserta bisa membuat grid kartu yang responsif.
 
 ## BANDINGKAN — Kapan Flexbox, kapan Grid
@@ -482,7 +482,124 @@ Dua alasan, dan yang kedua yang sebenarnya:
 
 ---
 
-# BAGIAN 6 — Penutup & Tugas (112–120 menit)
+# BAGIAN 6 — TailwindCSS (102–115 menit)
+> **Posisi bagian ini disengaja: paling akhir.** Peserta baru saja menulis CSS manual selama satu jam penuh. Sekarang mereka punya rasa sakit yang bisa diobati — dan itu satu-satunya cara Tailwind terasa masuk akal, bukan sekadar cara lain yang membingungkan.
+
+## Kenapa Tailwind Ditaruh di Sini, Bukan di Awal
+
+Ini keputusan yang perlu Anda pahami sebelum mengajarkannya.
+
+Kalau Tailwind diberikan di awal pertemuan, peserta akan menulis `flex justify-center` tanpa tahu itu singkatan dari apa. Saat hasilnya melenceng, mereka tidak punya apa pun untuk dijadikan pegangan — karena yang mereka hafal cuma mantra.
+
+Ini prinsip yang sama dengan Emmet di Bagian 1: **shortcut diberikan setelah paham manual, sebagai hadiah.**
+
+> **CARA SAMPAIKAN saat membuka bagian ini:**
+> "Satu jam terakhir kalian nulis CSS manual, dan sebagian dari kalian mikir 'kok ribet banget'. Bagus — itu memang ribet. Sekarang saya kasih obatnya.
+> Tapi ingat: saya kasih obatnya SETELAH kalian ngerasain sakitnya. Kalau saya kasih dari tadi, kalian nggak bakal ngerti obatnya buat apa."
+
+## APA
+
+TailwindCSS adalah kumpulan class siap pakai yang tiap class-nya mewakili **satu** aturan CSS.
+
+```html
+<!-- Tailwind: gaya ditulis langsung di HTML lewat class -->
+<div class="flex justify-center items-center gap-4 p-6 bg-white rounded-lg">
+  ...
+</div>
+```
+
+Cara memasangnya di P1 cukup satu baris di `<head>` — belum perlu Node atau build:
+
+```html
+<script src="https://cdn.tailwindcss.com"></script>
+```
+
+> **CATATAN UNTUK ANDA:** cara CDN ini **hanya untuk belajar**, tidak untuk produksi. Sebut itu sekali, jangan dijadikan bahasan panjang. Di P3 mereka akan memasangnya dengan benar lewat Vite, dan di situ perbedaannya baru relevan.
+
+## BANDINGKAN — Kartu yang sama, dua cara
+
+Tulis keduanya berdampingan. Pakai kartu yang **sudah mereka buat sendiri** di Bagian 5, jangan contoh baru.
+
+```html
+<!-- CSS MANUAL — yang mereka tulis satu jam terakhir -->
+<article class="kartu">...</article>
+```
+```css
+.kartu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+```
+
+```html
+<!-- TAILWIND — tanpa file CSS sama sekali -->
+<article class="flex justify-between items-center p-6 bg-white rounded-lg border border-gray-200">
+  ...
+</article>
+```
+
+**Petakan satu per satu di layar.** Ini bagian terpenting: peserta harus melihat bahwa Tailwind bukan sistem baru, cuma nama pendek untuk yang sudah mereka kuasai.
+
+| CSS manual | Tailwind |
+|---|---|
+| `display: flex` | `flex` |
+| `justify-content: space-between` | `justify-between` |
+| `align-items: center` | `items-center` |
+| `padding: 1.5rem` | `p-6` |
+| `background: #fff` | `bg-white` |
+| `border-radius: 8px` | `rounded-lg` |
+
+> **CARA SAMPAIKAN:**
+> "Lihat tabel ini baik-baik. Nggak ada satu pun konsep baru di kolom kanan. Semuanya kolom kiri yang dipendekin.
+> `justify-between` itu ya `justify-content: space-between`. Sama persis. Cuma lebih pendek.
+> Makanya tadi kita belajar yang kiri dulu. Kalau kalian ngerti kolom kiri, kolom kanan cuma soal hafalan nama — dan hafalan itu gampang, tinggal buka dokumentasi."
+
+## KENAPA orang memakai Tailwind
+
+Dua alasan yang bisa Anda tunjukkan, bukan cuma diceritakan.
+
+**1. Tidak perlu memikirkan nama class.**
+
+Ini masalah yang mereka baru saja alami di tugas: memikirkan nama yang benar itu melelahkan. Dengan Tailwind, pertanyaan "ini class-nya dinamain apa ya?" hilang sama sekali.
+
+**2. Tidak ada CSS yang menumpuk tanpa dipakai.**
+
+Di project besar, file CSS terus bertambah dan tidak ada yang berani menghapus — takut ada yang masih memakai. Dengan Tailwind, gaya nempel di elemennya; hapus elemennya, gayanya ikut hilang.
+
+> **CARA SAMPAIKAN — Analogi Lemari vs Ransel:**
+> "CSS manual itu kayak lemari baju di rumah. Rapi, tiap laci ada namanya. Tapi lama-lama isinya numpuk, dan ada baju yang kalian nggak tahu masih dipakai atau enggak — nggak berani dibuang.
+> Tailwind itu kayak ransel. Semua yang kalian butuh nempel di badan. Nggak ada gudang yang numpuk. Tapi kalian keliatan lebih berantakan."
+
+## BANDINGKAN — Kelemahannya, sebutkan dengan jujur
+
+**Jangan menjual Tailwind sebagai selalu lebih baik.** Peserta akan melihat sendiri kelemahannya dalam 5 menit, dan kalau Anda tidak menyebutnya duluan, kredibilitas Anda yang turun.
+
+```html
+<!-- HTML-nya jadi panjang dan penuh -->
+<article class="flex flex-col justify-between items-start gap-3 p-6 bg-white rounded-lg border border-gray-200 hover:shadow-md transition">
+```
+
+> **CARA SAMPAIKAN:**
+> "Jujur ya, ini jelek dilihat. Satu baris bisa isinya 15 class. Ada yang bilang ini 'nggak beda sama inline style yang tadi kita bilang buruk'.
+> Sebagian benar. Bedanya: inline style itu bebas nulis apa aja, Tailwind itu terbatas pada pilihan yang sudah disediakan — jadi seluruh tim otomatis konsisten. Tapi soal panjangnya? Iya, memang panjang.
+> Dua-duanya dipakai di industri. Yang penting kalian tahu keduanya dan bisa milih, bukan cuma bisa satu."
+
+## Praktik: konversi satu komponen
+
+Dalam sisa waktu, minta peserta **mengubah SATU kartu** dari CSS manual jadi Tailwind. Satu saja, jangan seluruh halaman.
+
+Tujuannya bukan menguasai Tailwind hari ini — tapi merasakan pemetaannya sendiri, supaya di P3 mereka tinggal melanjutkan.
+
+> **KALAU WAKTU HABIS:** bagian ini yang paling aman dipotong. Cukup tunjukkan tabel pemetaan dan satu contoh kartu, lalu sampaikan bahwa praktik penuhnya di P3 saat setup Vite. Yang wajib nempel hari ini tetap HTML semantic dan Flexbox — bukan Tailwind.
+
+---
+
+# BAGIAN 7 — Penutup & Tugas (115–120 menit)
 
 ## Rangkuman: Satu Benang Merah
 
@@ -667,6 +784,7 @@ Karena Bagian 2 sangat menekankan semantic, mudah terpeleset jadi "jangan pakai 
 
 **H-1:**
 - [ ] Latih demo navbar Flexbox sampai lancar tanpa melihat catatan
+- [ ] Uji `demo/06-tailwind.html` — pastikan CDN Tailwind termuat (perlu internet di ruang kelas!). Kalau koneksi meragukan, siapkan tangkapan layar cadangan.
 - [ ] Uji demo grid `auto-fit` — pastikan efek tarik-jendelanya mulus (momen wow)
 - [ ] Siapkan halaman contoh tanpa `<meta charset>` untuk peragaan karakter rusak
 - [ ] Siapkan berkas tugas + contoh hasil jadi sebagai acuan peserta
@@ -675,7 +793,7 @@ Karena Bagian 2 sangat menekankan semantic, mudah terpeleset jadi "jangan pakai 
 - [ ] VS Code dengan font diperbesar (min 18pt), tema terang — tema gelap sering tidak terbaca lewat proyektor
 - [ ] Browser dan DevTools terbuka berdampingan dengan editor
 - [ ] Sediakan 10 menit di awal khusus membantu instalasi yang gagal
-- [ ] Siapkan folder `tugas/` untuk dibagikan di menit ke-112
+- [ ] Siapkan folder `tugas/` untuk dibagikan di menit ke-115
 
 ---
 

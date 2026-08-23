@@ -130,9 +130,9 @@ Kalau saya minta pendapat soal keputusan pedagogis atau kurikulum:
 
 Urutan 8 pertemuan (silabus terbaru):
 
-1. **P1** — HTML5 Semantic + CSS Layout (box model, Flexbox, Grid, mobile-first). *CSS murni, tanpa Tailwind.*
+1. **P1** — HTML5 Semantic + CSS Layout (box model, Flexbox, Grid, mobile-first) + pengenalan **TailwindCSS** via CDN di bagian penutup.
 2. **P2** — JavaScript Modern (ES6+) & Arsitektur Web (client-server, HTTP methods, arrow/destructuring/spread, `.map/.filter/.find/.some/.reduce`, modul). *Praktik di browser console.*
-3. **P3** — React Fundamentals (Vite, JSX, komponen, props, conditional & list rendering) + **TailwindCSS**.
+3. **P3** — React Fundamentals (Vite, JSX, komponen, props, conditional & list rendering) + pemasangan **TailwindCSS** yang benar lewat Vite.
 4. **P4** — State & Lifecycle (`useState`, `useEffect`, controlled forms, immutability).
 5. **P5** — Routing (React Router) & Custom Hooks.
 6. **P6** — Konsumsi REST API & async UI (Axios, loading/error state). *Titik risiko.*
@@ -145,7 +145,11 @@ Alasan penukaran: risiko motivasi di pertemuan pertama. Dengan JS di depan, pese
 
 Harga yang dibayar — **sadari ini saat menyusun P2 dan P3:** JS sekarang langsung disambung React di P3, tanpa jeda "marinasi" satu minggu seperti rencana awal. JS adalah prasyarat terberat React. Mitigasinya bukan mengubah urutan lagi, tapi: (a) P2 harus menutup dengan latihan `.map` dan `.filter` yang benar-benar nempel, dan (b) P3 harus membuka dengan pengulangan singkat `.map` sebelum masuk list rendering.
 
-**TailwindCSS dipindah ke P3**, tidak lagi di pertemuan HTML/CSS. Alasannya dua: Tailwind sebelum paham CSS biasa melanggar prinsip "shortcut diberikan SETELAH paham manual", dan Tailwind paling wajar dipasang saat setup Vite di P3. Konsekuensinya P3 jadi padat — pertimbangkan itu saat menyusun materinya.
+**TailwindCSS tetap di P1, tapi ditaruh di BAGIAN PALING AKHIR** (menit 102–115), setelah peserta menulis CSS manual satu jam penuh. Ini penerapan prinsip "shortcut diberikan SETELAH paham manual" — sama seperti Emmet di Bagian 1. Jangan pernah menaruhnya di awal: peserta akan menulis `flex justify-center` tanpa tahu itu singkatan dari apa, dan tidak punya pegangan saat hasilnya melenceng.
+
+Di P1 pemasangannya cukup via CDN satu baris (belum perlu Node). Pemasangan yang benar lewat Vite ada di P3. Sebut sekali bahwa CDN hanya untuk belajar, jangan dijadikan bahasan panjang.
+
+**Konsekuensi yang perlu diawasi:** P1 jadi padat — tujuh bagian dalam 120 menit. Kalau waktu habis, Bagian 6 (Tailwind) yang paling aman dipotong; yang wajib nempel tetap HTML semantic dan Flexbox.
 
 **Colokan ke depan:** saat mengajar konsep di pertemuan awal, tandai eksplisit mana yang akan dipakai lagi nanti ("ini yang kalian pakai terus di React"), supaya latihan terasa relevan, bukan sia-sia.
 
