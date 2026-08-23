@@ -1,7 +1,9 @@
-# Pertemuan 1 — Modern JavaScript (ES6+) & Arsitektur Web
+# Pertemuan 1 — HTML5 Semantic & CSS Layout
 
 **Durasi:** 120 menit · **Jadwal:** Oktober W1 (1–7 Okt 2026)
-**Topik:** Client-Server, HTTP Methods, ES6+ Fundamentals, Manipulasi Array, Modul
+**Topik:** Struktur Dokumen, Semantic Tags, CSS Fundamentals, Box Model, Flexbox, Grid, Mobile-First
+
+> **Catatan revisi:** Sejak 23 Agustus 2026, HTML/CSS naik dari P2 ke P1, bertukar dengan JavaScript. **TailwindCSS tidak diajarkan di sini** — dipindah ke P3 bersama setup Vite.
 
 ---
 
@@ -9,24 +11,26 @@
 
 ```
 P1/
-├── P1-Materi-Mentor-Frontend-JS.md   # Panduan mengajar lengkap — BACA INI DULU
+├── P1-Materi-Mentor-Frontend-HTML-CSS.md   # Panduan mengajar — BACA INI DULU
 │
-├── demo/                             # Kode live untuk di kelas    [mentor]
-│   ├── 00-data-demo.js
-│   ├── 01-var-let-const.js
-│   ├── 02-es6-fundamentals.js
-│   ├── 03-array-methods.js
-│   └── 04-modul/                     # butuh Live Server
+├── demo/                        # Kode live untuk di kelas      [mentor]
+│   ├── 01-kerangka.html
+│   ├── 02-semantic/             # divsoup.html vs semantic.html
+│   ├── 03-box-model.html
+│   ├── 04-flexbox.html
+│   └── 05-grid-responsif.html
 │
-├── tugas/                            # Dibagikan ke peserta        [peserta]
-│   ├── soal.md                       # soal + rubrik + aturan AI
-│   ├── data.js                       # 10 mahasiswa
-│   ├── tugas-1.js                    # kerangka jawaban ber-TODO
-│   └── index.html                    # cangkang, cukup double-click
+├── tugas/                       # Dibagikan ke peserta          [peserta]
+│   ├── soal.md                  # soal + rubrik + aturan AI
+│   ├── index.html               # kerangka ber-TODO
+│   └── style.css                # kerangka ber-TODO
 │
-└── kunci-jawaban/                    # JANGAN dibagikan            [mentor]
-    └── tugas-1-kunci.js              # jawaban + catatan penilaian
+└── kunci-jawaban/               # JANGAN dibagikan              [mentor]
+    ├── index.html
+    └── style.css                # + catatan menilai
 ```
+
+Semua file berdiri sendiri — cukup double-click, tidak perlu server atau install apa pun.
 
 ---
 
@@ -38,7 +42,7 @@ P1/
 | `tugas/` | Peserta | ✅ |
 | `kunci-jawaban/` | Mentor | ❌ |
 
-Saat membagikan tugas, kirim **isi folder `tugas/` saja** — keempat filenya sekaligus, karena `index.html` memanggil `data.js` dan `tugas-1.js`.
+Saat membagikan tugas, kirim **isi folder `tugas/` saja** — ketiga filenya sekaligus, karena `index.html` memanggil `style.css`.
 
 ---
 
@@ -46,62 +50,64 @@ Saat membagikan tugas, kirim **isi folder `tugas/` saja** — keempat filenya se
 
 | Menit | Bagian | File demo |
 |:--:|---|---|
-| 0–10 | Pembuka & peta program | — |
-| 10–30 | Arsitektur Client-Server & HTTP Methods | — |
-| 30–40 | Variabel Modern (`let`/`const`) | `01-var-let-const.js` |
-| 40–70 | ES6+ Fundamentals | `02-es6-fundamentals.js` |
-| 70–100 | **Manipulasi Array** (porsi terbesar) | `03-array-methods.js` |
-| 100–110 | Modul Import/Export | `04-modul/` |
-| 110–120 | Rangkuman & pembagian tugas | `tugas/` |
-
-Bagian 0 dan 1 murni penjelasan — tidak ada kode. Mulai `00-data-demo.js` di awal Bagian 4 untuk momen `console.table()`.
+| 0–10 | Pembuka, peta program, **kemenangan pertama** | — |
+| 10–25 | Anatomi dokumen HTML | `01-kerangka.html` |
+| 25–50 | **HTML5 Semantic** — inti pedagogis hari ini | `02-semantic/` |
+| 50–75 | CSS: cara menempel, selector, box model | `03-box-model.html` |
+| 75–100 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
+| 100–112 | Grid & mobile-first | `05-grid-responsif.html` |
+| 112–120 | Rangkuman & pembagian tugas | `tugas/` |
 
 ---
 
 ## Situasi Khusus P1
 
-Peserta **belum punya halaman web untuk dilihat.** Silabus menaruh JavaScript sebelum HTML/CSS, jadi seluruh praktik hari ini terjadi di browser console — tidak ada tampilan, tidak ada tombol, hanya logika dan data.
+**Ini pertemuan pertama, dan taruhannya motivasi.** Sebagian peserta belum pernah menulis satu baris kode, dan sebagian sedang diam-diam bertanya apakah mereka salah masuk kelas.
 
-Ini bisa terasa kering bagi pemula yang mengira coding itu langsung bikin tampilan. Antisipasinya ada di dokumen materi (analogi mesin & mobil di Bagian 0), dan `console.table()` disiapkan sebagai satu-satunya "kemenangan visual" hari ini.
+Keunggulan besar P1 versi HTML/CSS: peserta bisa **melihat hasil kerjanya dalam 10 menit pertama**. Rasa "saya bisa bikin sesuatu" itu yang menahan mereka bertahan sampai materi sulit di P2 dan P6.
+
+**Menit ke-8 adalah prioritas nomor satu Anda.** Sebelum teori apa pun, pastikan semua orang berhasil mengetik `<h1>Halo</h1>`, menyimpan, dan melihatnya di browser. Peserta yang gagal di sini akan tertinggal sepanjang 8 pertemuan — membantunya lebih penting daripada menyelesaikan materi.
 
 ---
 
 ## Yang Perlu Peserta Siapkan
 
-Cukup **browser (Chrome/Edge terbaru)** dan **editor teks**. Belum perlu Node.js, belum perlu install apa pun.
+**VS Code** dan **browser Chrome/Edge terbaru**. Tidak perlu Node.js, tidak perlu install apa pun lagi.
 
-Hanya demo modul (`04-modul/`) yang butuh **Live Server** — dan itu untuk mentor, bukan peserta.
+Karena ini pertemuan pertama, kirim panduan instalasi **H-3** lengkap dengan tautan unduh dan tangkapan layar. Minta mereka balas "sudah" di grup supaya Anda tahu siapa yang perlu dibantu di hari-H.
 
 ---
 
 ## Tugas 1
 
-**Deliverable:** file `tugas-1.js` yang sudah terisi, dengan **komentar alasan di tiap jawaban**.
+**Deliverable:** `index.html` + `style.css` berisi landing page responsif — navbar, hero, grid minimal 6 kartu, footer. Dengan **komentar alasan**: minimal 2 di HTML, minimal 4 di CSS.
 
 | Bobot | Aspek |
 |:--:|---|
-| 40% | Method yang dipilih tepat sesuai tugasnya |
+| 35% | Ketepatan pemilihan tag semantic & alasannya |
 | 30% | Kualitas alasan di komentar |
-| 20% | Kode jalan & benar hasilnya |
-| 10% | Kerapian |
+| 20% | Layout berfungsi & responsif di HP |
+| 15% | Kerapian (indentasi, penamaan class) |
 
-Alasan (30%) sengaja diberi bobot lebih besar daripada kode jalan (20%). Boleh pakai AI, tapi verifikasi lisan acak di breakout room yang jadi penentu — detailnya di [soal.md](tugas/soal.md).
+Tampilan cantik sengaja cuma 20%. Detailnya di [soal.md](tugas/soal.md).
 
 ---
 
 ## Checklist Persiapan
 
 **H-3**
-- [ ] Kirim panduan ke grup: cukup browser + editor teks
-- [ ] Baca ulang [dokumen materi](P1-Materi-Mentor-Frontend-JS.md) sampai Lampiran E
+- [ ] Kirim panduan instalasi VS Code + browser ke grup, lengkap dengan tautan dan tangkapan layar
+- [ ] Minta peserta balas "sudah" — catat siapa yang belum
+- [ ] Baca [dokumen materi](P1-Materi-Mentor-Frontend-HTML-CSS.md) sampai Lampiran E
 
 **H-1**
-- [ ] Latih demo chaining `.filter().map()` di console sampai lancar
-- [ ] Coba `console.table()` — pastikan tampil rapi (momen wow)
-- [ ] Uji [kunci jawaban](kunci-jawaban/tugas-1-kunci.js), pastikan semua hasilnya cocok
-- [ ] Kalau mau memakai demo modul: pasang Live Server, uji `04-modul/index.html`
+- [ ] Latih demo navbar Flexbox sampai lancar tanpa catatan
+- [ ] Uji tarik-jendela di [05-grid-responsif.html](demo/05-grid-responsif.html) — pastikan mulus (momen wow)
+- [ ] Buka [kunci-jawaban/index.html](kunci-jawaban/index.html), pastikan tampil benar
+- [ ] Siapkan peragaan `<meta charset>` yang dihapus
 
 **Hari-H**
-- [ ] Console terbuka besar di layar, font minimal 18pt
-- [ ] Ajak peserta buka console mereka di menit-menit awal — jangan ada yang cuma menonton
-- [ ] Siapkan folder `tugas/` untuk dibagikan di menit ke-110
+- [ ] VS Code font minimal 18pt, **tema terang** — tema gelap sering tidak terbaca lewat proyektor
+- [ ] Browser + DevTools terbuka berdampingan dengan editor
+- [ ] Sediakan 10 menit di awal khusus membantu instalasi yang gagal
+- [ ] Siapkan folder `tugas/` untuk dibagikan di menit ke-112

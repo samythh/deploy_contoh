@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+  BAGIAN 3 — CSS & Box Model  (50–75 menit)
+
+  Satu file mandiri. Buka di browser, lalu F12 → klik kotaknya →
+  panel Computed untuk melihat diagram box model berwarna.
+-->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Box Model — Demo P1</title>
+
+    <style>
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: #fafafa;
+        padding: 2rem;
+        color: #1a1a1a;
+      }
+
+      h2 {
+        font-size: 1.05rem;
+        margin: 2rem 0 0.5rem;
+      }
+
+      /* ------------------------------------------------------------
+         PERAGAAN 1 — padding vs margin
+
+         Minta peserta menebak dulu SEBELUM melihat hasilnya:
+         "menurut kalian yang mana yang kotaknya jadi lebih gemuk?"
+
+         Lalu buka DevTools dan tunjukkan diagramnya. Menebak lalu
+         mengecek jauh lebih nempel daripada langsung diberi tahu.
+         ------------------------------------------------------------ */
+
+      .kotak {
+        background: #d6e4ff;
+        border: 3px solid #3b6fd4;
+        width: 180px;
+      }
+
+      .pakai-padding {
+        padding: 2rem; /* jarak isi ke tepi DALAM — kotaknya jadi gemuk */
+      }
+
+      .pakai-margin {
+        margin: 2rem; /* jarak ke elemen LAIN — kotaknya tetap, posisinya geser */
+      }
+
+      /* ------------------------------------------------------------
+         PERAGAAN 2 — kenapa border-box lebih masuk akal
+
+         Ini sumber frustrasi klasik: "kok lebarnya 180px tapi
+         diukur jadi 226px?"
+         ------------------------------------------------------------ */
+
+      .content-box {
+        box-sizing: content-box; /* default bawaan browser */
+        width: 180px;
+        padding: 20px;
+        border: 3px solid #c44;
+        background: #ffe0e0;
+        /* lebar sesungguhnya = 180 + 20 + 20 + 3 + 3 = 226px */
+      }
+
+      .border-box {
+        box-sizing: border-box; /* padding & border DIHITUNG KE DALAM */
+        width: 180px;
+        padding: 20px;
+        border: 3px solid #2a8;
+        background: #e0ffe8;
+        /* lebar sesungguhnya = 180px, persis seperti yang ditulis */
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>1. Kotak polos</h2>
+    <div class="kotak">Tanpa padding, tanpa margin</div>
+
+    <h2>2. Pakai padding — isi menjauh dari tepi, kotaknya gemuk</h2>
+    <div class="kotak pakai-padding">padding: 2rem</div>
+
+    <h2>3. Pakai margin — kotaknya sama, posisinya yang geser</h2>
+    <div class="kotak pakai-margin">margin: 2rem</div>
+
+    <h2>4. content-box (default) — width 180px, terukur 226px</h2>
+    <div class="content-box">Ukur saya di DevTools</div>
+
+    <h2>5. border-box — width 180px, terukur 180px</h2>
+    <div class="border-box">Ukur saya juga</div>
+
+    <!--
+      ============================================================
+      CARA SAMPAIKAN — Analogi Bingkai Foto:
+
+      "Content itu fotonya. Padding itu paspartu — kertas putih antara
+       foto dan bingkai. Border itu bingkainya. Margin itu jarak dari
+       bingkai ini ke bingkai sebelahnya di tembok.
+
+       Yang paling sering ketuker: padding ke DALAM, margin ke LUAR."
+
+      ------------------------------------------------------------
+      UNTUK PERAGAAN 4 vs 5:
+
+      "Kalian nulis width 180px, tapi pas diukur jadi 226. Kenapa?
+       Karena default-nya, padding sama border itu DITAMBAHKAN di luar
+       lebar yang kalian tulis.
+
+       Kayak beli kasur ukuran 180cm, terus dibungkus plastik tebal —
+       yang harus masuk pintu itu ukuran setelah dibungkus, bukan
+       ukuran kasurnya.
+
+       `border-box` bilang: 'hitung 180cm itu SUDAH termasuk bungkusnya.'
+       Makanya hampir semua project modern nulis ini di paling atas:"
+
+         *, *::before, *::after { box-sizing: border-box; }
+
+      Jangan jadikan hafalan. Peserta cukup tahu bahwa baris ini ada
+      alasannya — dan mereka baru saja melihat alasannya.
+      ============================================================
+    -->
+  </body>
+</html>

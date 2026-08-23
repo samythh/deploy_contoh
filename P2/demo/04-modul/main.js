@@ -35,4 +35,4 @@ console.log(formatHarga(hitungTotal(produk)));
    bakal jadi napas sehari-hari."
 
    BATASI SAMPAI SINI. Jangan masuk default export vs named export —
-   itu overload untuk P1. Cukup idenya. */
+   itu overload untuk P2. Cukup idenya. */

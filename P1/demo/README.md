@@ -2,7 +2,7 @@
 
 File-file di sini untuk **dipakai mentor saat mengajar**, bukan dibagikan ke peserta.
 
-Urutan file mengikuti urutan bagian di [dokumen materi](../P1-Materi-Mentor-Frontend-JS.md).
+Semua file berdiri sendiri — cukup double-click, tidak perlu server atau install apa pun.
 
 ---
 
@@ -10,45 +10,47 @@ Urutan file mengikuti urutan bagian di [dokumen materi](../P1-Materi-Mentor-Fron
 
 | File | Bagian di materi | Menit |
 |---|---|:--:|
-| [00-data-demo.js](00-data-demo.js) | Data + momen wow `console.table()` | — |
-| [01-var-let-const.js](01-var-let-const.js) | Bagian 2 — Variabel Modern | 30–40 |
-| [02-es6-fundamentals.js](02-es6-fundamentals.js) | Bagian 3 — ES6+ Fundamentals | 40–70 |
-| [03-array-methods.js](03-array-methods.js) | Bagian 4 — Manipulasi Array | 70–100 |
-| [04-modul/](04-modul/) | Bagian 5 — Import & Export | 100–110 |
+| [01-kerangka.html](01-kerangka.html) | Bagian 1 — Anatomi Dokumen HTML | 10–25 |
+| [02-semantic/](02-semantic/) | Bagian 2 — HTML5 Semantic | 25–50 |
+| [03-box-model.html](03-box-model.html) | Bagian 3 — CSS & Box Model | 50–75 |
+| [04-flexbox.html](04-flexbox.html) | Bagian 4 — Flexbox | 75–100 |
+| [05-grid-responsif.html](05-grid-responsif.html) | Bagian 5 — Grid & Mobile-First | 100–112 |
 
 ---
 
-## Cara Pakai di Kelas
+## Dua Momen Wow — Jangan Dilewatkan
 
-Buka Console (`F12`), lalu **paste per blok** — jangan seluruh file sekaligus.
+**1. Grid yang menyesuaikan sendiri** ([05-grid-responsif.html](05-grid-responsif.html))
+Buka file-nya, lalu **tarik-tarik lebar jendela browser pelan-pelan** di depan kelas. Kolomnya berubah 4 → 3 → 2 → 1 tanpa satu pun media query. Lakukan ini **sebelum** menjelaskan apa pun — lihat dulu, baru paham.
 
-Alasannya bukan sekadar kerapian: beberapa blok memang sengaja dibuat error (misalnya deklarasi ulang `const`). Kalau di-paste bersamaan dengan blok sebelumnya, seluruh paste gagal dan peserta tidak sempat melihat perilaku yang mau ditunjukkan.
-
-> Perbesar font console minimal 18pt sebelum kelas mulai — `Ctrl` + `+` di dalam DevTools.
-
-### ⚠️ Jangan paste `00` lalu `03` mentah-mentah
-
-Keduanya mendeklarasikan `const produk` — `03` sengaja dibuat mandiri supaya bisa dipakai tanpa membuka file lain. Kalau di-paste berurutan dalam satu sesi console:
-
-```
-SyntaxError: Identifier 'produk' has already been declared
-```
-
-dan seluruh paste gagal, persis di tengah kelas. **Lewati blok `const produk` di awal `03`** kalau `00` sudah di-paste.
-
-Kalau terlanjur kena: tekan `F5`, console bersih lagi. Bisa juga dijadikan bahan mengajar dadakan — inilah yang barusan dijelaskan di Bagian 2, `const` menolak deklarasi ulang.
+**2. Navbar lima baris** ([04-flexbox.html](04-flexbox.html) bagian 8)
+Bangun bersama peserta, jangan ditunjukkan jadi. Lima baris CSS menghasilkan navbar yang di era `float` butuh 20 baris plus tambalan. Sebut perbandingan itu.
 
 ---
 
 ## Catatan per File
 
-**`00-data-demo.js`** — Jangan tambah atau ubah isi array `produk`. Angka-angka di dokumen materi (`[8000000, 150000, 300000]`, "Mouse hilang karena stok 0", total 8.450.000) mengacu persis ke tiga item ini. Kalau datanya berubah, contoh di materi tidak lagi cocok dengan yang muncul di layar peserta.
+**`01-kerangka.html`** — Ketik ulang dari nol bersama peserta, jangan langsung dibuka. Mengetik manual sekali adalah syarat sebelum Emmet diberikan sebagai hadiah di akhir bagian. File ini memuat dua peragaan: hapus `<meta charset>` lalu lihat karakter `—` rusak, dan pindahkan `<h1>` ke `<head>` lalu lihat teksnya hilang.
 
-**`01-var-let-const.js`** — Blok `const` yang error sengaja dikomentari. Buka komentarnya saat mau ditunjukkan, jalankan terpisah dari blok `var` di atasnya. File ini juga memuat jebakan `const` pada array — pertanyaan yang hampir pasti muncul dari peserta yang jeli, lengkap dengan analogi lemari yang dipaku.
+**`02-semantic/`** — **Buka `divsoup.html` dan `semantic.html` berdampingan.** Keduanya memakai `style.css` yang sama dan tampilannya identik — itu inti demonstrasinya. Peserta perlu melihat sendiri bahwa `div` tidak salah dan tidak error, supaya argumen semantic tidak terdengar sewenang-wenang.
 
-**`03-array-methods.js`** — File terpenting, porsi waktu terbesar. Memuat versi `.reduce()` yang mencetak isi amplop tiap putaran; jalankan itu kalau ada yang bingung. Jangan memaksakan `reduce` sampai semua paham — lihat Lampiran D di dokumen materi.
+Sebelum membuka versi semantic, tanyakan ke kelas: *"tanpa scroll ke atas, ada yang bisa bilang `</div>` yang mana menutup navigasi?"* Kesulitan mereka itu justru pesannya.
 
-**`04-modul/`** — Satu-satunya bagian yang butuh setup. ES module tidak jalan lewat `file://`, harus pakai **Live Server** di VS Code. Kalau tidak sempat menyiapkan, lewati saja dan sampaikan konsepnya lewat analogi lemari berlaci — materi P1 memang hanya menuntut idenya, bukan praktiknya.
+`semantic.html` juga menandai satu `div` yang **memang tepat** — pembungkus grid. Tunjukkan ini; peserta perlu tahu kapan `div` benar, bukan cuma kapan kurang tepat.
+
+**`03-box-model.html`** — Minta peserta **menebak dulu** sebelum melihat hasil: "yang mana yang kotaknya jadi lebih gemuk, padding atau margin?" Lalu buka DevTools → Computed. Menebak lalu mengecek jauh lebih nempel daripada langsung diberi tahu. File ini juga memperagakan `content-box` vs `border-box` — kenapa `width: 180px` bisa terukur 226px.
+
+**`04-flexbox.html`** — Porsi terbesar hari ini. **Jangan langsung ke Flexbox.** Tunjukkan bagian float dulu, lalu minta peserta membuat tiga kotak berdampingan rata tengah secara tegak dengan cara lama. Biarkan mereka gagal 3 menit — itu 3 menit paling berharga di bagian ini. Baru tunjukkan obatnya.
+
+**`05-grid-responsif.html`** — Kalau waktu menipis, cukup ajarkan contoh 1 (grid `auto-fit`). Itu yang mereka butuhkan untuk tugas. Media query manual bisa disebut sekilas.
+
+---
+
+## Sebelum Kelas
+
+- Perbesar font editor minimal **18pt**, pakai **tema terang** — tema gelap sering tidak terbaca lewat proyektor
+- Buka browser dan DevTools berdampingan dengan VS Code
+- Uji tarik-jendela di `05-grid-responsif.html` sampai mulus
 
 ---
 

@@ -1,6 +1,6 @@
 /* ============================================================
-   TUGAS 1 — Manipulasi Data dengan JavaScript Modern
-   Pertemuan 1 · Kelas Frontend Web Development
+   TUGAS 2 — Manipulasi Data dengan JavaScript Modern
+   Pertemuan 2 · Kelas Frontend Web Development
 
    Nama    : ______________________
    Jurusan : ______________________

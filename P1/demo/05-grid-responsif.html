@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+  BAGIAN 5 — Grid & Mobile-First  (100–112 menit)
+
+  MOMEN WOW KEDUA HARI INI: buka file ini, lalu tarik-tarik lebar
+  jendela browser pelan-pelan. Kolomnya menyesuaikan sendiri —
+  4 kolom, 3, 2, lalu 1 — tanpa satu pun media query.
+
+  Lakukan itu di depan kelas sebelum menjelaskan apa pun.
+  Lihat dulu, baru paham.
+-->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grid & Responsif — Demo P1</title>
+
+    <style>
+      * { box-sizing: border-box; }
+
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: #fafafa;
+        padding: 2rem;
+        color: #1a1a1a;
+      }
+
+      h2 { font-size: 1.05rem; margin: 2.5rem 0 0.75rem; }
+
+      .kartu {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1.25rem;
+      }
+
+      /* ============================================================
+         GRID OTOMATIS — tiga baris, responsif tanpa media query
+
+         Baca baris tengahnya sebagai kalimat:
+         "muat sebanyak mungkin kolom, tapi tiap kolom minimal 250px,
+          dan kalau ada sisa ruang bagi rata"
+
+           auto-fit  = sebanyak mungkin yang muat
+           minmax    = minimal 250px, maksimal 1 bagian sisa ruang
+           1fr       = "satu bagian" dari ruang yang tersedia
+         ============================================================ */
+
+      .grid-otomatis {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      /* ============================================================
+         MOBILE-FIRST — cara manual, untuk dibandingkan
+
+         Perhatikan urutannya: aturan HP ditulis DULUAN tanpa media
+         query, baru naik ke layar lebih besar dengan min-width.
+         ============================================================ */
+
+      .grid-manual {
+        display: grid;
+        grid-template-columns: 1fr;   /* DEFAULT = HP: satu kolom */
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 640px) {
+        .grid-manual { grid-template-columns: repeat(2, 1fr); }   /* tablet */
+      }
+
+      @media (min-width: 1024px) {
+        .grid-manual { grid-template-columns: repeat(4, 1fr); }   /* laptop */
+      }
+
+      /* ============================================================
+         FLEXBOX DI DALAM GRID — keduanya dipakai bersama
+
+         Grid menyusun kartunya (dua arah).
+         Flexbox menyusun isi DI DALAM tiap kartu (satu arah).
+
+         Ini menjawab pertanyaan "jadi harus pilih yang mana?" —
+         jawabannya sering kali: dua-duanya, di lapisan berbeda.
+         ============================================================ */
+
+      .kartu-isi {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .harga { color: #666; }
+    </style>
+  </head>
+
+  <body>
+    <h2>1. Grid otomatis — TARIK LEBAR JENDELANYA SEKARANG</h2>
+    <p><em>Tanpa satu pun media query. Kolomnya menyesuaikan sendiri.</em></p>
+
+    <div class="grid-otomatis">
+      <article class="kartu"><div class="kartu-isi"><strong>Laptop</strong><span class="harga">8jt</span></div></article>
+      <article class="kartu"><div class="kartu-isi"><strong>Mouse</strong><span class="harga">150rb</span></div></article>
+      <article class="kartu"><div class="kartu-isi"><strong>Keyboard</strong><span class="harga">300rb</span></div></article>
+      <article class="kartu"><div class="kartu-isi"><strong>Monitor</strong><span class="harga">2jt</span></div></article>
+      <article class="kartu"><div class="kartu-isi"><strong>Webcam</strong><span class="harga">450rb</span></div></article>
+      <article class="kartu"><div class="kartu-isi"><strong>Headset</strong><span class="harga">600rb</span></div></article>
+    </div>
+
+    <h2>2. Mobile-first manual — 1 kolom → 2 → 4</h2>
+    <p><em>Uji dengan Ctrl+Shift+M di DevTools, ganti-ganti ukuran layarnya.</em></p>
+
+    <div class="grid-manual">
+      <article class="kartu"><strong>Satu</strong></article>
+      <article class="kartu"><strong>Dua</strong></article>
+      <article class="kartu"><strong>Tiga</strong></article>
+      <article class="kartu"><strong>Empat</strong></article>
+    </div>
+
+    <!--
+      ============================================================
+      CARA SAMPAIKAN — Flexbox vs Grid:
+
+      "Flexbox itu buat SATU BARISAN — kayak orang antre.
+       Grid itu buat KOTAK-KOTAK — kayak papan catur atau rak sepatu.
+
+       Aturan praktisnya: kalau kalian cuma mikirin kiri-kanan ATAU
+       atas-bawah, pakai Flexbox. Kalau mikirin dua-duanya barengan,
+       pakai Grid.
+
+       Dan nggak apa-apa dipakai barengan — lihat contoh di atas:
+       Grid nyusun kartunya, Flexbox nyusun isi di dalam tiap kartu."
+
+      ------------------------------------------------------------
+      CARA SAMPAIKAN — Kenapa Mobile-First:
+
+      "Ini kayak packing buat traveling. Kalau mulai dari koper besar
+       terus dipaksa pindah ke tas kecil, kalian pusing milih apa yang
+       dibuang.
+
+       Tapi kalau mulai dari tas kecil — cuma yang penting — terus
+       dapat koper besar, kalian tinggal nambahin. Jauh lebih enak.
+
+       Mobile-first itu mulai dari tas kecilnya."
+
+      ------------------------------------------------------------
+      CATATAN UNTUK ANDA:
+
+      Contoh 1 dan 2 sengaja menghasilkan efek yang mirip dengan cara
+      yang berbeda. Kalau waktu menipis, cukup ajarkan contoh 1 —
+      itu yang mereka butuhkan untuk tugas. Media query manual bisa
+      disebut sekilas sebagai "cara mengaturnya lebih detail".
+      ============================================================
+    -->
+  </body>
+</html>

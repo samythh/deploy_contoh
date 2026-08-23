@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  KUNCI JAWABAN — TUGAS 1
+  UNTUK MENTOR SAJA. Jangan dibagikan ke peserta.
+
+  Ini SATU jawaban yang benar, bukan SATU-SATUNYA. Selama tag
+  semantic-nya masuk akal dan alasannya nyambung, jawaban peserta
+  yang berbeda tetap benar.
+
+  Komentar alasan di file ini ditulis persis seperti yang diharapkan
+  dari peserta — pakai sebagai acuan saat menilai.
+  ============================================================
+-->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kopi Kita — Kedai Kopi Lokal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- pakai <header> karena ini kepala halaman, bukan sekadar kotak
+         di bagian atas — screen reader memakainya sebagai penanda area -->
+    <header class="navbar">
+      <div class="logo">Kopi Kita</div>
+
+      <!-- pakai <nav> bukan <div class="nav"> supaya pengguna screen
+           reader bisa memakai perintah "lompat ke navigasi". Dengan div,
+           perintah itu tidak menemukan apa pun karena class cuma label
+           untuk CSS, bukan penanda peran -->
+      <nav class="navbar-menu">
+        <a href="#">Beranda</a>
+        <a href="#">Menu</a>
+        <a href="#">Kontak</a>
+      </nav>
+    </header>
+
+    <!-- <main> cuma boleh satu per halaman. Ini penanda "isi utamanya
+         di sini" — kalau ada dua, penandanya jadi tidak berarti -->
+    <main>
+      <!-- <section> karena ini kelompok konten yang punya satu tema -->
+      <section class="hero">
+        <!-- <h1> sekali saja per halaman: ini judul utamanya.
+             Mesin pencari memakainya untuk tahu halaman ini tentang apa -->
+        <h1 class="hero-judul">Kopi yang Diseduh Pelan</h1>
+        <p class="hero-teks">Biji lokal pilihan, disangrai tiap pagi di kedai kami.</p>
+        <a class="tombol" href="#">Lihat Menu</a>
+      </section>
+
+      <!-- div DI SINI BENAR. Elemen ini tidak punya makna apa pun —
+           dia cuma pembungkus supaya CSS Grid punya tempat menempel.
+           Tidak ada tag semantic yang berarti "kotak pengatur posisi" -->
+      <div class="daftar-kartu">
+        <!-- <article> karena tiap kartu berdiri sendiri: kalau dipotong
+             dan ditempel di halaman lain, maknanya masih utuh -->
+        <article class="kartu">
+          <h2 class="kartu-judul">Espresso</h2>
+          <p class="kartu-teks">Pekat, pahit seimbang. Rp 18.000</p>
+        </article>
+
+        <article class="kartu">
+          <h2 class="kartu-judul">Kopi Susu Gula Aren</h2>
+          <p class="kartu-teks">Manis lembut, paling dicari. Rp 22.000</p>
+        </article>
+
+        <article class="kartu">
+          <h2 class="kartu-judul">Americano</h2>
+          <p class="kartu-teks">Ringan, cocok untuk siang. Rp 20.000</p>
+        </article>
+
+        <article class="kartu">
+          <h2 class="kartu-judul">Cappuccino</h2>
+          <p class="kartu-teks">Busa tebal, susu hangat. Rp 25.000</p>
+        </article>
+
+        <article class="kartu">
+          <h2 class="kartu-judul">Cold Brew</h2>
+          <p class="kartu-teks">Diseduh dingin 12 jam. Rp 28.000</p>
+        </article>
+
+        <article class="kartu">
+          <h2 class="kartu-judul">Kopi Tubruk</h2>
+          <p class="kartu-teks">Cara lama, tetap juara. Rp 15.000</p>
+        </article>
+      </div>
+    </main>
+
+    <!-- <footer> karena ini kaki halaman, punya peran yang jelas -->
+    <footer class="footer">© 2026 Kopi Kita</footer>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+  CARA SEMANTIC — isi dan tampilan sama persis dengan divsoup.html
+
+  Bandingkan berdampingan. Yang berubah cuma NAMA tag-nya.
+
+  Perhatikan tag penutupnya: </nav>, </main>, </footer> — langsung
+  terbaca menutup apa, tanpa perlu menghitung mundur.
+-->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Semantic — versi modern</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">TokoKita</div>
+
+      <!-- <nav> supaya screen reader bisa melompat langsung ke sini -->
+      <nav class="nav">
+        <a class="nav-item" href="#">Beranda</a>
+        <a class="nav-item" href="#">Produk</a>
+        <a class="nav-item" href="#">Kontak</a>
+      </nav>
+    </header>
+
+    <!-- <main> cuma boleh satu per halaman — ini penanda "isi utamanya di sini" -->
+    <main class="main">
+      <section class="hero">
+        <h1 class="hero-judul">Belanja Jadi Mudah</h1>
+        <p class="hero-teks">Ribuan produk pilihan, satu klik saja.</p>
+      </section>
+
+      <!--
+        div DI SINI JUSTRU BENAR.
+        Elemen ini tidak punya makna apa pun — dia cuma pembungkus
+        supaya CSS Grid punya tempat menempel. Tidak ada tag semantic
+        yang berarti "kotak untuk mengatur posisi".
+
+        Tunjukkan ini di kelas. Peserta perlu tahu kapan div itu tepat,
+        bukan cuma kapan div itu kurang tepat.
+      -->
+      <div class="daftar">
+        <!-- <article> karena tiap kartu produk berdiri sendiri —
+             kalau dipotong dan ditempel di halaman lain, masih utuh maknanya -->
+        <article class="kartu">
+          <h2 class="kartu-judul">Laptop</h2>
+          <p class="kartu-harga">Rp 8.000.000</p>
+        </article>
+        <article class="kartu">
+          <h2 class="kartu-judul">Mouse</h2>
+          <p class="kartu-harga">Rp 150.000</p>
+        </article>
+        <article class="kartu">
+          <h2 class="kartu-judul">Keyboard</h2>
+          <p class="kartu-harga">Rp 300.000</p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">© 2026 TokoKita</footer>
+  </body>
+</html>

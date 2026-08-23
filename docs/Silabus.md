@@ -45,9 +45,31 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 
 ## 2. Breakdown 8 Pertemuan Kelas Intensif (Oktober – November 2026)
 
-### Pertemuan 1 — Fundamental Logika Dasar
+### Pertemuan 1 — Fundamental Struktur & Tampilan
 
-**Modern JavaScript (ES6+) & Web Architecture** · `1 Oktober 2026`
+**HTML5 Semantic & CSS Layout** · `1 Oktober 2026`
+
+> **Fokus Pembelajaran:** Struktur Dokumen, Tata Letak Fleksibel, & Sistem Grid.
+
+**Materi**
+
+- Anatomi dokumen HTML5, peran `<head>` vs `<body>`, dan tiga meta tag wajib.
+- HTML5 Semantic Tags & Aksesibilitas Web — termasuk kapan `<div>` justru pilihan yang tepat.
+- CSS Fundamentals: cara menempelkan gaya, selector, penamaan class berbasis fungsi, dan Box Model.
+- **Deep-dive CSS Layouting:** Flexbox (Axis, Alignment, Gap) & CSS Grid (Template Columns, `auto-fit`).
+- Strategi *Mobile-First Design* & breakpoints responsif.
+
+**Praktik Live**
+
+- Membangun halaman *Landing Page* responsif dari nol menggunakan CSS murni, plus praktik DevTools & Emmet.
+
+> **Output / Tugas 1** — Satu halaman web responsif dengan Navbar, Hero Section, Cards Grid, dan Footer rapi, disertai komentar alasan pemilihan tag dan layout.
+
+---
+
+### Pertemuan 2 — Praktik Logika Dasar
+
+**Modern JavaScript (ES6+) & Web Architecture**
 
 > **Fokus Pembelajaran:** Arsitektur Web Client-Server & Fitur Modern JavaScript.
 
@@ -62,28 +84,7 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 
 - Latihan algoritma manipulasi *array of objects* dan pembuatan fungsi *utility* modern di browser console.
 
-> **Output / Tugas 1** — Menyelesaikan 5 studi kasus logika manipulasi data JavaScript modern.
-
----
-
-### Pertemuan 2 — Praktik Sintaksis Dasar
-
-**Modern UI Styling & Mobile-First Responsive Layouts**
-
-> **Fokus Pembelajaran:** Tata Letak Fleksibel, Sistem Grid, & Styling Utility Modern.
-
-**Materi**
-
-- HTML5 Semantic Tags & Aksesibilitas Web.
-- **Deep-dive CSS Layouting:** Flexbox (Axis, Alignment, Wrapping) & CSS Grid (Template Columns/Rows, Gap).
-- Penerapan *Utility-First CSS* menggunakan TailwindCSS (Konfigurasi, Custom Theme & Utility Classes).
-- Strategi *Mobile-First Design* & breakpoints responsif (`sm`, `md`, `lg`, `xl`).
-
-**Praktik Live**
-
-- Membangun halaman *Landing Page* responsif dari desain wireframe menggunakan TailwindCSS.
-
-> **Output / Tugas 2** — Satu halaman web responsif dengan Navbar, Hero Section, Cards Grid, dan Footer rapi.
+> **Output / Tugas 2** — Menyelesaikan 5 studi kasus logika manipulasi data JavaScript modern.
 
 ---
 
@@ -96,6 +97,7 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 **Materi**
 
 - Pengenalan ekosistem React.js & inisialisasi project kilat menggunakan Vite.
+- Penerapan *Utility-First CSS* menggunakan **TailwindCSS** (instalasi via Vite, Custom Theme, Utility Classes, breakpoints `sm`/`md`/`lg`/`xl`).
 - Anatomi Component, sintaks JSX, dan Virtual DOM.
 - Komunikasi data antar-komponen via Props (*props drilling*, *children props*, *default props*).
 - *Conditional Rendering* (ternary operator, short-circuit `&&`) dan *List Rendering* menggunakan `.map()` dengan `key`.

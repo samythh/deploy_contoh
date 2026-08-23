@@ -29,7 +29,10 @@ Bootcamp_Metro_S2/
 │   └── Portofolio.md           # Profil mentor
 │
 └── P1/ ... P8/          # Materi per pertemuan
-    └── P1-Materi-Mentor-Frontend-JS.md
+    ├── P1-Materi-Mentor-Frontend-HTML-CSS.md
+    ├── demo/            # kode live untuk mentor
+    ├── tugas/           # dibagikan ke peserta
+    └── kunci-jawaban/   # mentor saja
 ```
 
 ---
@@ -45,7 +48,7 @@ Bootcamp_Metro_S2/
 
 Kalau ada pertentangan: **fakta** (tanggal, item materi, bobot nilai) mengikuti `docs/`; **cara menyampaikan** mengikuti `CLAUDE.md`.
 
-> ⚠️ Ada satu temuan yang masih terbuka: **Silabus dan Timeline berbeda soal jadwal Demo Day** (selisih ~2 minggu). Detail dan buktinya di [T-001](docs/Catatan-Perubahan.md#t-001--silabus-dan-timeline-berbeda-soal-jadwal-demo-day).
+> ⚠️ Ada temuan yang masih terbuka: **Silabus dan Timeline berbeda soal jadwal Demo Day** (selisih ~2 minggu). Detail dan buktinya di [T-001](docs/Catatan-Perubahan.md#t-001--silabus-dan-timeline-berbeda-soal-jadwal-demo-day). Sejak revisi urutan P1↔P2, **nama pertemuan di Silabus juga tidak lagi cocok dengan Timeline** — lihat [T-002](docs/Catatan-Perubahan.md#t-002--nama-pertemuan-di-silabus-tidak-lagi-cocok-dengan-timeline).
 
 ---
 
@@ -53,9 +56,9 @@ Kalau ada pertentangan: **fakta** (tanggal, item materi, bobot nilai) mengikuti 
 
 | Kode | Pertemuan | Topik | Status |
 |:--:|---|---|:--:|
-| **P1** | Fundamental Logika Dasar | Modern JavaScript (ES6+) & Web Architecture | ✅ Selesai |
-| **P2** | Praktik Sintaksis Dasar | HTML5 Semantic, CSS Layout, TailwindCSS, Responsif | ⬜ Belum |
-| **P3** | Studi Kasus & Latihan Terbimbing | React.js Fundamentals & Component Architecture | ⬜ Belum |
+| **P1** | Fundamental Struktur & Tampilan | HTML5 Semantic, CSS Layout, Flexbox, Grid, Mobile-First | ✅ Selesai |
+| **P2** | Praktik Logika Dasar | Modern JavaScript (ES6+) & Web Architecture | ✅ Selesai |
+| **P3** | Studi Kasus & Latihan Terbimbing | React.js Fundamentals, Component Architecture, **TailwindCSS** | ⬜ Belum |
 | **P4** | Pengembangan Fitur Dasar | State, Lifecycle Hooks & Controlled Forms | ⬜ Belum |
 | **P5** | Integrasi Konsep Lanjutan | Routing & Custom Hooks | ⬜ Belum |
 | **P6** | Studi Kasus Tingkat Menengah | REST API Consumption & Async UI | ⬜ Belum |
@@ -100,7 +103,7 @@ Ditambah blok **CARA SAMPAIKAN** — kalimat dan analogi yang bisa langsung diuc
 P{n}/P{n}-Materi-Mentor-Frontend-{Topik}.md
 ```
 
-Contoh: `P1/P1-Materi-Mentor-Frontend-JS.md`
+Contoh: `P1/P1-Materi-Mentor-Frontend-HTML-CSS.md`, `P2/P2-Materi-Mentor-Frontend-JS.md`
 
 ---
 

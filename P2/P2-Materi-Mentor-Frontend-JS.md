@@ -1,9 +1,9 @@
-# PERTEMUAN 1 — JavaScript Modern & Arsitektur Web
+# PERTEMUAN 2 — JavaScript Modern & Arsitektur Web
 ### Panduan Materi & Cara Penyampaian untuk Mentor
 **Metro Institute Season 2 — Divisi Frontend**
 Durasi: 120 menit | Topik: Arsitektur Client-Server, HTTP Methods, ES6+ Fundamentals, Manipulasi Array, Modul
 
-> **CATATAN VERSI:** Dokumen ini mengikuti silabus terbaru yang menaruh JavaScript di Pertemuan 1 (bukan HTML). Materi HTML/Semantic dan CSS Layout kini berada di Pertemuan 2.
+> **CATATAN VERSI:** Materi ini sebelumnya berada di Pertemuan 1. Sejak revisi 23 Agustus 2026, urutannya ditukar — HTML/CSS naik ke Pertemuan 1, JavaScript turun ke sini. Alasannya: peserta butuh umpan balik visual di pertemuan pertama. Lihat `docs/Catatan-Perubahan.md` untuk konsekuensi lengkapnya.
 
 ---
 
@@ -21,20 +21,26 @@ Ditambah blok **CARA SAMPAIKAN** — kalimat dan analogi yang bisa Anda pakai la
 
 ---
 
-## Situasi Khusus P1 Ini: Belum Ada "Web" untuk Dilihat
+## Situasi Khusus P2 Ini: Halaman Mereka Masih Diam
 
-Sadari sejak awal: karena silabus memulai dari JavaScript sebelum HTML/CSS, peserta belum punya halaman untuk ditempeli. Seluruh praktik P1 terjadi di **browser console** — tidak ada tampilan, tidak ada tombol, hanya logika dan data.
+Sadari sejak awal: peserta baru saja menyelesaikan P1 dan sudah punya halaman web buatan sendiri — navbar, hero, grid kartu, footer. Halaman itu rapi, responsif, dan **sama sekali tidak bisa diapa-apakan**. Diklik tidak bereaksi, datanya harus diketik manual satu per satu di HTML.
 
-Ini bisa terasa "kering" bagi pemula yang mengira coding itu langsung bikin tampilan. **Tugas Anda mengubah ini jadi kekuatan:** hari ini mereka belajar *mesin berpikirnya* dulu, sebelum belajar *bodinya* minggu depan. Sampaikan itu di awal supaya mereka tidak bertanya-tanya "kok belum bikin website?".
+Itu titik masuk Anda hari ini, dan jauh lebih kuat daripada memulai dari nol. Mereka sudah punya rasa sakitnya; JavaScript adalah obatnya.
 
-> **CARA SAMPAIKAN — Analogi Mesin & Mobil:**
-> "Minggu ini kita nggak bikin bodi mobil yang kelihatan mengkilap. Kita bikin **mesinnya** dulu. Bodi tanpa mesin cuma pajangan. Nah, JavaScript itu mesin — yang bikin website kalian nanti bisa mikir, ngolah data, dan bereaksi. Minggu depan baru kita pasang bodinya (HTML/CSS)."
+**Buka kelas dengan menunjukkan halaman P1 mereka sendiri**, lalu tanyakan: "kalau produknya nambah jadi 50, kalian mau nulis 50 kartu satu-satu?" Biarkan mereka merasakan sebentar bahwa jawabannya tidak masuk akal.
+
+> **CARA SAMPAIKAN — Analogi Bodi & Mesin:**
+> "Minggu lalu kalian bikin **bodi mobilnya** — dan bagus, kelihatan mengkilap. Tapi coba dorong: nggak jalan. Bodi tanpa mesin cuma pajangan.
+> Hari ini kita pasang **mesinnya**. JavaScript itu yang bikin halaman kalian bisa mikir, ngolah data, dan bereaksi.
+> Bedanya sama minggu lalu: hari ini nggak ada yang kelihatan cantik di layar. Kita kerja di **console** — nggak ada tampilan, nggak ada tombol, cuma logika dan data. Itu wajar, dan itu memang mesinnya. Mesin mobil juga jelek dilihat."
+
+**Antisipasi penurunan energi.** Setelah P1 yang penuh umpan balik visual, P2 akan terasa mundur — semua kembali ke teks di console. Sebut ini di depan supaya tidak terasa seperti ada yang salah. Selipkan `console.table()` sedini mungkin sebagai satu-satunya kemenangan visual hari ini.
 
 ---
 
 ## Prinsip Besar yang Anda Tanamkan Hari Ini
 
-P1 bukan tentang menghafal sintaks ES6+. P1 adalah tentang menanamkan **kebiasaan bertanya "kenapa"** — kenapa cara ini dipilih daripada cara lama.
+P2 bukan tentang menghafal sintaks ES6+. P2 adalah tentang menanamkan **kebiasaan bertanya "kenapa"** — kenapa cara ini dipilih daripada cara lama.
 
 JavaScript modern (ES6+) hampir semuanya adalah **jawaban atas rasa sakit dari cara lama**. Arrow function, destructuring, `.map()` — semuanya lahir karena cara sebelumnya menyusahkan. Kalau peserta hanya hafal sintaks barunya tanpa tahu sakit yang diobatinya, mereka tidak akan tahu kapan memakainya.
 
@@ -50,14 +56,16 @@ Kalimat yang layak Anda ulang hari ini:
 
 1. Tunjukkan **hasil akhir program** — web app yang menarik data dari API dan tampil rapi di HP. "Dalam 8 pertemuan, ini yang kalian bangun."
 2. Tunjuk bagian yang mengambil & mengolah data. "Nah, yang bikin data ini bisa diambil, disaring, dan ditampilkan — itu JavaScript. Itu yang kita mulai hari ini."
-3. Jelaskan kenapa mulai dari JS: karena JS adalah logika. Tanpa logika, HTML/CSS cuma tampilan mati.
+3. Sambungkan ke minggu lalu: "Halaman yang kalian bikin di P1 itu bodinya. Hari ini kita pasang mesinnya." Tanpa logika, HTML/CSS cuma tampilan mati.
 
 ### Ukur kelas Anda
 
 Tiga pertanyaan cepat, catat jawabannya — ini menentukan kecepatan Anda 8 pertemuan ke depan:
-- Siapa yang pernah menulis kode apa pun (bahasa apa saja)?
+- Siapa yang tugas P1-nya sudah selesai dan bisa dibuka sekarang? (ini juga cara halus mengecek siapa yang tertinggal)
 - Siapa yang tahu apa itu "variabel"?
 - Siapa yang belum pernah buka browser console sama sekali?
+
+Pertanyaan pertama penting: peserta yang belum menyelesaikan P1 akan kesulitan merasakan "sakit"-nya menulis kartu produk manual — dan itu justru motivasi utama materi hari ini.
 
 ---
 
@@ -86,7 +94,7 @@ Setiap kali membuka website, ada dua pihak yang bicara:
 
 ## KENAPA ini penting diajarkan lebih dulu
 
-Karena seluruh 8 pertemuan berujung pada satu hal: **frontend (client) mengambil data dari backend (server)**. Kalau peta ini tidak jelas di P1, materi API di P6 nanti akan terasa seperti sihir.
+Karena seluruh 8 pertemuan berujung pada satu hal: **frontend (client) mengambil data dari backend (server)**. Kalau peta ini tidak jelas di P2, materi API di P6 nanti akan terasa seperti sihir.
 
 ### CARA SAMPAIKAN — Analogi Restoran
 
@@ -183,12 +191,12 @@ const tambah = (a, b) => a + b;
 
 ### KENAPA
 
-Lebih ringkas, dan (yang lebih penting nanti di React) menangani konteks `this` dengan lebih terduga. Untuk P1, cukup tekankan keringkasan dan bahwa ini **bentuk yang akan mereka lihat di mana-mana** di kode modern.
+Lebih ringkas, dan (yang lebih penting nanti di React) menangani konteks `this` dengan lebih terduga. Untuk P2, cukup tekankan keringkasan dan bahwa ini **bentuk yang akan mereka lihat di mana-mana** di kode modern.
 
 > **CARA SAMPAIKAN:**
 > "Dua-duanya bikin fungsi yang sama persis. Tapi yang bawah lebih pendek. Di React nanti kalian bakal nulis fungsi kecil-kecil terus-terusan — bayangkan kalau tiap kali harus nulis `function` panjang. Arrow function itu bikin hidup kalian lebih ringkas."
 
-Jangan overload dengan aturan `this` yang rumit di P1. Simpan untuk saat dibutuhkan.
+Jangan overload dengan aturan `this` yang rumit di P2. Simpan untuk saat dibutuhkan.
 
 ## 3.2 Template Literals
 
@@ -268,7 +276,7 @@ const [juara, ...lainnya] = [1, 2, 3, 4];
 ---
 
 # BAGIAN 4 — Manipulasi Array (70–100 menit)
-> **PALING PENTING di P1.** Beri porsi terbesar. Ini jantung frontend modern — data selalu datang sebagai array, dan mengolahnya adalah pekerjaan sehari-hari.
+> **PALING PENTING di P2.** Beri porsi terbesar. Ini jantung frontend modern — data selalu datang sebagai array, dan mengolahnya adalah pekerjaan sehari-hari.
 
 ## Konteks: Kenapa Ini Sepenting Itu
 
@@ -286,7 +294,7 @@ Pekerjaan frontend: menyaring (yang stoknya ada), mengubah (format harga), mengh
 
 ## BANDINGKAN — Cara Lama (`for` loop) vs Method Modern
 
-Ini perbandingan kunci P1. Tulis keduanya berdampingan.
+Ini perbandingan kunci P2. Tulis keduanya berdampingan.
 
 **Tugas: ambil semua nama produk.**
 
@@ -427,7 +435,7 @@ import { formatHarga } from './utils.js';
 > Modul itu kayak lemari berlaci: laci kaus kaki, laci baju, laci celana. Tiap file punya tugasnya. `export` itu naruh barang di laci biar bisa dipinjam. `import` itu ambil dari laci file lain.
 > Nanti di React, tiap komponen kalian jadi satu file. Import-export ini bakal jadi napas sehari-hari."
 
-Untuk P1 cukup sampai sini. Jangan masuk default export vs named export secara detail — itu overload sekarang.
+Untuk P2 cukup sampai sini. Jangan masuk default export vs named export secara detail — itu overload sekarang.
 
 ---
 
@@ -437,7 +445,7 @@ Untuk P1 cukup sampai sini. Jangan masuk default export vs named export secara d
 
 > "Semua yang kita pelajari hari ini punya satu tema: **cara modern lahir buat ngobatin sakitnya cara lama.** `const` ngobatin bug `var`. Arrow ngobatin fungsi yang kepanjangan. `.map/.filter` ngobatin for loop yang ribet. Kalau kalian ingat sakitnya, kalian ngerti kenapa obatnya ada."
 
-## Tugas 1 (sesuai silabus): 5 Studi Kasus Manipulasi Data
+## Tugas 2 (sesuai silabus): 5 Studi Kasus Manipulasi Data
 
 Beri satu array of objects (misal data mahasiswa atau produk), lalu 5 soal:
 
@@ -489,8 +497,11 @@ const lulus = mahasiswa.filter(m => m.nilai >= 80);
 
 # LAMPIRAN A — Pertanyaan yang Pasti Muncul
 
-**"Kok belum bikin website? Kapan lihat hasilnya di layar?"**
-> Minggu depan. Hari ini kita bangun mesin berpikirnya dulu — logika. HTML/CSS itu bodinya, kita pasang setelah mesinnya jalan. Coding bukan cuma bikin tampilan; yang bikin tampilan itu *hidup* adalah logika hari ini.
+**"Minggu lalu kita bikin tampilan, kok sekarang balik ke teks doang di console?"**
+> Pertanyaan yang wajar, dan jujur saja: hari ini memang mundur soal tampilan. Minggu lalu kalian bikin bodi mobilnya. Hari ini mesinnya — dan mesin itu memang jelek dilihat. Tapi tanpa dia, bodinya cuma pajangan. Mulai Pertemuan 3, mesin ini yang bikin tampilan kalian hidup.
+
+**"Kapan JavaScript-nya nyambung ke halaman HTML saya?"**
+> Pertemuan 3, pakai React. Sengaja belum hari ini — kalau logika dan tampilan diajarkan barengan, saat error kalian nggak akan tahu yang salah logikanya atau HTML-nya. Kuasai mesinnya dulu di console, baru kita pasang ke bodi.
 
 **"Kenapa nggak pakai for loop aja? Kan sama hasilnya."**
 > Hasil bisa sama, tapi `.map/.filter` lebih pendek, lebih terbaca, dan lebih jarang salah. Yang lebih penting: React — yang kita pakai nanti — memang menuntut cara berpikir `.map/.filter` untuk menampilkan data. Jadi ini bukan pilihan gaya, ini persiapan.
@@ -511,7 +522,7 @@ const lulus = mahasiswa.filter(m => m.nilai >= 80);
 
 # LAMPIRAN B — Praktik Langsung: Browser Console
 
-Karena P1 belum pakai editor project, seluruh praktik di **console browser**. Ajarkan ini di awal supaya peserta bisa ikut mengetik.
+Berbeda dari P1 yang memakai editor dan file, seluruh praktik hari ini di **console browser**. Ini disengaja: console memberi umpan balik seketika tanpa perlu save-refresh, jadi peserta bisa mencoba puluhan ide dalam semenit. Ajarkan cara membukanya di awal supaya semua bisa ikut mengetik, bukan cuma menonton.
 
 **Buka console:**
 - Chrome/Edge: `F12` → tab **Console**, atau `Ctrl + Shift + J`
@@ -539,7 +550,7 @@ console.log(hasil);              // cetak ke console biar kelihatan
 
 ---
 
-# LAMPIRAN C — Tips & Kebiasaan untuk Ditanamkan Sejak P1
+# LAMPIRAN C — Tips & Kebiasaan untuk Ditanamkan Sejak P2
 
 **1. Coba di console dulu sebelum yakin.**
 Ragu `.filter()` jalan atau tidak? Jangan menebak — ketik di console, lihat hasilnya. Membangun kebiasaan menguji, bukan mengasumsi.
@@ -568,7 +579,7 @@ Lanjutan prinsip yang berlaku sepanjang program: tulis sedikit, jalankan, lihat,
 
 ---
 
-# LAMPIRAN D — Tiga Kesalahan Mentor Baru di P1 (versi JS)
+# LAMPIRAN D — Tiga Kesalahan Mentor Baru di P2 (versi JS)
 
 **1. Menganggap "cuma logika" itu membosankan lalu buru-buru.**
 Godaan mempercepat bagian JS karena "belum ada yang kelihatan" itu jebakan. Justru fondasi inilah yang menentukan apakah mereka survive di P3-P4. Pelan dan mantap.
@@ -577,14 +588,14 @@ Godaan mempercepat bagian JS karena "belum ada yang kelihatan" itu jebakan. Just
 Kalau Anda cuma bilang "ini arrow function, ini cara nulisnya", peserta hafal tapi tak paham kapan pakai. **Selalu tunjukkan cara lama yang menyakitkan dulu**, baru obatnya. Rasa sakit itu yang bikin fitur baru bermakna.
 
 **3. Menjejalkan reduce sampai semua orang paham.**
-`reduce` itu sulit dan tidak apa-apa kalau belum semua paham di P1. Memaksakannya sampai kelas frustrasi lebih merugikan daripada membiarkannya matang dengan latihan. Prioritaskan `.map` dan `.filter` nempel sempurna; reduce menyusul.
+`reduce` itu sulit dan tidak apa-apa kalau belum semua paham di P2. Memaksakannya sampai kelas frustrasi lebih merugikan daripada membiarkannya matang dengan latihan. Prioritaskan `.map` dan `.filter` nempel sempurna; reduce menyusul.
 
 ---
 
 # LAMPIRAN E — Checklist Persiapan Anda
 
 **H-3 sebelum kelas:**
-- [ ] Kirim panduan ke grup: cukup browser (Chrome/Edge terbaru) + editor teks. Belum perlu Node/project untuk P1.
+- [ ] Kirim panduan ke grup: cukup browser (Chrome/Edge terbaru) + editor teks. Belum perlu Node/project untuk P2.
 - [ ] Siapkan file berisi array of objects untuk demo & tugas (data produk/mahasiswa)
 - [ ] Siapkan contoh "cara lama vs cara modern" tiap fitur, siap di-paste
 
@@ -599,4 +610,4 @@ Kalau Anda cuma bilang "ini arrow function, ini cara nulisnya", peserta hafal ta
 
 ---
 
-*Dokumen ini disiapkan untuk Pertemuan 1 (versi silabus baru — JavaScript) — Metro Institute Season 2, Divisi Frontend.*
+*Dokumen ini disiapkan untuk Pertemuan 2 (versi silabus baru — JavaScript) — Metro Institute Season 2, Divisi Frontend.*

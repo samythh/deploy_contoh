@@ -46,9 +46,59 @@ Jadi kemungkinan besar ini bukan angka yang tertukar, melainkan **dua versi renc
 
 ---
 
+### T-002 — Nama pertemuan di Silabus tidak lagi cocok dengan Timeline
+
+**Ditemukan:** 23 Agustus 2026
+**Status:** 🔴 Terbuka — perlu dibawa ke koordinator
+**Penyebab:** akibat langsung dari keputusan menukar urutan P1↔P2 (lihat B-001)
+
+[Timeline.md](Timeline.md) Fase 2 menamai tiap pertemuan, dan penamaan itu **berlaku lintas divisi** — Backend, Android, dan UI/UX memakai kode dan nama yang sama, dengan PIC Leader & Divisi Akademik.
+
+| Kode | Nama di Timeline | Isi Frontend setelah revisi | Cocok? |
+|---|---|---|:--:|
+| **P1** | Fundamental **Logika** Dasar | HTML5 Semantic & CSS Layout | ❌ |
+| **P2** | Praktik **Sintaksis** Dasar | Modern JavaScript (ES6+) | ❌ |
+
+Nama slotnya terbalik dengan isinya: "logika" sekarang berisi tampilan, "sintaksis" berisi logika.
+
+**Yang sudah dilakukan:** [Silabus.md](Silabus.md) — dokumen milik Divisi Frontend — judulnya disesuaikan jadi "Fundamental Struktur & Tampilan" (P1) dan "Praktik Logika Dasar" (P2), supaya nama dan isinya konsisten.
+
+**Yang sengaja TIDAK dilakukan:** [Timeline.md](Timeline.md) tidak disentuh. Itu dokumen program lintas divisi, bukan milik Frontend — mengubahnya sepihak akan membuat kode pertemuan tidak sinkron dengan divisi lain.
+
+**Konsekuensinya:** Silabus Frontend dan Timeline sekarang berbeda nama untuk P1 dan P2. Ini disengaja dan terdokumentasi, bukan kelalaian — tapi perlu diselesaikan.
+
+**Tindak lanjut yang disarankan:** sampaikan ke Leader / Divisi Akademik dengan nada analisis, bukan permintaan. Isi yang layak disampaikan:
+
+> Divisi Frontend menukar urutan materi P1 dan P2 karena risiko motivasi di pertemuan pertama — dengan JavaScript di depan, peserta tidak punya hasil yang terlihat di sesi paling rawan mereka mundur. Akibatnya nama pertemuan di Timeline ("Fundamental Logika Dasar" untuk P1) tidak lagi menggambarkan isi materi Frontend.
+>
+> Dua opsi yang bisa dipertimbangkan: (a) nama pertemuan di Timeline dibuat lebih netral supaya muat untuk semua divisi, misalnya "Fundamental 1" dan "Fundamental 2"; atau (b) tiap divisi boleh punya subjudul sendiri di bawah nama pertemuan bersama. Keputusan sepenuhnya di Leader.
+
+**Perlu dicek juga:** apakah divisi lain memakai urutan yang sama. Kalau Backend juga menaruh logika di P1, opsi (a) mungkin merugikan mereka.
+
+---
+
 ## B. Temuan Selesai
 
-*(belum ada)*
+### B-001 — Urutan P1 dan P2 ditukar: HTML/CSS naik ke depan
+
+**Ditemukan & diputuskan:** 23 Agustus 2026
+**Status:** ✅ Selesai — sudah dijalankan
+
+**Keputusan:** P1 menjadi HTML5 Semantic & CSS Layout, P2 menjadi Modern JavaScript. TailwindCSS dikeluarkan dari pertemuan HTML/CSS dan dipindah ke P3.
+
+**Alasan yang menang:** risiko motivasi di pertemuan pertama. Dengan JavaScript di depan, seluruh praktik P1 terjadi di console — tidak ada yang terlihat di layar, tepat di sesi ketika peserta paling gampang mundur. Dengan HTML/CSS di depan, peserta melihat hasil kerjanya sendiri dalam 10 menit pertama.
+
+**Harga yang disadari dan diterima:** rencana awal sengaja menaruh JavaScript di P1 supaya ada jeda "marinasi" satu minggu selama P2 sebelum JS dipakai berat di React (P3). Penukaran ini menghapus jeda itu — JS di P2 langsung disambung React di P3, padahal JS adalah prasyarat terberat React.
+
+Mitigasi yang disepakati, bukan mengubah urutan lagi:
+- P2 harus menutup dengan latihan `.map` dan `.filter` yang benar-benar nempel
+- P3 harus membuka dengan pengulangan singkat `.map` sebelum masuk *list rendering*
+
+**Kenapa Tailwind dipindah ke P3:** dua alasan. Pertama, mengajarkan Tailwind sebelum peserta paham CSS biasa melanggar prinsip yang dipegang di CLAUDE.md — shortcut diberikan *setelah* paham manual, sebagai hadiah. Kedua, Tailwind paling wajar dipasang saat setup Vite di P3; memasangnya via CDN di P1 hanya untuk dibuang lagi di P3 itu pemborosan waktu kelas.
+
+**Konsekuensi yang perlu diawasi:** P3 sekarang padat — React + Vite + JSX + props + rendering + Tailwind dalam 120 menit. Pertimbangkan ini saat menyusun materinya; kemungkinan ada yang perlu digeser ke P4.
+
+**Efek samping yang muncul:** nama pertemuan di Timeline jadi tidak cocok dengan isinya. Dicatat terpisah sebagai T-002.
 
 ---
 
@@ -58,7 +108,20 @@ Terbaru di atas.
 
 ### 23 Agustus 2026
 
+**REVISI BESAR — urutan P1 dan P2 ditukar**
+- *Keputusan & alasan lengkap:* lihat B-001 di bagian B.
+- Seluruh materi JavaScript dipindah `P1/` → `P2/` memakai `git mv` supaya riwayat filenya tetap terlacak
+- `tugas-1.js` → `tugas-2.js`, `tugas-1-kunci.js` → `tugas-2-kunci.js`, dan seluruh rujukan "P1"/"Tugas 1" di dalamnya diperbarui
+- **Framing materi JS ditulis ulang, bukan sekadar diganti nomornya.** Seluruh pembukaan materi lama dibangun di atas asumsi "peserta belum punya halaman web" — asumsi itu sudah tidak berlaku. Yang diubah: bagian "Situasi Khusus" (sekarang bertumpu pada halaman P1 mereka yang masih diam), analogi mesin & mobil (dibalik jadi bodi & mesin), pertanyaan pembuka kelas, dan dua entri di Lampiran A yang kini menjawab "kok balik ke teks doang?" alih-alih "kok belum bikin website?"
+- Ditambahkan antisipasi **penurunan energi** di P2 — setelah P1 yang penuh umpan balik visual, kembali ke console akan terasa mundur. Perlu disebut di depan supaya tidak terasa seperti ada yang salah.
+- Materi P1 baru (HTML/CSS) ditulis dari nol: 6 bagian, alokasi 120 menit, Lampiran A–E lengkap, 5 file demo, tugas landing page, dan kunci jawaban bertema kedai kopi
+- `docs/Silabus.md`: isi P1 dan P2 ditukar, judul pertemuan disesuaikan, TailwindCSS dipindah ke daftar materi P3
+- `CLAUDE.md`: bagian Pengetahuan Kurikulum diperbarui — termasuk mengganti catatan lama yang melarang menukar P1↔P2, sekarang berisi keputusan penukaran beserta mitigasi yang wajib dijalankan di P2 dan P3
+- `README.md`: tabel progres diperbarui, P2 kini berstatus selesai
+- Temuan baru: T-002 (nama pertemuan Timeline tidak lagi cocok)
+
 **P1 — menambah file demo, tugas, dan kunci jawaban**
+> Catatan: entri di bawah ini ditulis sebelum revisi urutan. Materi yang dimaksud sekarang berada di `P2/`.
 - *Alasan:* checklist H-3 dan H-1 di dokumen materi menyuruh menyiapkan file data demo, contoh "cara lama vs cara modern", serta 5 soal beserta kuncinya — tapi filenya belum ada. Yang tersedia baru dokumen panduan mengajarnya.
 - Struktur baru: `P1/demo/` (mentor), `P1/tugas/` (dibagikan ke peserta), `P1/kunci-jawaban/` (mentor), masing-masing dengan README sendiri
 - Tetap tanpa Node/build sesuai batasan P1. Peserta cukup double-click `tugas/index.html`; satu-satunya yang butuh Live Server adalah demo modul, dan itu bagian opsional untuk mentor
@@ -85,7 +148,7 @@ Terbaru di atas.
 - Roadmap sprint dan sistem penilaian → tabel
 - Ditambah Daftar Isi ber-anchor
 
-**[P1-Materi-Mentor-Frontend-JS.md](../P1/P1-Materi-Mentor-Frontend-JS.md) — menambah `.some()`**
+**P1-Materi-Mentor-Frontend-JS.md — menambah `.some()`** *(file ini kini [P2-Materi-Mentor-Frontend-JS.md](../P2/P2-Materi-Mentor-Frontend-JS.md))*
 - *Alasan:* silabus P1 menyebut lima method array (`.map`, `.filter`, `.reduce`, `.find`, `.some`), materi hanya memuat empat. `.some()` tidak ada sama sekali.
 - Bagian 4: heading "Empat Method Wajib" → **"Lima Method Wajib"**
 - Menambah sub-bagian `.some()` di antara `.find()` dan `.reduce()` — lengkap dengan BANDINGKAN (`.filter(...).length > 0` vs `.some(...)`), KENAPA (efisiensi + kejelasan niat), analogi absen kelas, dan colokan ke depan ke *conditional rendering* React

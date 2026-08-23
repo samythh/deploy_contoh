@@ -1,5 +1,5 @@
 /* ============================================================
-   DATA TUGAS 1 — Pertemuan 1
+   DATA TUGAS 2 — Pertemuan 2
    Jangan diubah. Semua soal mengacu ke data ini.
    ============================================================ */
 

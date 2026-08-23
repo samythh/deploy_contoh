@@ -1,72 +1,122 @@
 <!DOCTYPE html>
 <!--
-  Cangkang untuk menjalankan Tugas 1.
+  ============================================================
+  TUGAS 1 — Landing Page Responsif
+  Pertemuan 1 · Kelas Frontend Web Development
 
-  Halaman ini sengaja hampir kosong — P1 memang belum membahas HTML.
-  Fungsinya cuma satu: supaya kalian bisa menulis jawaban di file .js
-  yang rapi, bukan mengetik ulang di console tiap kali.
+  Nama    : ______________________
+  Jurusan : ______________________
 
-  Cukup double-click file ini. Tidak butuh server, tidak butuh install
-  apa pun. Lalu buka Console (F12).
+  ------------------------------------------------------------
+  CARA MENGERJAKAN
+
+  1. Isi bagian bertanda TODO di file ini dan di style.css
+  2. Simpan, lalu buka file ini di browser (cukup double-click)
+  3. Uji di HP: F12 → Ctrl+Shift+M → pilih iPhone atau Galaxy
+
+  Baca soal.md untuk soal lengkap dan kriteria penilaiannya.
+
+  ------------------------------------------------------------
+  DUA HAL YANG DINILAI PALING BESAR
+
+  1. Pemilihan tag semantic yang tepat (35%)
+  2. Alasan yang kalian tulis di komentar (30%)
+
+  Tulis komentar alasan untuk minimal 2 pilihan tag di file ini,
+  dan minimal 4 keputusan di style.css.
+  ============================================================
 -->
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tugas 1 — Manipulasi Data JavaScript</title>
-    <style>
-      body {
-        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-        max-width: 42rem;
-        margin: 3rem auto;
-        padding: 0 1.5rem;
-        line-height: 1.65;
-        color: #1a1a1a;
-        background: #fafafa;
-      }
-      h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
-      .sub { color: #666; margin-top: 0; }
-      ol { padding-left: 1.25rem; }
-      li { margin-bottom: 0.35rem; }
-      code {
-        background: #ececec;
-        padding: 0.15em 0.4em;
-        border-radius: 3px;
-        font-size: 0.9em;
-      }
-      .kotak {
-        border-left: 3px solid #999;
-        background: #f1f1f1;
-        padding: 0.85rem 1.1rem;
-        margin: 1.75rem 0;
-        border-radius: 0 4px 4px 0;
-      }
-    </style>
+    <title>TODO: ganti dengan nama brand kalian</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <h1>Tugas 1 — Manipulasi Data JavaScript</h1>
-    <p class="sub">Pertemuan 1 · Kelas Frontend Web Development</p>
 
-    <div class="kotak">
-      <strong>Halaman ini memang kosong.</strong> Semua hasil muncul di
-      Console, bukan di sini. Tekan <code>F12</code> lalu pilih tab
-      <strong>Console</strong>.
+  <body>
+    <!-- ============================================================
+         BAGIAN 1 — NAVBAR
+         Logo di kiri, menu di kanan. Pakai Flexbox di style.css.
+
+         TODO: ganti <div class="navbar"> di bawah dengan tag semantic
+               yang tepat. Ada DUA tag yang cocok di sini — satu untuk
+               kepala halaman, satu untuk navigasinya.
+         ============================================================ -->
+
+    <!-- TODO: tulis alasan kenapa kalian pilih tag itu — -->
+    <div class="navbar">
+      <div class="logo">TODO: nama brand</div>
+
+      <div class="navbar-menu">
+        <a href="#">Beranda</a>
+        <a href="#">Produk</a>
+        <a href="#">Kontak</a>
+      </div>
     </div>
 
-    <p>Langkah pengerjaan:</p>
-    <ol>
-      <li>Buka <code>tugas-1.js</code> di VS Code</li>
-      <li>Isi setiap bagian bertanda <code>TODO</code></li>
-      <li>Tulis komentar alasan di tiap jawaban</li>
-      <li>Simpan, lalu <em>refresh</em> halaman ini dan lihat Console</li>
-    </ol>
+    <!-- ============================================================
+         BAGIAN 2 — KONTEN UTAMA
 
-    <p>
-      Soal lengkap beserta penjelasannya ada di <code>soal.md</code>.
-    </p>
+         TODO: bungkus SELURUH isi di bawah ini dengan tag yang berarti
+               "ini konten utama halaman". Ingat: tag itu cuma boleh
+               ada satu per halaman.
+         ============================================================ -->
 
-    <!-- Urutan penting: data dulu, baru jawaban -->
-    <script src="data.js"></script>
-    <script src="tugas-1.js"></script>
+    <!-- BAGIAN 2a — HERO SECTION -->
+    <div class="hero">
+      <!-- TODO: judul besar. Pakai tag heading yang tepat —
+           tiap halaman sebaiknya punya SATU judul utama -->
+      <div class="hero-judul">TODO: judul utama</div>
+
+      <div class="hero-teks">TODO: satu kalimat deskripsi</div>
+
+      <a class="tombol" href="#">TODO: teks tombol</a>
+    </div>
+
+    <!-- ============================================================
+         BAGIAN 2b — CARDS GRID
+         Minimal 6 kartu. Susun dengan CSS Grid di style.css.
+
+         TODO: ganti <div class="kartu"> dengan tag semantic yang tepat.
+               Petunjuk: tiap kartu berdiri sendiri — kalau dipotong dan
+               ditempel di halaman lain, maknanya masih utuh.
+
+         CATATAN: <div class="daftar-kartu"> pembungkusnya BOLEH tetap
+         div. Dia memang cuma kotak untuk menempelkan Grid, tidak punya
+         makna sendiri. Ini contoh div yang justru tepat.
+         ============================================================ -->
+
+    <div class="daftar-kartu">
+      <!-- TODO: tulis alasan pilihan tag kartu — -->
+      <div class="kartu">
+        <div class="kartu-judul">TODO</div>
+        <div class="kartu-teks">TODO</div>
+      </div>
+
+      <!-- TODO: lengkapi sampai minimal 6 kartu -->
+
+    </div>
+
+    <!-- ============================================================
+         BAGIAN 3 — FOOTER
+         Teks hak cipta, rata tengah.
+
+         TODO: ganti dengan tag semantic yang tepat.
+         ============================================================ -->
+
+    <div class="footer">© 2026 TODO: nama brand</div>
+
+    <!-- ============================================================
+         SEBELUM MENGUMPULKAN, CEK:
+
+         [ ] Tidak ada lagi tulisan TODO yang tersisa
+         [ ] Navbar, main, dan footer sudah pakai tag semantic
+         [ ] Ada minimal 6 kartu
+         [ ] Minimal 2 komentar alasan di file ini
+         [ ] Minimal 4 komentar alasan di style.css
+         [ ] Sudah diuji di mode HP (Ctrl+Shift+M) dan tidak berantakan
+         [ ] Indentasi rapi — tekan Alt+Shift+F
+         ============================================================ -->
   </body>
 </html>

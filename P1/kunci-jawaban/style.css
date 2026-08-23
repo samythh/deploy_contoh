@@ -1,0 +1,207 @@
+/* ============================================================
+   KUNCI JAWABAN — TUGAS 1 · style.css
+   UNTUK MENTOR SAJA.
+
+   Komentar alasan di bawah ditulis persis seperti yang diharapkan
+   dari peserta. Pakai sebagai acuan menilai bobot 30% "kualitas alasan".
+   ============================================================ */
+
+* {
+  /* border-box supaya padding dan border ikut dihitung ke dalam width.
+     Tanpa ini, kartu yang ditulis 250px terukur lebih lebar dan grid
+     bisa meleset dari perhitungan */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  margin: 0;
+  color: #1a1a1a;
+  background: #fafafa;
+  line-height: 1.6;
+}
+
+
+/* ------------------------------------------------------------
+   1. NAVBAR
+   ------------------------------------------------------------ */
+
+/* pakai Flexbox karena logo dan menu cuma perlu ditata dalam SATU
+   barisan mendatar. space-between mendorong keduanya ke ujung yang
+   berlawanan tanpa perlu menghitung lebar atau memakai margin */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+/* gap, bukan margin, supaya jarak cuma muncul DI ANTARA item.
+   Dengan margin-right, item terakhir ikut dapat jarak dan
+   menyisakan ruang nganggur di kanan */
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  color: #444;
+  text-decoration: none;
+}
+
+
+/* ------------------------------------------------------------
+   2. HERO
+   ------------------------------------------------------------ */
+
+.hero {
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+/* satuan rem, bukan px, supaya ukuran teks ikut menyesuaikan kalau
+   pengguna memperbesar ukuran font default browsernya — penting
+   untuk pengguna dengan gangguan penglihatan */
+.hero-judul {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+}
+
+.hero-teks {
+  color: #666;
+  margin: 0 0 1.75rem;
+}
+
+/* inline-block karena <a> bawaannya elemen inline, dan elemen inline
+   mengabaikan padding atas-bawah. Tanpa baris ini tombolnya terlihat
+   gepeng walaupun padding sudah ditulis */
+.tombol {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background: #3b6fd4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+
+/* ------------------------------------------------------------
+   3. CARDS GRID
+   ------------------------------------------------------------ */
+
+/* pakai Grid, bukan Flexbox, karena kartu perlu tersusun DUA ARAH —
+   ke samping dan turun baris otomatis saat layar menyempit.
+
+   auto-fit + minmax membuatnya responsif tanpa satu pun media query:
+   "muat sebanyak mungkin kolom, tiap kolom minimal 250px, sisa ruang
+   dibagi rata". Di laptop jadi 3-4 kolom, di HP otomatis jadi 1 */
+.daftar-kartu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0 2rem 3rem;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+/* padding, bukan margin, karena yang dibutuhkan adalah jarak isi ke
+   tepi DALAM kartu. Margin justru akan mendorong kartunya menjauh
+   dari kartu lain dan merusak jarak yang sudah diatur gap */
+.kartu {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.kartu-judul {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.kartu-teks {
+  color: #666;
+  margin: 0;
+}
+
+
+/* ------------------------------------------------------------
+   4. FOOTER
+   ------------------------------------------------------------ */
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: #888;
+  font-size: 0.9rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+
+/* ------------------------------------------------------------
+   5. RESPONSIF
+   ------------------------------------------------------------ */
+
+/* pakai min-width, bukan max-width, karena aturan dasar di atas sudah
+   ditulis untuk layar kecil (mobile-first). Menambah aturan saat layar
+   melebar lebih mudah daripada membongkar desain desktop agar muat
+   di HP — dan mayoritas pengunjung memakai HP */
+@media (min-width: 768px) {
+  .hero-judul {
+    font-size: 3rem;
+  }
+
+  .hero {
+    padding: 6rem 1.5rem;
+  }
+}
+
+
+/* ============================================================
+   CATATAN MENILAI — baca sebelum mengoreksi
+
+   YANG DITERIMA PENUH untuk pilihan tag:
+     header / nav / main / section / article / footer dipakai dengan
+     peran yang masuk akal, DAN alasannya menyebut manfaat nyata
+     (screen reader, mesin pencari, atau keterbacaan tim).
+
+   VARIASI YANG TETAP BENAR — jangan disalahkan:
+     - <section class="kartu"> alih-alih <article>. Bisa dibela:
+       kartu produk memang kelompok konten bertema. Terima kalau
+       alasannya nyambung.
+     - <div class="navbar"> berisi <nav> di dalamnya, tanpa <header>.
+       Kurang ideal tapi tidak salah — <nav>-nya sudah benar.
+     - Grid diganti Flexbox + flex-wrap. Hasilnya mirip dan tetap
+       responsif. Kurangi sedikit di "ketepatan alat", tapi kalau
+       alasannya menyebut sadar memilih satu arah + wrap, itu justru
+       menunjukkan paham.
+
+   YANG DIKURANGI:
+     - Semua pakai <div> walau class-nya rapi → inti materi hari ini
+       belum nempel. Ini yang paling perlu ditindaklanjuti di breakout.
+     - Nama class menjelaskan tampilan (.merah, .kotak-kiri) → kurangi
+       di "kerapian", dan tanyakan di review: "kalau bosnya minta
+       warnanya diganti oranye, class-nya jadi namanya apa?"
+     - Komentar yang cuma mengulang kodenya (/* bikin flex */) →
+       kurangi di "kualitas alasan". Ini bobot 30%, jangan diabaikan.
+     - Lebih dari satu <h1>, atau <main> lebih dari satu.
+
+   PERANGKAP YANG DISENGAJA DI SOAL:
+     1. Pembungkus .daftar-kartu memang seharusnya tetap <div>.
+        Peserta yang mengganti semuanya jadi semantic — termasuk
+        pembungkus ini — belum menangkap bahwa div punya tempatnya
+        sendiri. Bahas di kelas, jangan cuma dicoret.
+     2. .tombol butuh display: inline-block. Peserta akan menulis
+        padding lalu bingung kenapa tidak berubah. Ini kesempatan
+        mengajarkan DevTools → panel Computed.
+   ============================================================ */

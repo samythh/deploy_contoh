@@ -23,7 +23,7 @@ console.log(tambahLama(2, 3), tambah(2, 3));   // 5 5
 /* KENAPA: di React nanti mereka menulis fungsi kecil terus-menerus.
    Bayangkan kalau tiap kali harus menulis `function` panjang.
 
-   JANGAN masuk ke aturan `this` di P1 — itu overload. Simpan sampai
+   JANGAN masuk ke aturan `this` di P2 — itu overload. Simpan sampai
    benar-benar dibutuhkan. */
 
 

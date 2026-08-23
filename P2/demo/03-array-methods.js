@@ -1,7 +1,7 @@
 /* ============================================================
    BAGIAN 4 — Manipulasi Array   (70–100 menit)
 
-   BAGIAN PALING PENTING DI P1. Beri porsi terbesar.
+   BAGIAN PALING PENTING DI P2. Beri porsi terbesar.
    Ini jantung frontend modern — data selalu datang sebagai array,
    dan mengolahnya adalah pekerjaan sehari-hari.
 

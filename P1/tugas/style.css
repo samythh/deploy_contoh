@@ -1,0 +1,153 @@
+/* ============================================================
+   TUGAS 1 — style.css
+
+   Isi bagian bertanda TODO.
+
+   ATURAN PENAMAAN CLASS:
+   Nama class harus menjelaskan FUNGSI, bukan TAMPILAN.
+   Ini bagian dari penilaian.
+
+     BURUK : .merah, .kotak-kiri, .tulisan-besar
+     BAIK  : .alert-error, .sidebar, .hero-judul
+
+   ATURAN KOMENTAR:
+   Tulis alasan untuk minimal 4 keputusan. Komentar harus menjelaskan
+   KENAPA, bukan mengulang APA yang sudah terbaca dari kodenya.
+
+     BURUK : .kartu { display: flex; }   /* bikin flex */
+     BAIK  : /* flex supaya judul dan harga sejajar tengah walaupun
+                panjang judulnya beda-beda */
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   DASAR — sudah disiapkan, tidak perlu diubah
+   ------------------------------------------------------------ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  margin: 0;
+  color: #1a1a1a;
+  background: #fafafa;
+  line-height: 1.6;
+}
+
+
+/* ------------------------------------------------------------
+   1. NAVBAR
+   Logo di kiri, menu di kanan, keduanya sejajar tengah secara tegak.
+
+   Petunjuk: satu property untuk mendorong ke dua ujung,
+   satu lagi untuk merapikan tegaknya.
+   ------------------------------------------------------------ */
+
+/* TODO: tulis alasan kenapa pakai Flexbox di sini — */
+.navbar {
+  /* TODO */
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar-menu {
+  /* TODO: menu juga perlu berjajar dengan jarak antar-item */
+}
+
+.navbar a {
+  color: #444;
+  text-decoration: none;
+}
+
+
+/* ------------------------------------------------------------
+   2. HERO SECTION
+   Rata tengah, dengan ruang napas atas-bawah.
+   ------------------------------------------------------------ */
+
+.hero {
+  /* TODO */
+}
+
+.hero-judul {
+  /* TODO: ukuran besar, tebal */
+}
+
+.hero-teks {
+  color: #666;
+}
+
+.tombol {
+  /* TODO: beri padding, warna latar, sudut membulat.
+     Petunjuk: <a> itu elemen inline — padding atas-bawahnya tidak
+     berfungsi normal sampai display-nya diubah. Cari tahu kenapa. */
+  text-decoration: none;
+}
+
+
+/* ------------------------------------------------------------
+   3. CARDS GRID
+   Minimal 6 kartu, responsif.
+
+   Di laptop beberapa kolom, di HP satu kolom — dan usahakan
+   TANPA menulis media query. Ada satu baris yang bisa melakukannya.
+
+   Petunjuk: repeat(auto-fit, minmax(..., 1fr))
+   ------------------------------------------------------------ */
+
+/* TODO: tulis alasan kenapa pakai Grid di sini dan bukan Flexbox — */
+.daftar-kartu {
+  /* TODO */
+  padding: 2rem;
+}
+
+.kartu {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  /* TODO: beri jarak isi ke tepi kartu.
+     Ingat: yang ke DALAM itu padding, bukan margin. */
+}
+
+.kartu-judul {
+  /* TODO */
+}
+
+.kartu-teks {
+  color: #666;
+}
+
+
+/* ------------------------------------------------------------
+   4. FOOTER
+   Teks rata tengah dengan ruang di atasnya.
+   ------------------------------------------------------------ */
+
+.footer {
+  /* TODO */
+  color: #888;
+  border-top: 1px solid #e0e0e0;
+}
+
+
+/* ------------------------------------------------------------
+   5. RESPONSIF (opsional, nilai tambah)
+
+   Kalau grid kalian sudah memakai auto-fit, kartunya sudah responsif
+   dengan sendirinya. Bagian ini untuk merapikan sisanya.
+
+   Ingat MOBILE-FIRST: tulis aturan HP sebagai default di atas,
+   lalu naik ke layar besar dengan min-width — bukan sebaliknya.
+
+   Yang biasanya perlu dirapikan di layar kecil:
+   - navbar yang isinya berdesakan
+   - hero-judul yang terlalu besar
+   ------------------------------------------------------------ */
+
+/* TODO (opsional): tulis alasan kenapa memakai min-width dan bukan max-width — */
+@media (min-width: 768px) {
+  /* TODO */
+}

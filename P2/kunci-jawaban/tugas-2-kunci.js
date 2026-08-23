@@ -1,5 +1,5 @@
 /* ============================================================
-   KUNCI JAWABAN — TUGAS 1
+   KUNCI JAWABAN — TUGAS 2
    UNTUK MENTOR SAJA. Jangan dibagikan ke peserta.
 
    Butuh ../tugas/data.js. Cara cepat menguji: paste data.js dulu
@@ -130,7 +130,7 @@ console.log("Soal 4:", rataRata);
 
    KALAU KELAS BANYAK YANG GAGAL DI SINI: itu normal, dan sudah
    diantisipasi di LAMPIRAN D dokumen materi. Jangan memaksakan reduce
-   sampai semua paham. Yang wajib nempel di P1 adalah .map dan .filter. */
+   sampai semua paham. Yang wajib nempel di P2 adalah .map dan .filter. */
 
 
 /* ============================================================

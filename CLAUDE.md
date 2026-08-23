@@ -130,16 +130,22 @@ Kalau saya minta pendapat soal keputusan pedagogis atau kurikulum:
 
 Urutan 8 pertemuan (silabus terbaru):
 
-1. **P1** — JavaScript Modern (ES6+) & Arsitektur Web (client-server, HTTP methods, arrow/destructuring/spread, `.map/.filter/.find/.reduce`, modul). *Praktik di browser console, belum ada tampilan.*
-2. **P2** — HTML5 Semantic + CSS Layout (Flexbox, Grid) + **TailwindCSS** + mobile-first responsif.
-3. **P3** — React Fundamentals (Vite, JSX, komponen, props, conditional & list rendering).
+1. **P1** — HTML5 Semantic + CSS Layout (box model, Flexbox, Grid, mobile-first). *CSS murni, tanpa Tailwind.*
+2. **P2** — JavaScript Modern (ES6+) & Arsitektur Web (client-server, HTTP methods, arrow/destructuring/spread, `.map/.filter/.find/.some/.reduce`, modul). *Praktik di browser console.*
+3. **P3** — React Fundamentals (Vite, JSX, komponen, props, conditional & list rendering) + **TailwindCSS**.
 4. **P4** — State & Lifecycle (`useState`, `useEffect`, controlled forms, immutability).
 5. **P5** — Routing (React Router) & Custom Hooks.
 6. **P6** — Konsumsi REST API & async UI (Axios, loading/error state). *Titik risiko.*
 7. **P7** — Global State (Context/Zustand) & optimasi performa. *Titik risiko.*
 8. **P8** — Auth (JWT), protected routes, build & deploy ke Vercel.
 
-**Catatan penting soal urutan:** P1 sengaja JavaScript-dulu (tidak lazim). Pembelaannya: JS adalah prasyarat terberat React (P3), jadi ditaruh di depan agar dapat jeda "marinasi" satu minggu selama P2 (HTML/CSS) sebelum dipakai berat di React. Menukar P1↔P2 akan menghapus jeda ini — jadi JANGAN sarankan tukar tanpa mempertimbangkan ini. Risiko utama urutan sekarang: motivasi peserta karena belum ada umpan balik visual di P1. Mitigasi: selipkan "kemenangan visual kecil" di P1 (mis. `console.table`, atau demo array mengubah tampilan lewat boilerplate), bukan mengubah urutan.
+**Catatan penting soal urutan (diputuskan 23 Agustus 2026):** urutan P1↔P2 sudah **ditukar** dari rencana awal. Sebelumnya JavaScript di P1, sekarang HTML/CSS yang di depan.
+
+Alasan penukaran: risiko motivasi di pertemuan pertama. Dengan JS di depan, peserta tidak punya umpan balik visual sama sekali di sesi paling rawan mereka mundur. HTML/CSS memberi hasil yang terlihat dalam 10 menit.
+
+Harga yang dibayar — **sadari ini saat menyusun P2 dan P3:** JS sekarang langsung disambung React di P3, tanpa jeda "marinasi" satu minggu seperti rencana awal. JS adalah prasyarat terberat React. Mitigasinya bukan mengubah urutan lagi, tapi: (a) P2 harus menutup dengan latihan `.map` dan `.filter` yang benar-benar nempel, dan (b) P3 harus membuka dengan pengulangan singkat `.map` sebelum masuk list rendering.
+
+**TailwindCSS dipindah ke P3**, tidak lagi di pertemuan HTML/CSS. Alasannya dua: Tailwind sebelum paham CSS biasa melanggar prinsip "shortcut diberikan SETELAH paham manual", dan Tailwind paling wajar dipasang saat setup Vite di P3. Konsekuensinya P3 jadi padat — pertimbangkan itu saat menyusun materinya.
 
 **Colokan ke depan:** saat mengajar konsep di pertemuan awal, tandai eksplisit mana yang akan dipakai lagi nanti ("ini yang kalian pakai terus di React"), supaya latihan terasa relevan, bukan sia-sia.
 

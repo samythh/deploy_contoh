@@ -1,0 +1,99 @@
+/* ============================================================
+   CSS BERSAMA untuk divsoup.html dan semantic.html
+
+   Sengaja dipakai bareng oleh KEDUA file. Itu bagian dari
+   demonstrasinya: CSS yang sama menghasilkan tampilan yang sama,
+   apa pun nama tag-nya. Yang berubah bukan hasilnya — yang berubah
+   siapa yang bisa MEMBACA strukturnya.
+   ============================================================ */
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  margin: 0;
+  color: #1a1a1a;
+  background: #fafafa;
+}
+
+/* selector pakai .class, bukan nama tag — supaya CSS ini tetap
+   mengenai kedua file walaupun tag-nya berbeda */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  color: #444;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero-judul {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.hero-teks {
+  color: #666;
+  margin: 0;
+}
+
+.daftar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.kartu {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.kartu-judul {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.kartu-harga {
+  color: #666;
+  margin: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: #888;
+  font-size: 0.9rem;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 3rem;
+}

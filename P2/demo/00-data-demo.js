@@ -1,5 +1,5 @@
 /* ============================================================
-   DATA DEMO — Pertemuan 1
+   DATA DEMO — Pertemuan 2
    Dipakai di seluruh file demo dan sepanjang penjelasan di kelas.
 
    PENTING: jangan tambah atau ubah isinya.
@@ -20,9 +20,9 @@ const produk = [
    console.table() menampilkan array of objects sebagai tabel rapi,
    bukan teks berantakan. Peserta biasanya bereaksi di sini.
 
-   Ini juga "kemenangan visual kecil" yang penting untuk P1: peserta
-   belum punya halaman web, jadi ini satu-satunya momen di mana data
-   terlihat cantik di layar.
+   Ini juga "kemenangan visual kecil" yang penting untuk P2: setelah P1
+   yang penuh umpan balik visual, hari ini semua kembali ke teks di
+   console. Ini satu-satunya momen di mana data terlihat rapi di layar.
    ------------------------------------------------------------ */
 
 console.table(produk);

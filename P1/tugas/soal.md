@@ -1,4 +1,4 @@
-# Tugas 1 — Manipulasi Data dengan JavaScript Modern
+# Tugas 1 — Landing Page Responsif
 
 **Pertemuan 1** · Kelas Frontend Web Development — Metro Institute Season 2
 
@@ -6,89 +6,87 @@
 
 ## Yang Dikumpulkan
 
-File `tugas-1.js` yang sudah terisi. Kirim sesuai instruksi mentor di grup.
+Dua file: `index.html` dan `style.css` yang sudah terisi. Kirim sesuai instruksi mentor di grup.
 
 ---
 
 ## Cara Mengerjakan
 
-1. Buka `tugas-1.js` di VS Code
+1. Buka `index.html` dan `style.css` di VS Code
 2. Isi setiap bagian bertanda `TODO`
-3. Buka `index.html` (cukup double-click), lalu tekan `F12` → tab **Console** untuk melihat hasilnya
-4. Simpan file, refresh halaman, cek Console lagi
+3. Simpan, lalu double-click `index.html` untuk melihat hasilnya
+4. Uji di HP: `F12` → `Ctrl+Shift+M` → pilih iPhone atau Galaxy
 
-Tidak perlu install apa pun. Cukup browser dan editor teks.
-
-> Kalau `index.html` bermasalah, cara alternatifnya: buka Console, paste isi `data.js`, tekan Enter, lalu paste isi `tugas-1.js`.
+Tidak perlu install apa pun selain VS Code dan browser.
 
 ---
 
-## Aturan Penting
+## Yang Harus Dibuat
 
-**Di tiap jawaban, tulis komentar satu baris berisi alasan** kenapa kalian memilih method itu. Komentar ini bagian dari penilaian dengan bobot 30% — lebih besar daripada bobot "kode jalan".
+Satu halaman berisi empat bagian:
+
+| # | Bagian | Isi | Alat |
+|:--:|---|---|---|
+| 1 | **Navbar** | Logo di kiri, menu di kanan | Flexbox |
+| 2 | **Hero** | Judul besar, deskripsi, satu tombol | — |
+| 3 | **Cards Grid** | Minimal **6 kartu**, responsif | CSS Grid |
+| 4 | **Footer** | Teks hak cipta rata tengah | — |
+
+Temanya bebas — toko, portofolio, komunitas, kafe, apa pun. Yang dinilai strukturnya, bukan idenya.
+
+---
+
+## Tiga Syarat Wajib
+
+**1. Pakai tag semantic, bukan `div` untuk semuanya.**
+
+Navbar, konten utama, kartu, dan footer harus memakai tag yang namanya menjelaskan perannya.
+
+> Tapi ingat: `div` **tidak haram**. Pembungkus grid yang memang cuma kotak untuk menempelkan CSS itu justru tepat memakai `div`. Yang salah adalah memakai `div` untuk sesuatu yang jelas punya nama.
+
+**2. Nama class menjelaskan fungsi, bukan tampilan.**
+
+| Buruk | Baik |
+|---|---|
+| `.merah` | `.alert-error` |
+| `.kotak-kiri` | `.sidebar` |
+| `.tulisan-besar` | `.hero-judul` |
+
+**3. Rapi di HP maupun laptop.**
+
+Tidak ada teks yang terpotong, tidak ada elemen yang keluar layar, tidak perlu scroll ke samping.
+
+---
+
+## Deliverable Pembeda — Komentar Alasan
+
+Ini yang membedakan tugas ini dari sekadar "bikin halaman".
+
+**Di `style.css`** — tulis alasan untuk minimal **4 keputusan**:
+
+```css
+/* pakai Grid, bukan Flexbox, karena kartu perlu tersusun dua arah —
+   ke samping DAN turun baris otomatis saat layar menyempit */
+.daftar-kartu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+```
+
+**Di `index.html`** — tulis alasan untuk minimal **2 pilihan tag**:
+
+```html
+<!-- pakai <nav> bukan <div class="nav"> supaya screen reader
+     bisa melompat langsung ke navigasi -->
+<nav>...</nav>
+```
+
+### Komentar yang bagus vs yang kurang
 
 | Contoh | Penilaian |
 |---|---|
-| `// pakai map untuk mengambil nama` | ❌ Kurang — ini cuma mengulang apa yang dilakukan kode |
-| `// pakai .map() karena jumlah hasilnya harus tetap 10 — kita mengubah tiap item, bukan membuang sebagian` | ✅ Baik — menjelaskan kenapa method ini, bukan yang lain |
-
----
-
-## Data
-
-Semua soal memakai array `mahasiswa` di file `data.js` — 10 mahasiswa dengan properti `nama`, `jurusan`, `nilai`, dan `semester`. Jangan diubah isinya.
-
-Jalankan `console.table(mahasiswa)` untuk melihatnya sebagai tabel.
-
----
-
-## Soal
-
-### Soal 1 — Ambil semua nama mahasiswa
-
-Buat array berisi nama seluruh mahasiswa.
-
-**Hasil yang diharapkan:** array berisi 10 nama.
-
----
-
-### Soal 2 — Saring mahasiswa bernilai 80 ke atas
-
-Buat array berisi mahasiswa yang nilainya 80 atau lebih.
-
-**Hasil yang diharapkan:** array berisi **object mahasiswa** — lengkap dengan jurusan dan semesternya, bukan nama saja.
-
----
-
-### Soal 3 — Dua pertanyaan tentang hal yang sama
-
-Baca pelan-pelan. Dua pertanyaan berikut terdengar mirip, tapi **menuntut bentuk jawaban yang berbeda**.
-
-**3a.** Ada nggak mahasiswa yang nilainya di bawah 60?
-→ Jawabannya cuma "iya" atau "nggak" — hasilnya harus `true` atau `false`.
-
-**3b.** Kalau ada, siapa orang **pertama** yang nilainya di bawah 60?
-→ Jawabannya satu object mahasiswa.
-
-> Kalau kalian memakai method yang sama untuk 3a dan 3b, ada yang terlewat. Di komentar 3b, jelaskan juga **kenapa method-nya berbeda dari 3a**.
-
----
-
-### Soal 4 — Hitung rata-rata nilai
-
-Hitung rata-rata nilai seluruh mahasiswa.
-
-**Petunjuk:** jumlahkan dulu semua nilai, baru bagi dengan jumlah mahasiswa. Ingat analogi amplop nagih kas — amplop mulai kosong, tiap orang menambah isinya.
-
----
-
-### Soal 5 — Gabungan (chaining)
-
-Ambil **nama** mahasiswa jurusan **Sistem Informasi** yang nilainya **80 ke atas**, dalam **satu rantai method**. Jangan pakai variabel perantara.
-
-**Hasil yang diharapkan:** array berisi nama saja (string), bukan object.
-
-Di komentar, jelaskan juga **kenapa urutan method-nya begitu** — apa yang terjadi kalau dibalik?
+| `/* bikin flex */` | ❌ Cuma mengulang yang sudah terbaca dari kodenya |
+| `/* flex supaya judul dan harga sejajar tengah walaupun panjang judulnya beda-beda */` | ✅ Menjelaskan keputusannya |
 
 ---
 
@@ -96,22 +94,24 @@ Di komentar, jelaskan juga **kenapa urutan method-nya begitu** — apa yang terj
 
 | Bobot | Aspek |
 |:--:|---|
-| **40%** | Method yang dipilih tepat sesuai tugasnya |
+| **35%** | Ketepatan pemilihan tag semantic & alasannya |
 | **30%** | Kualitas alasan di komentar |
-| **20%** | Kode jalan & benar hasilnya |
-| **10%** | Kerapian (penamaan variabel, konsistensi) |
+| **20%** | Layout berfungsi & responsif di HP |
+| **15%** | Kerapian (indentasi, penamaan class) |
 
-Perhatikan: **alasan (30%) bobotnya lebih besar daripada kode jalan (20%).** Ini disengaja.
+Perhatikan: **tampilan cantik cuma 20%.** Yang paling besar adalah *kenapa* kalian memilih tag itu dan *kenapa* kalian memilih cara itu. Ini disengaja.
 
 ---
 
-## Soal Boleh Dikerjakan dengan Bantuan AI?
+## Boleh Pakai AI?
 
 **Boleh** — dengan syarat kalian paham tiap baris yang kalian tulis.
 
-Saat review, mentor akan menunjuk satu baris secara acak dan menanyakan kenapa method itu yang dipakai. Kalau tidak bisa menjawab, itu bukan kode kalian.
+Jujur saja: AI bisa membuat halaman ini dalam 10 detik, lebih cepat dari siapa pun. Mentor tidak akan pura-pura sebaliknya.
 
-AI itu seperti kalkulator: berguna kalau kalian sudah mengerti hitungannya, berbahaya kalau dipakai untuk menghindari paham.
+Tapi pekerjaan kalian nanti bukan **mengetik** kode — itu memang sudah kalah cepat. Pekerjaan kalian adalah **memeriksa** kode, dan membaca kode itu lebih sulit daripada menulisnya. Perusahaan membayar kalian untuk bertanggung jawab kalau ada yang salah. AI tidak bisa dimintai tanggung jawab.
+
+Saat review, mentor akan menunjuk satu baris secara acak dan menanyakan kenapa. Kalau tidak bisa menjawab, itu bukan kode kalian.
 
 ---
 
@@ -122,8 +122,19 @@ Coba dulu 15 menit. Kalau masih buntu, bertanya di grup dengan format ini:
 ```
 1. Yang saya coba      : ...
 2. Yang saya harap     : ...
-3. Yang malah terjadi  : ... (+ pesan error kalau ada)
+3. Yang malah terjadi  : ...
 4. Yang sudah saya coba: ...
 ```
 
 Sering kali jawabannya ketemu sendiri saat menulis baris ke-4.
+
+### Tiga masalah yang paling sering muncul
+
+**"`align-items: center` saya nggak ngaruh."**
+Cek apakah induknya sudah `display: flex`. Tanpa itu, semua property Flexbox diabaikan diam-diam — tidak ada error, cuma tidak terjadi apa-apa.
+
+**"Tombolnya nggak mau dikasih padding atas-bawah."**
+`<a>` itu elemen *inline*. Padding tegaknya tidak berfungsi normal sampai `display`-nya diubah jadi `inline-block`.
+
+**"Halamannya bisa di-scroll ke samping di HP."**
+Biasanya ada elemen dengan lebar tetap dalam `px` yang lebih besar dari layar. Cari lewat DevTools → Elements, klik satu per satu sampai ketemu yang menonjol keluar.
