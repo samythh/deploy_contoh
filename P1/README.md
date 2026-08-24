@@ -13,7 +13,8 @@
 
 ```
 P1/
-├── P1-Materi-Mentor-Frontend-HTML-CSS.md   # Panduan mengajar — BACA INI DULU
+├── P1-Materi-Mentor-Frontend-HTML-CSS.md   # Panduan mengajar lengkap — BACA INI DULU
+├── RUNDOWN.md                              # Pegangan singkat SAAT mengajar
 │
 ├── demo/                        # Kode live untuk di kelas      [mentor]
 │   ├── 01-kerangka.html
@@ -50,6 +51,8 @@ Saat membagikan tugas, kirim **isi folder `tugas/` saja** — ketiga filenya sek
 ---
 
 ## Alur Mengajar
+
+> Versi lengkap dengan gerakan per bagian, kalimat siap-ucap, dan urutan potong kalau waktu habis: **[RUNDOWN.md](RUNDOWN.md)** — buka di layar kedua saat kelas berlangsung.
 
 | Menit | Bagian | File demo |
 |:--:|---|---|
