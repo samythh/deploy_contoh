@@ -3,11 +3,14 @@
   BAGIAN 4 — FLEXBOX  (75–100 menit)
   PORSI TERBESAR HARI INI.
 
-  Urutan mengajar yang disarankan:
-  1. Tunjukkan bagian "CARA LAMA" di bawah — biarkan terasa menyakitkan
-  2. Minta peserta membuat 3 kotak berdampingan RATA TENGAH dengan float
-     → biarkan mereka gagal 3 menit. Itu 3 menit paling berharga.
-  3. Baru tunjukkan Flexbox
+  URUTAN MENGAJAR — LANGSUNG KE CARA BARU.
+
+  Mulai dari contoh 1 (Flexbox dasar). JANGAN memperagakan float dan
+  JANGAN menyuruh peserta mencobanya — itu memakan 3-5 menit yang
+  tidak kita punya.
+
+  Cara lama cukup disebut sebagai SELINGAN satu kalimat sambil lewat,
+  di contoh 5. Kalimatnya sudah disiapkan di bawah.
 -->
 <html lang="id">
   <head>
@@ -42,28 +45,6 @@
       }
 
       /* ============================================================
-         CARA LAMA — float
-
-         Perhatikan ::after yang misterius itu. Tanpa dia, elemen
-         setelahnya naik ke atas dan layout rusak. Selama bertahun-tahun
-         orang menuliskannya sebagai mantra tanpa tahu kenapa.
-
-         Dan yang paling penting: DENGAN CARA INI, RATA TENGAH SECARA
-         TEGAK PRAKTIS TIDAK MUNGKIN tanpa trik tambahan.
-         ============================================================ */
-
-      .cara-lama::after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      .cara-lama .kotak {
-        float: left;
-        width: 33.33%;
-      }
-
-      /* ============================================================
          FLEXBOX — satu baris menggantikan semuanya
          ============================================================ */
 
@@ -79,7 +60,7 @@
       /* align-items = sumbu SILANG (atas-bawah) */
       .flex-vtengah  { display: flex; gap: 1rem; align-items: center; min-height: 160px; }
 
-      /* keduanya sekaligus — inilah yang mustahil dengan float */
+      /* keduanya sekaligus — pusat sempurna, dua baris */
       .flex-pusat    { display: flex; gap: 1rem; justify-content: center; align-items: center; min-height: 160px; }
 
       /* ------------------------------------------------------------
@@ -94,7 +75,7 @@
 
       /* ------------------------------------------------------------
          NAVBAR — momen wow Bagian 4. Lima baris.
-         Di era float, ini butuh 20 baris plus tambalan.
+         Selingan boleh disebut: dulu ini butuh 20 baris plus tambalan.
          ------------------------------------------------------------ */
 
       .navbar {
@@ -113,52 +94,61 @@
   </head>
 
   <body>
-    <h2>1. CARA LAMA (float) — berdampingan, tapi mentok di sini</h2>
-    <div class="rak cara-lama">
-      <div class="kotak">Satu</div>
-      <div class="kotak">Dua</div>
-      <div class="kotak">Tiga</div>
-    </div>
-    <p><em>Coba buat ketiganya rata tengah secara tegak dengan float. Silakan dicoba dulu.</em></p>
-
-    <h2>2. FLEXBOX dasar — satu baris CSS</h2>
+    <h2>1. FLEXBOX dasar — satu baris CSS</h2>
     <div class="rak flex-dasar">
       <div class="kotak">Satu</div>
       <div class="kotak">Dua</div>
       <div class="kotak">Tiga</div>
     </div>
 
-    <h2>3. justify-content: center — geser kiri-kanan</h2>
+    <h2>2. justify-content: center — geser kiri-kanan</h2>
     <div class="rak flex-tengah">
       <div class="kotak">Satu</div>
       <div class="kotak">Dua</div>
     </div>
 
-    <h2>4. justify-content: space-between — dorong ke dua ujung</h2>
+    <h2>3. justify-content: space-between — dorong ke dua ujung</h2>
     <div class="rak flex-pisah">
       <div class="kotak">Kiri</div>
       <div class="kotak">Kanan</div>
     </div>
 
-    <h2>5. align-items: center — geser atas-bawah</h2>
+    <h2>4. align-items: center — geser atas-bawah</h2>
     <div class="rak flex-vtengah">
       <div class="kotak">Satu</div>
       <div class="kotak">Dua</div>
     </div>
 
-    <h2>6. Keduanya — pusat sempurna. Inilah yang mustahil tadi.</h2>
+    <!--
+      SELINGAN — sebut sambil lewat di sini, JANGAN diperagakan.
+      Cukup satu-dua kalimat, lalu lanjut:
+
+      "Dua baris ini kelihatannya sepele ya. Buat info aja: sebelum ada
+       Flexbox, naruh sesuatu pas di tengah secara tegak itu masalah
+       legendaris — orang nulis belasan baris akal-akalan buat ini, dan
+       sering nggak berhasil. Sekarang dua baris. Kalian lahir di waktu
+       yang tepat."
+
+      Selesai. Jangan buka contoh float, jangan suruh mereka mencoba.
+    -->
+    <h2>5. Keduanya sekaligus — pusat sempurna, mendatar dan tegak</h2>
     <div class="rak flex-pusat">
       <div class="kotak">Tengah</div>
     </div>
 
-    <h2>7. margin — perhatikan ruang nganggur di kanan kotak terakhir</h2>
+    <!--
+      SELINGAN kedua: "Dulu orang pakai margin buat ini, terus harus
+      nulis baris tambahan khusus buat anak terakhir. `gap` nggak perlu."
+      Satu kalimat, lanjut.
+    -->
+    <h2>6. gap vs margin — perhatikan ruang nganggur di kanan kotak terakhir</h2>
     <div class="rak flex-dasar pakai-margin" style="gap: 0">
       <div class="kotak">Satu</div>
       <div class="kotak">Dua</div>
       <div class="kotak">Tiga</div>
     </div>
 
-    <h2>8. NAVBAR — lima baris CSS</h2>
+    <h2>7. NAVBAR — lima baris CSS</h2>
     <nav class="navbar">
       <strong>TokoKita</strong>
       <div class="navbar-menu">

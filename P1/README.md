@@ -5,6 +5,8 @@
 
 > **Catatan revisi:** Sejak 23 Agustus 2026, HTML/CSS naik dari P2 ke P1, bertukar dengan JavaScript. **TailwindCSS diajarkan di Bagian 6** — paling akhir, setelah CSS manual dikuasai.
 
+> **CARA PENYAMPAIAN:** materi ini **langsung ke cara modern**. Cara lama (float, inline style, margin-tambalan) tidak diperagakan — cukup disebut sebagai **selingan** satu-dua kalimat sambil lewat. Kalimatnya sudah disiapkan di tiap bagian materi dan di komentar file demo. Satu-satunya pengecualian: perbandingan div soup di Bagian 2, karena di situ perbandingannya *adalah* argumennya.
+
 ---
 
 ## Isi Folder
@@ -52,13 +54,13 @@ Saat membagikan tugas, kirim **isi folder `tugas/` saja** — ketiga filenya sek
 | Menit | Bagian | File demo |
 |:--:|---|---|
 | 0–10 | Pembuka, peta program, **kemenangan pertama** | — |
-| 10–22 | Anatomi dokumen HTML | `01-kerangka.html` |
-| 22–45 | **HTML5 Semantic** — inti pedagogis hari ini | `02-semantic/` |
-| 45–65 | CSS: cara menempel, selector, box model | `03-box-model.html` |
-| 65–90 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
-| 90–102 | Grid & mobile-first | `05-grid-responsif.html` |
-| 102–115 | **TailwindCSS** — diberikan paling akhir, sebagai hadiah | `06-tailwind.html` |
-| 115–120 | Rangkuman & pembagian tugas | `tugas/` |
+| 10–20 | Anatomi dokumen HTML | `01-kerangka.html` |
+| 20–40 | **HTML5 Semantic** — inti pedagogis hari ini | `02-semantic/` |
+| 40–58 | CSS: cara menempel, selector, box model | `03-box-model.html` |
+| 58–85 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
+| 85–98 | Grid & mobile-first | `05-grid-responsif.html` |
+| 98–112 | **TailwindCSS** — diberikan paling akhir, sebagai hadiah | `06-tailwind.html` |
+| 112–120 | Rangkuman & pembagian tugas | `tugas/` |
 
 ---
 
@@ -108,6 +110,7 @@ Tampilan cantik sengaja cuma 20%. Detailnya di [soal.md](tugas/soal.md).
 
 **H-1**
 - [ ] Latih demo navbar Flexbox sampai lancar tanpa catatan
+- [ ] Hafalkan tiga kalimat **selingan** cara lama (Bagian 3, 4, dan `gap`) — cukup sekali sebut, jangan sampai malah jadi bahasan panjang
 - [ ] Uji tarik-jendela di [05-grid-responsif.html](demo/05-grid-responsif.html) — pastikan mulus (momen wow)
 - [ ] Buka [kunci-jawaban/index.html](kunci-jawaban/index.html), pastikan tampil benar
 - [ ] Siapkan peragaan `<meta charset>` yang dihapus
@@ -116,4 +119,4 @@ Tampilan cantik sengaja cuma 20%. Detailnya di [soal.md](tugas/soal.md).
 - [ ] VS Code font minimal 18pt, **tema terang** — tema gelap sering tidak terbaca lewat proyektor
 - [ ] Browser + DevTools terbuka berdampingan dengan editor
 - [ ] Sediakan 10 menit di awal khusus membantu instalasi yang gagal
-- [ ] Siapkan folder `tugas/` untuk dibagikan di menit ke-115
+- [ ] Siapkan folder `tugas/` untuk dibagikan di menit ke-112

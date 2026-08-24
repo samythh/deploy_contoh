@@ -66,7 +66,16 @@ Contoh yang SALAH:
 Contoh yang BENAR:
 > "Bisa pakai `<div class='nav'>` atau `<nav>`. Tampilannya sama. Tapi `<nav>` menang karena: screen reader bisa melompat ke sana, Google paham strukturnya, dan programmer lain langsung mengerti tanpa baca nama class. `<div>` tidak salah — dia netral — tapi memakai div untuk sesuatu yang jelas punya nama itu membuang makna."
 
-Fitur modern hampir selalu **obat untuk rasa sakit cara lama**. Selalu tunjukkan cara lama yang menyakitkan DULU, baru obatnya. Kalau peserta tahu sakitnya, mereka paham kenapa obatnya ada.
+Fitur modern hampir selalu **obat untuk rasa sakit cara lama**. Peserta perlu tahu sakitnya supaya paham kenapa obatnya ada.
+
+**Tapi bedakan dokumen dan kelas** (diputuskan 23 Agustus 2026):
+
+- **Di dokumen materi & saat menjawab saya** — tetap tulis perbandingannya lengkap. Saya butuh tahu cara lamanya untuk bisa menjawab kalau ditanya.
+- **Di alokasi waktu kelas** — jangan menjadwalkan peragaan cara lama, dan jangan menjadwalkan latihan "biarkan mereka gagal dulu". Langsung ke cara modern. Cara lama cukup jadi **selingan satu-dua kalimat sambil lewat**, dan siapkan kalimatnya siap-ucap.
+
+Alasannya waktu: 120 menit tidak cukup untuk mendemonstrasikan dua cara. Yang dikorbankan cuma peragaannya — lapisan **KENAPA** tetap wajib ada, hanya disampaikan lewat kalimat.
+
+**Pengecualiannya:** kalau perbandingan itu *adalah* argumennya — misalnya div soup vs semantic, di mana tanpa melihat div soup aturan "pakai `<nav>`" terdengar sewenang-wenang — perbandingan tetap dipakai, tapi dibatasi maksimal 2 menit dan bukan sebagai latihan.
 
 ---
 

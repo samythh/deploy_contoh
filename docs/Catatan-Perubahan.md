@@ -96,7 +96,7 @@ Mitigasi yang disepakati, bukan mengubah urutan lagi:
 
 **Posisi TailwindCSS — direvisi 23 Agustus 2026, setelah sempat salah tempat.**
 
-Awalnya Tailwind dikeluarkan dari P1 dan dipindah ke P3. Itu **salah baca instruksi mentor** dan sudah dikoreksi: Tailwind **tetap di P1**, tapi ditaruh di **bagian paling akhir** (menit 102–115), setelah peserta menulis CSS manual satu jam penuh.
+Awalnya Tailwind dikeluarkan dari P1 dan dipindah ke P3. Itu **salah baca instruksi mentor** dan sudah dikoreksi: Tailwind **tetap di P1**, tapi ditaruh di **bagian paling akhir** (menit 98–112), setelah peserta menulis CSS manual satu jam penuh.
 
 Kenapa posisi akhir, bukan awal: kalau Tailwind diberikan di awal, peserta menulis `flex justify-center` tanpa tahu itu singkatan dari apa, dan tidak punya pegangan saat hasilnya melenceng. Ini prinsip yang sama dengan Emmet di Bagian 1 — shortcut diberikan *setelah* paham manual, sebagai hadiah. Menaruhnya di akhir juga membuat Tailwind terasa sebagai obat, bukan sebagai cara lain yang membingungkan.
 
@@ -113,6 +113,16 @@ Pemasangan di P1 cukup via CDN satu baris, belum perlu Node. Pemasangan yang ben
 Terbaru di atas.
 
 ### 23 Agustus 2026
+
+**Penyampaian P1 dipangkas — langsung ke cara modern**
+- *Alasan:* keputusan mentor. P1 padat (tujuh bagian / 120 menit), dan memperagakan dua cara untuk tiap konsep memakan waktu yang tidak ada. Cara lama sekarang cukup disebut sebagai **selingan satu-dua kalimat sambil lewat**, dengan kalimat siap-ucap yang sudah disiapkan di tiap bagian.
+- *Yang tetap dipertahankan:* lapisan **KENAPA**. Peserta tetap harus tahu alasan tiap pilihan — hanya penyampaiannya lewat kalimat, bukan lewat peragaan. Dokumen materi tetap memuat perbandingan lengkapnya supaya mentor bisa menjawab kalau ditanya.
+- `demo/04-flexbox.html`: contoh float dan CSS-nya dihapus seluruhnya, termasuk latihan "biarkan mereka gagal 3 menit". Delapan contoh jadi tujuh, ditambah dua blok komentar SELINGAN siap-ucap.
+- Materi Bagian 3: peragaan tiga cara menempelkan CSS (inline → internal → external) diganti langsung ke file terpisah, dengan satu selingan.
+- Materi Bagian 4: blok BANDINGKAN float dihapus, langsung APA — Flexbox. `gap` vs margin diringkas jadi satu selingan.
+- **Pengecualian yang sengaja dipertahankan:** perbandingan div soup vs semantic di Bagian 2. Di situ perbandingannya *adalah* argumennya — tanpa melihat div soup, aturan "pakai `<nav>`" cuma terdengar sewenang-wenang. Dibatasi maksimal 2 menit, dan bukan sebagai latihan.
+- Alokasi menit dihitung ulang; sekitar 10 menit yang hemat dialihkan ke praktik Flexbox (jadi 27 menit) dan penutup (jadi 8 menit, sebelumnya 5).
+- `CLAUDE.md`: Prinsip Inti diamandemen — dibedakan antara dokumen (perbandingan tetap lengkap) dan alokasi waktu kelas (langsung cara modern). Ini perubahan pada aturan yang sebelumnya berbunyi "selalu tunjukkan cara lama DULU", jadi dicatat eksplisit di sini.
 
 **Koreksi posisi TailwindCSS — dikembalikan ke P1**
 - *Penyebab:* salah membaca instruksi mentor "html css tetap dipertama, karena langsung tailwind saja belajarnya". Dibaca sebagai alasan mengeluarkan Tailwind dari P1, padahal maksudnya sebaliknya — Tailwind memang dipelajari langsung di P1.

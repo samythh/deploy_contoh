@@ -5,6 +5,10 @@ Durasi: 120 menit | Topik: Struktur Dokumen, Semantic Tags, CSS Fundamentals, Bo
 
 > **CATATAN VERSI:** Sejak revisi 23 Agustus 2026, HTML/CSS naik dari Pertemuan 2 ke Pertemuan 1, bertukar dengan JavaScript. Alasannya: peserta butuh umpan balik visual di pertemuan pertama, saat mereka paling gampang mundur. **TailwindCSS diajarkan di akhir pertemuan ini** (Bagian 6), setelah peserta menulis CSS manual — sebagai "hadiah", bukan jalan pintas. Lihat `docs/Catatan-Perubahan.md` untuk konsekuensi lengkapnya.
 
+> **CARA PENYAMPAIAN — BACA INI SEBELUM MENGAJAR:** materi ini **langsung ke cara modern**. Cara lama (float, inline style, margin-tambalan) **tidak diperagakan** — cukup disebut sebagai selingan satu-dua kalimat sambil lewat, dan kalimatnya sudah disiapkan di tiap bagian. Alasannya waktu: 120 menit untuk tujuh bagian tidak cukup untuk mendemonstrasikan dua cara.
+>
+> Yang tetap wajib: lapisan **KENAPA**. Peserta harus tahu alasan tiap pilihan, hanya saja alasannya disampaikan lewat kalimat, bukan lewat peragaan.
+
 ---
 
 ## Cara Membaca Dokumen Ini
@@ -85,7 +89,7 @@ Jangan tunggu sampai Bagian 2. Sebelum teori apa pun, minta semua orang:
 
 ---
 
-# BAGIAN 1 — Anatomi Dokumen HTML (10–22 menit)
+# BAGIAN 1 — Anatomi Dokumen HTML (10–20 menit)
 
 ## APA
 
@@ -145,7 +149,7 @@ Peserta akan menemukan sendiri bahwa mengetik kerangka ini melelahkan. Bagus —
 
 ---
 
-# BAGIAN 2 — HTML5 Semantic (22–45 menit)
+# BAGIAN 2 — HTML5 Semantic (20–40 menit)
 > Inti pedagogis P1. Beri porsi penuh — ini contoh terbaik dari "kenapa", bukan sekadar "apa".
 
 ## APA
@@ -194,6 +198,10 @@ Tulis keduanya berdampingan di layar. Ini perbandingan terpenting hari ini.
 
 **Tampilannya sama persis.** Buka keduanya di browser untuk membuktikan — ini penting, karena peserta perlu tahu bahwa `<div>` tidak salah dan tidak error.
 
+> **PENGECUALIAN YANG DISENGAJA:** ini satu-satunya tempat di P1 yang tetap memakai perbandingan cara lama, dan itu bukan kelalaian. Di sini perbandingannya **adalah argumennya** — tanpa melihat div soup, "pakai `<nav>`" cuma terdengar seperti aturan sewenang-wenang.
+>
+> Tapi batasi **maksimal 2 menit**: buka dua file berdampingan, ajukan satu pertanyaan, lanjut. Bukan latihan, cuma perbandingan.
+
 ## KENAPA semantic menang
 
 Tiga alasan, dan ketiganya bisa Anda tunjukkan langsung:
@@ -236,36 +244,26 @@ Satu halaman hanya boleh punya satu `<main>` — itu penanda "ini isi utamanya".
 
 ---
 
-# BAGIAN 3 — CSS: Menempelkan Gaya (45–65 menit)
+# BAGIAN 3 — CSS: Menempelkan Gaya (40–58 menit)
 
-## BANDINGKAN — Tiga cara menempelkan CSS
+## APA — Cara menempelkan CSS: file terpisah
 
-Tunjukkan ketiganya berurutan, dari yang paling menyakitkan.
-
-```html
-<!-- 1. INLINE — nempel di elemennya -->
-<p style="color: red;">Halo</p>
-```
+Langsung ajarkan yang dipakai di industri. Jangan peragakan tiga cara.
 
 ```html
-<!-- 2. INTERNAL — dikumpulkan di <head> -->
-<head>
-  <style>
-    p { color: red; }
-  </style>
-</head>
-```
-
-```html
-<!-- 3. EXTERNAL — file terpisah -->
 <head>
   <link rel="stylesheet" href="style.css" />
 </head>
 ```
 
-## KENAPA external yang dipakai di industri
+Satu file CSS, dipanggil dari semua halaman. Itu saja yang mereka butuhkan hari ini.
 
-Peragakan masalahnya, jangan cuma ceritakan: **buat tiga paragraf dengan `style="color: red"`, lalu minta peserta mengubah semuanya jadi biru.** Mereka harus mengedit tiga tempat. Sekarang tambahkan: "bayangkan 50 halaman."
+## KENAPA file terpisah
+
+> **SELINGAN — sebut sambil lewat, jangan diperagakan:**
+> "Sebenarnya ada cara lain: gaya bisa ditulis nempel langsung di tiap elemen. Cuma masalahnya, kalau kalian mau ganti satu warna, kalian harus edit 50 tempat satu-satu. Makanya orang naruh semuanya di satu file — ganti sekali, semua ikut."
+
+Cukup segitu, lalu lanjut ke selector. Kalau ada yang penasaran dan bertanya, baru tunjukkan contoh `style="..."` di DevTools — 30 detik, tidak perlu buka file baru.
 
 > **CARA SAMPAIKAN — Analogi Seragam Sekolah:**
 > "Inline style itu kayak nulis aturan seragam di baju tiap murid satu-satu pakai spidol. Mau ganti warna dasi? Kalian harus datangi 500 murid.
@@ -337,30 +335,14 @@ Buka `F12` → pilih elemen → panel **Computed**. Di situ box model tampil seb
 
 ---
 
-# BAGIAN 4 — Flexbox (65–90 menit)
+# BAGIAN 4 — Flexbox (58–85 menit)
 > **PORSI TERBESAR HARI INI.** Ini alat tata letak yang mereka pakai setiap hari, termasuk nanti di React.
 
-## BANDINGKAN — Cara lama menata elemen berdampingan
+## APA — Satu baris yang mengatur semuanya
 
-Tunjukkan penderitaannya dulu. Ini penting supaya Flexbox terasa seperti obat, bukan sekadar fitur baru.
-
-```css
-/* CARA LAMA — float */
-.kartu {
-  float: left;
-  width: 33.33%;
-}
-.pembungkus::after {
-  content: "";
-  display: table;
-  clear: both;    /* baris misterius yang harus ditulis, kalau tidak layout-nya rusak */
-}
-```
-
-Sebelum menunjukkan solusinya, minta peserta membuat tiga kotak berdampingan **rata tengah secara vertikal** dengan cara lama. Biarkan mereka gagal 3 menit. Itu 3 menit paling berharga di bagian ini.
+Langsung ke Flexbox. **Jangan memperagakan float, dan jangan menyuruh peserta mencobanya** — itu memakan 5 menit yang tidak kita punya.
 
 ```css
-/* FLEXBOX */
 .pembungkus {
   display: flex;
   justify-content: center;   /* rata tengah arah mendatar */
@@ -388,20 +370,16 @@ Ini satu-satunya hal yang harus benar-benar nempel dari Flexbox:
 > `align-items` itu ngatur buku mau naik ke atas rak, turun ke bawah, atau di tengah — geser atas-bawah.
 > Yang sering bikin bingung: dua-duanya ditulis di **RAK**-nya, bukan di bukunya. Kalian nggak nyuruh buku pindah — kalian nyuruh rak ngatur bukunya."
 
-## KENAPA `gap` lebih baik daripada `margin`
+## KENAPA memakai `gap` untuk jarak antar-anak
 
 ```css
-/* CARA LAMA — margin, lalu bermasalah di ujung */
-.kartu { margin-right: 1rem; }
-.kartu:last-child { margin-right: 0; }   /* baris tambalan */
-
-/* GAP — jarak cuma DI ANTARA, ujungnya bersih */
 .pembungkus { display: flex; gap: 1rem; }
 ```
 
-> **CARA SAMPAIKAN:**
-> "Margin itu ngasih jarak ke semua anak, termasuk yang paling ujung — jadi ada ruang nganggur di pinggir. Makanya orang dulu harus nulis baris tambalan buat anak terakhir.
-> `gap` itu ngasih jarak cuma DI ANTARA. Kayak jarak antar-orang yang lagi antre — nggak ada jarak sebelum orang pertama."
+> **SELINGAN — satu kalimat, lalu lanjut:**
+> "`gap` itu ngasih jarak cuma DI ANTARA — kayak jarak antar-orang yang lagi antre, nggak ada jarak sebelum orang pertama. Dulu orang pakai margin buat ini, terus harus nulis baris tambahan khusus buat anak terakhir biar nggak ada ruang nganggur di pinggir. Sekarang nggak perlu."
+
+Contoh 6 di file demo memperlihatkan ruang nganggur itu kalau ada yang ingin melihatnya — tapi tidak perlu dibuka kecuali ditanya.
 
 ## Praktik terpandu: navbar dalam 5 baris
 
@@ -420,7 +398,7 @@ Lima baris menghasilkan navbar yang di era `float` butuh 20 baris plus tambalan.
 
 ---
 
-# BAGIAN 5 — Grid & Mobile-First (90–102 menit)
+# BAGIAN 5 — Grid & Mobile-First (85–98 menit)
 > Singkat dan fokus. Tujuannya cukup satu: peserta bisa membuat grid kartu yang responsif.
 
 ## BANDINGKAN — Kapan Flexbox, kapan Grid
@@ -482,7 +460,7 @@ Dua alasan, dan yang kedua yang sebenarnya:
 
 ---
 
-# BAGIAN 6 — TailwindCSS (102–115 menit)
+# BAGIAN 6 — TailwindCSS (98–112 menit)
 > **Posisi bagian ini disengaja: paling akhir.** Peserta baru saja menulis CSS manual selama satu jam penuh. Sekarang mereka punya rasa sakit yang bisa diobati — dan itu satu-satunya cara Tailwind terasa masuk akal, bukan sekadar cara lain yang membingungkan.
 
 ## Kenapa Tailwind Ditaruh di Sini, Bukan di Awal
@@ -599,7 +577,7 @@ Tujuannya bukan menguasai Tailwind hari ini — tapi merasakan pemetaannya sendi
 
 ---
 
-# BAGIAN 7 — Penutup & Tugas (115–120 menit)
+# BAGIAN 7 — Penutup & Tugas (112–120 menit)
 
 ## Rangkuman: Satu Benang Merah
 

@@ -4,18 +4,20 @@ File-file di sini untuk **dipakai mentor saat mengajar**, bukan dibagikan ke pes
 
 Semua file berdiri sendiri — cukup double-click, tidak perlu server atau install apa pun.
 
+> **CARA PENYAMPAIAN:** file-file di sini **langsung memakai cara modern**. Cara lama tidak diperagakan — kalimat selingannya sudah disiapkan di komentar tiap file, cukup sebut sambil lewat. Pengecualian: `02-semantic/` tetap memakai perbandingan, karena di situ perbandingannya *adalah* argumennya (maksimal 2 menit).
+
 ---
 
 ## Isi & Pemetaan ke Materi
 
 | File | Bagian di materi | Menit |
 |---|---|:--:|
-| [01-kerangka.html](01-kerangka.html) | Bagian 1 — Anatomi Dokumen HTML | 10–22 |
-| [02-semantic/](02-semantic/) | Bagian 2 — HTML5 Semantic | 22–45 |
-| [03-box-model.html](03-box-model.html) | Bagian 3 — CSS & Box Model | 45–65 |
-| [04-flexbox.html](04-flexbox.html) | Bagian 4 — Flexbox | 65–90 |
-| [05-grid-responsif.html](05-grid-responsif.html) | Bagian 5 — Grid & Mobile-First | 90–102 |
-| [06-tailwind.html](06-tailwind.html) | Bagian 6 — TailwindCSS | 102–115 |
+| [01-kerangka.html](01-kerangka.html) | Bagian 1 — Anatomi Dokumen HTML | 10–20 |
+| [02-semantic/](02-semantic/) | Bagian 2 — HTML5 Semantic | 20–40 |
+| [03-box-model.html](03-box-model.html) | Bagian 3 — CSS & Box Model | 40–58 |
+| [04-flexbox.html](04-flexbox.html) | Bagian 4 — Flexbox | 58–85 |
+| [05-grid-responsif.html](05-grid-responsif.html) | Bagian 5 — Grid & Mobile-First | 85–98 |
+| [06-tailwind.html](06-tailwind.html) | Bagian 6 — TailwindCSS | 98–112 |
 
 ---
 
@@ -24,8 +26,8 @@ Semua file berdiri sendiri — cukup double-click, tidak perlu server atau insta
 **1. Grid yang menyesuaikan sendiri** ([05-grid-responsif.html](05-grid-responsif.html))
 Buka file-nya, lalu **tarik-tarik lebar jendela browser pelan-pelan** di depan kelas. Kolomnya berubah 4 → 3 → 2 → 1 tanpa satu pun media query. Lakukan ini **sebelum** menjelaskan apa pun — lihat dulu, baru paham.
 
-**2. Navbar lima baris** ([04-flexbox.html](04-flexbox.html) bagian 8)
-Bangun bersama peserta, jangan ditunjukkan jadi. Lima baris CSS menghasilkan navbar yang di era `float` butuh 20 baris plus tambalan. Sebut perbandingan itu.
+**2. Navbar lima baris** ([04-flexbox.html](04-flexbox.html) contoh 7)
+Bangun bersama peserta, jangan ditunjukkan jadi. Lima baris CSS menghasilkan navbar utuh — boleh disebut sambil lewat bahwa dulu ini butuh 20 baris plus tambalan, tapi cukup satu kalimat.
 
 ---
 
@@ -41,7 +43,11 @@ Sebelum membuka versi semantic, tanyakan ke kelas: *"tanpa scroll ke atas, ada y
 
 **`03-box-model.html`** — Minta peserta **menebak dulu** sebelum melihat hasil: "yang mana yang kotaknya jadi lebih gemuk, padding atau margin?" Lalu buka DevTools → Computed. Menebak lalu mengecek jauh lebih nempel daripada langsung diberi tahu. File ini juga memperagakan `content-box` vs `border-box` — kenapa `width: 180px` bisa terukur 226px.
 
-**`04-flexbox.html`** — Porsi terbesar hari ini. **Jangan langsung ke Flexbox.** Tunjukkan bagian float dulu, lalu minta peserta membuat tiga kotak berdampingan rata tengah secara tegak dengan cara lama. Biarkan mereka gagal 3 menit — itu 3 menit paling berharga di bagian ini. Baru tunjukkan obatnya.
+**`04-flexbox.html`** — Porsi terbesar hari ini. **Langsung mulai dari contoh 1 (Flexbox dasar).** Float sudah dihapus dari file ini; jangan memperagakannya dan jangan menyuruh peserta mencobanya.
+
+Cara lama cukup disebut sebagai selingan satu kalimat di contoh 5, saat pusat sempurna tercapai — kalimatnya sudah ditulis di komentar file. Selingan kedua ada di contoh 6 untuk `gap` vs margin.
+
+Tujuh contoh berurutan, dari satu baris CSS sampai navbar utuh. Bangun bersama peserta, jangan ditunjukkan jadi.
 
 **`05-grid-responsif.html`** — Kalau waktu menipis, cukup ajarkan contoh 1 (grid `auto-fit`). Itu yang mereka butuhkan untuk tugas. Media query manual bisa disebut sekilas.
 
