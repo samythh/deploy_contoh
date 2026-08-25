@@ -16,8 +16,11 @@ Semua file berdiri sendiri — cukup double-click, tidak perlu server atau insta
 | [02-semantic/](02-semantic/) | Bagian 3 — HTML5 Semantic & Aksesibilitas | 33–53 |
 | [03-box-model.html](03-box-model.html) | Bagian 4 — CSS, Box Model & Flow | 53–67 |
 | [04-flexbox.html](04-flexbox.html) | Bagian 5 — Flexbox | 67–89 |
-
 | [05-tailwind.html](05-tailwind.html) | Bagian 6 — TailwindCSS via Play CDN | 89–102 |
+
+> **Bagian 2 (Arsitektur Web)** dan **Bagian 7 (Setup Git & PR)** tidak punya file demo — keduanya dijalankan lewat penjelasan, tab Network browser, dan terminal.
+>
+> **CSS Grid & Mobile-First sudah pindah ke P2** ([P2/demo/01-grid-responsif.html](../../P2/demo/01-grid-responsif.html)). Jangan diajarkan hari ini.
 
 ---
 
@@ -46,11 +49,13 @@ Cara lama cukup disebut sebagai selingan satu kalimat di contoh 5, saat pusat se
 
 Tujuh contoh berurutan, dari satu baris CSS sampai navbar utuh. Bangun bersama peserta, jangan ditunjukkan jadi.
 
+**`05-tailwind.html`** — **Posisinya paling akhir, dan itu disengaja.** Peserta baru menulis CSS manual satu jam penuh; sekarang mereka punya rasa sakit yang bisa diobati. Kalau Tailwind diberikan di awal, mereka menulis `flex justify-center` tanpa tahu itu singkatan dari apa.
+
 Yang paling penting di file ini: **petakan tabel CSS → Tailwind satu per satu di layar.** Peserta harus melihat bahwa tidak ada konsep baru, cuma nama pendek.
 
 Jangan lewati contoh nomor 4 (class yang panjangnya sebelas). Kelemahan Tailwind harus Anda sebut duluan — peserta akan melihatnya sendiri dalam 5 menit, dan kalau Anda diam, kredibilitas Anda yang turun.
 
-**Ini bagian yang paling aman dipotong** kalau waktu habis.
+**Ini bagian yang paling aman dipotong** kalau waktu habis — tapi **jangan potong Bagian 7 (Setup Git)** untuk mengejarnya. Tanpa Git, peserta tidak bisa mengumpulkan tugas sama sekali.
 
 ---
 
