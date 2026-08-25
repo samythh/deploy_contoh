@@ -18,14 +18,15 @@ Buka file ini di layar kedua saat kelas berlangsung. Isinya cuma **gerakan**, bu
 
 | Menit | Bagian | File |
 |:--:|---|---|
-| 0–10 | Pembuka + **kemenangan pertama** | — |
-| 10–20 | Anatomi HTML | `01-kerangka.html` |
-| 20–40 | **HTML5 Semantic** | `02-semantic/` |
-| 40–58 | CSS & Box Model | `03-box-model.html` |
-| 58–85 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
-| 85–98 | Grid & Mobile-First | `05-grid-responsif.html` |
-| 98–112 | TailwindCSS | `06-tailwind.html` |
-| 112–120 | Penutup & tugas | `tugas/` |
+| 0–8 | Pembuka & peta program | — |
+| 8–20 | Anatomi HTML + **kemenangan pertama** | `01-kerangka.html` |
+| 20–33 | **Arsitektur Web** — client-server, HTTP, tab Network | — |
+| 33–53 | **HTML5 Semantic & Aksesibilitas** | `02-semantic/` |
+| 53–67 | CSS, Box Model & Flow Dokumen | `03-box-model.html` |
+| 67–89 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
+
+| 89–102 | TailwindCSS via Play CDN | `05-tailwind.html` |
+| 102–120 | Penutup, tugas & **Setup Git + PR** | `../tugas/` |
 
 ---
 

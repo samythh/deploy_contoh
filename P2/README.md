@@ -1,4 +1,5 @@
-# Pertemuan 2 — Modern JavaScript (ES6+) & Arsitektur Web
+# Pertemuan 2 — Praktik Sintaksis Dasar
+### Modern JavaScript (ES6+), Manipulasi Data & Responsive Grid
 
 **Durasi:** 120 menit · **Jadwal:** Oktober W2 (8–14 Okt 2026)
 **Topik:** Client-Server, HTTP Methods, ES6+ Fundamentals, Manipulasi Array, Modul

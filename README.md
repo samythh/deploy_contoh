@@ -28,11 +28,18 @@ Bootcamp_Metro_S2/
 │   ├── Catatan-Perubahan.md    # Temuan terbuka + log perubahan dokumen
 │   └── Portofolio.md           # Profil mentor
 │
-└── P1/ ... P8/          # Materi per pertemuan
+├── tugas/                      # Progressive Web Project
+│   ├── README.md               # sistem tugas + tema produk + kebijakan AI
+│   └── tugas-1-static-foundation/
+│       ├── soal.md             # dibagikan ke peserta
+│       ├── index.html
+│       ├── style.css
+│       └── kunci-jawaban/      # mentor saja
+│
+└── P1/ ... P8/                 # Materi per pertemuan
     ├── P1-Materi-Mentor-Frontend-HTML-CSS.md
-    ├── demo/            # kode live untuk mentor
-    ├── tugas/           # dibagikan ke peserta
-    └── kunci-jawaban/   # mentor saja
+    ├── RUNDOWN.md              # pegangan saat mengajar
+    └── demo/                   # kode live untuk mentor
 ```
 
 ---
@@ -48,7 +55,26 @@ Bootcamp_Metro_S2/
 
 Kalau ada pertentangan: **fakta** (tanggal, item materi, bobot nilai) mengikuti `docs/`; **cara menyampaikan** mengikuti `CLAUDE.md`.
 
-> ⚠️ Ada temuan yang masih terbuka: **Silabus dan Timeline berbeda soal jadwal Demo Day** (selisih ~2 minggu). Detail dan buktinya di [T-001](docs/Catatan-Perubahan.md#t-001--silabus-dan-timeline-berbeda-soal-jadwal-demo-day). Sejak revisi urutan P1↔P2, **nama pertemuan di Silabus juga tidak lagi cocok dengan Timeline** — lihat [T-002](docs/Catatan-Perubahan.md#t-002--nama-pertemuan-di-silabus-tidak-lagi-cocok-dengan-timeline).
+> ⚠️ **Dua temuan terbuka yang perlu dibawa ke koordinator:**
+> - **T-001** — Silabus dan Timeline berbeda soal jadwal Demo Day (selisih ~2 minggu)
+> - **T-003** — Silabus baru menyebut *dua pertemuan per minggu*, sedangkan Timeline menjadwalkan *satu per minggu* selama 8 minggu. Ini mempengaruhi seluruh tenggat tugas.
+>
+> Bukti dan analisisnya di [docs/Catatan-Perubahan.md](docs/Catatan-Perubahan.md).
+
+---
+
+## Sistem Tugas — Progressive Web Project
+
+Bukan 8 tugas terpisah, melainkan **4 tugas gabungan** yang membangun **satu produk yang sama** dari halaman statis sampai aplikasi produksi. Dikumpulkan lewat **Pull Request**.
+
+| Tugas | Materi | Produk jadi apa |
+|:--:|:--:|---|
+| 1 | P1 & P2 | Halaman statis responsif → dinamis dengan JavaScript |
+| 2 | P3 & P4 | Dibangun ulang dengan React + Vite + Tailwind |
+| 3 | P5 & P6 | Multi-halaman, data dari REST API |
+| 4 | P7 & P8 | Global state, autentikasi, terbit ke internet |
+
+Detailnya di [tugas/README.md](tugas/README.md).
 
 ---
 
@@ -56,8 +82,8 @@ Kalau ada pertentangan: **fakta** (tanggal, item materi, bobot nilai) mengikuti 
 
 | Kode | Pertemuan | Topik | Status |
 |:--:|---|---|:--:|
-| **P1** | Fundamental Struktur & Tampilan | HTML5 Semantic, CSS Layout, Flexbox, Grid, Mobile-First, TailwindCSS | ✅ Selesai |
-| **P2** | Praktik Logika Dasar | Modern JavaScript (ES6+) & Web Architecture | ✅ Selesai |
+| **P1** | Fundamental Logika Dasar | Arsitektur Web, HTML5 Semantic, Box Model, Flexbox, Tailwind CDN, Setup Git & PR | ✅ Selesai |
+| **P2** | Praktik Sintaksis Dasar | CSS Grid, Mobile-First, JavaScript ES6+, Manipulasi Data | ✅ Selesai |
 | **P3** | Studi Kasus & Latihan Terbimbing | React.js Fundamentals, Component Architecture, Tailwind via Vite | ⬜ Belum |
 | **P4** | Pengembangan Fitur Dasar | State, Lifecycle Hooks & Controlled Forms | ⬜ Belum |
 | **P5** | Integrasi Konsep Lanjutan | Routing & Custom Hooks | ⬜ Belum |
@@ -109,7 +135,7 @@ Contoh: `P1/P1-Materi-Mentor-Frontend-HTML-CSS.md`, `P2/P2-Materi-Mentor-Fronten
 
 ## Tech Stack Program
 
-`HTML5/CSS3` · `JavaScript ES6+` · `React.js` · `Vite` · `TailwindCSS` · `Axios` · `Git/GitHub` · `Vercel`
+`HTML5/CSS3` · `JavaScript ES6+` · `React.js` · `Vite` · `TailwindCSS` · `Axios` · `Git/GitHub` · `Vercel` · `Chrome DevTools` · `React DevTools`
 
 ---
 

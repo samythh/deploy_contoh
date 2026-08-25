@@ -1,9 +1,10 @@
-# Pertemuan 1 — HTML5 Semantic & CSS Layout
+# Pertemuan 1 — Fundamental Logika Dasar
+### Arsitektur Web & Struktur Dokumen Responsif
 
 **Durasi:** 120 menit · **Jadwal:** Oktober W1 (1–7 Okt 2026)
-**Topik:** Struktur Dokumen, Semantic Tags, CSS Fundamentals, Box Model, Flexbox, Grid, Mobile-First, TailwindCSS
+**Topik:** Client-Server & HTTP, Struktur Dokumen, Semantic & Aksesibilitas, Box Model, Flexbox, TailwindCSS, Setup Git & Pull Request
 
-> **Catatan revisi:** Sejak 23 Agustus 2026, HTML/CSS naik dari P2 ke P1, bertukar dengan JavaScript. **TailwindCSS diajarkan di Bagian 6** — paling akhir, setelah CSS manual dikuasai.
+> **Catatan revisi (rapat 25 Agustus 2026):** Arsitektur Web & HTTP Methods **masuk ke sini** dari P2. CSS Grid & Mobile-First **pindah ke P2**. Pertemuan ditutup dengan **Setup Workflow Git & Pull Request** — seluruh tugas P1–P8 dikumpulkan lewat PR.
 
 > **CARA PENYAMPAIAN:** materi ini **langsung ke cara modern**. Cara lama (float, inline style, margin-tambalan) tidak diperagakan — cukup disebut sebagai **selingan** satu-dua kalimat sambil lewat. Kalimatnya sudah disiapkan di tiap bagian materi dan di komentar file demo. Satu-satunya pengecualian: perbandingan div soup di Bagian 2, karena di situ perbandingannya *adalah* argumennya.
 
@@ -21,18 +22,10 @@ P1/
 │   ├── 02-semantic/             # divsoup.html vs semantic.html
 │   ├── 03-box-model.html
 │   ├── 04-flexbox.html
-│   ├── 05-grid-responsif.html
-│   └── 06-tailwind.html
-│
-├── tugas/                       # Dibagikan ke peserta          [peserta]
-│   ├── soal.md                  # soal + rubrik + aturan AI
-│   ├── index.html               # kerangka ber-TODO
-│   └── style.css                # kerangka ber-TODO
-│
-└── kunci-jawaban/               # JANGAN dibagikan              [mentor]
-    ├── index.html
-    └── style.css                # + catatan menilai
+│   └── 05-tailwind.html
 ```
+
+**Tugas tidak lagi ada di folder ini.** P1 dan P2 digabung jadi **Tugas 1 — Static Foundation**, ada di [`../tugas/tugas-1-static-foundation/`](../tugas/tugas-1-static-foundation/).
 
 Semua file berdiri sendiri — cukup double-click, tidak perlu server atau install apa pun.
 
@@ -42,11 +35,9 @@ Semua file berdiri sendiri — cukup double-click, tidak perlu server atau insta
 
 | Folder | Untuk | Dibagikan? |
 |---|---|:--:|
-| `demo/` | Mentor, dipakai live di kelas | ❌ |
-| `tugas/` | Peserta | ✅ |
-| `kunci-jawaban/` | Mentor | ❌ |
-
-Saat membagikan tugas, kirim **isi folder `tugas/` saja** — ketiga filenya sekaligus, karena `index.html` memanggil `style.css`.
+| `P1/demo/` | Mentor, dipakai live di kelas | ❌ |
+| `../tugas/tugas-1-static-foundation/` | Peserta | ✅ |
+| `../tugas/tugas-1-static-foundation/kunci-jawaban/` | Mentor | ❌ |
 
 ---
 
@@ -56,20 +47,20 @@ Saat membagikan tugas, kirim **isi folder `tugas/` saja** — ketiga filenya sek
 
 | Menit | Bagian | File demo |
 |:--:|---|---|
-| 0–10 | Pembuka, peta program, **kemenangan pertama** | — |
-| 10–20 | Anatomi dokumen HTML | `01-kerangka.html` |
-| 20–40 | **HTML5 Semantic** — inti pedagogis hari ini | `02-semantic/` |
-| 40–58 | CSS: cara menempel, selector, box model | `03-box-model.html` |
-| 58–85 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
-| 85–98 | Grid & mobile-first | `05-grid-responsif.html` |
-| 98–112 | **TailwindCSS** — diberikan paling akhir, sebagai hadiah | `06-tailwind.html` |
-| 112–120 | Rangkuman & pembagian tugas | `tugas/` |
+| 0–8 | Pembuka & peta program | — |
+| 8–20 | Anatomi HTML + **kemenangan pertama** | `01-kerangka.html` |
+| 20–33 | **Arsitektur Web** — client-server, HTTP, tab Network | — |
+| 33–53 | **HTML5 Semantic & Aksesibilitas** | `02-semantic/` |
+| 53–67 | CSS, Box Model & Flow Dokumen | `03-box-model.html` |
+| 67–89 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
+| 89–102 | **TailwindCSS** via Play CDN — sebagai hadiah | `05-tailwind.html` |
+| 102–120 | Penutup, tugas & **Setup Git + Pull Request** | `../tugas/` |
 
 ---
 
 ## Situasi Khusus P1
 
-**Padat — tujuh bagian dalam 120 menit.** Kalau waktu habis, **Bagian 6 (Tailwind) yang paling aman dipotong**; cukup tunjukkan tabel pemetaannya dan sampaikan praktik penuhnya di P3. Yang wajib nempel hari ini tetap HTML semantic dan Flexbox.
+**Padat — delapan bagian dalam 120 menit.** Kalau waktu habis, **Bagian 6 (Tailwind) yang dipotong — bukan Bagian 7.** Seluruh tugas dikumpulkan lewat Pull Request, jadi kalau setup Git gagal, peserta tidak bisa mengumpulkan apa pun. Yang wajib nempel hari ini: HTML semantic, Flexbox, dan Git/PR.
 
 **Ini pertemuan pertama, dan taruhannya motivasi.** Sebagian peserta belum pernah menulis satu baris kode, dan sebagian sedang diam-diam bertanya apakah mereka salah masuk kelas.
 
@@ -114,12 +105,14 @@ Tampilan cantik sengaja cuma 20%. Detailnya di [soal.md](tugas/soal.md).
 **H-1**
 - [ ] Latih demo navbar Flexbox sampai lancar tanpa catatan
 - [ ] Hafalkan tiga kalimat **selingan** cara lama (Bagian 3, 4, dan `gap`) — cukup sekali sebut, jangan sampai malah jadi bahasan panjang
-- [ ] Uji tarik-jendela di [05-grid-responsif.html](demo/05-grid-responsif.html) — pastikan mulus (momen wow)
-- [ ] Buka [kunci-jawaban/index.html](kunci-jawaban/index.html), pastikan tampil benar
+- [ ] Uji `demo/05-tailwind.html` — pastikan CDN Tailwind termuat (butuh internet di ruang kelas)
+- [ ] Siapkan repositori starter kelas di GitHub, uji `clone` dari komputer lain
+- [ ] Buka [kunci jawaban Tugas 1](../tugas/tugas-1-static-foundation/kunci-jawaban/index.html), pastikan tampil benar
 - [ ] Siapkan peragaan `<meta charset>` yang dihapus
 
 **Hari-H**
 - [ ] VS Code font minimal 18pt, **tema terang** — tema gelap sering tidak terbaca lewat proyektor
 - [ ] Browser + DevTools terbuka berdampingan dengan editor
 - [ ] Sediakan 10 menit di awal khusus membantu instalasi yang gagal
-- [ ] Siapkan folder `tugas/` untuk dibagikan di menit ke-112
+- [ ] Siapkan tautan repositori kelas + folder tugas untuk dibagikan di menit ke-105
+- [ ] Pastikan semua peserta sudah punya akun GitHub (cek di grup H-1)

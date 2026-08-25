@@ -1,9 +1,9 @@
-# PERTEMUAN 1 — HTML5 Semantic & CSS Layout
+# PERTEMUAN 1 — Arsitektur Web & Struktur Dokumen Responsif
 ### Panduan Materi & Cara Penyampaian untuk Mentor
 **Metro Institute Season 2 — Divisi Frontend**
-Durasi: 120 menit | Topik: Struktur Dokumen, Semantic Tags, CSS Fundamentals, Box Model, Flexbox, Grid, Mobile-First, TailwindCSS
+Durasi: 120 menit | Topik: Client-Server & HTTP, Struktur Dokumen, Semantic & Aksesibilitas, Box Model, Flexbox, TailwindCSS, Setup Git & Pull Request
 
-> **CATATAN VERSI:** Sejak revisi 23 Agustus 2026, HTML/CSS naik dari Pertemuan 2 ke Pertemuan 1, bertukar dengan JavaScript. Alasannya: peserta butuh umpan balik visual di pertemuan pertama, saat mereka paling gampang mundur. **TailwindCSS diajarkan di akhir pertemuan ini** (Bagian 6), setelah peserta menulis CSS manual — sebagai "hadiah", bukan jalan pintas. Lihat `docs/Catatan-Perubahan.md` untuk konsekuensi lengkapnya.
+> **CATATAN VERSI (hasil rapat 25 Agustus 2026):** **Arsitektur Web & HTTP Methods masuk ke sini** dari P2. **CSS Grid & Mobile-First pindah ke P2** supaya P1 tidak pecah. Pertemuan ditutup dengan **Setup Workflow Git & Pull Request** — seluruh tugas P1–P8 dikumpulkan lewat PR, jadi bagian ini tidak boleh gagal. TailwindCSS tetap di Bagian 6, via Play CDN, setelah CSS manual. Lihat `docs/Catatan-Perubahan.md`.
 
 > **CARA PENYAMPAIAN — BACA INI SEBELUM MENGAJAR:** materi ini **langsung ke cara modern**. Cara lama (float, inline style, margin-tambalan) **tidak diperagakan** — cukup disebut sebagai selingan satu-dua kalimat sambil lewat, dan kalimatnya sudah disiapkan di tiap bagian. Alasannya waktu: 120 menit untuk tujuh bagian tidak cukup untuk mendemonstrasikan dua cara.
 >
@@ -58,7 +58,7 @@ Kalimat yang layak Anda ulang hari ini:
 
 ---
 
-# BAGIAN 0 — Pembuka & Peta Program (0–10 menit)
+# BAGIAN 0 — Pembuka & Peta Program (0–8 menit)
 
 ## Yang Anda lakukan
 
@@ -89,7 +89,7 @@ Jangan tunggu sampai Bagian 2. Sebelum teori apa pun, minta semua orang:
 
 ---
 
-# BAGIAN 1 — Anatomi Dokumen HTML (10–20 menit)
+# BAGIAN 1 — Anatomi Dokumen HTML (8–20 menit)
 
 ## APA
 
@@ -149,7 +149,80 @@ Peserta akan menemukan sendiri bahwa mengetik kerangka ini melelahkan. Bagus —
 
 ---
 
-# BAGIAN 2 — HTML5 Semantic (20–40 menit)
+# BAGIAN 2 — Arsitektur Web: Client & Server (20–33 menit)
+> Jembatan dari yang barusan mereka lakukan. Mereka baru saja membuka file dari komputer sendiri — sekarang: bagaimana kalau file-nya ada di komputer orang lain?
+
+## APA
+
+Setiap kali membuka website, ada dua pihak yang bicara:
+
+```
+   CLIENT                          SERVER
+(browser kamu)                (komputer penyedia)
+     │                              │
+     │  ──── "minta halaman" ────>  │
+     │       (request)              │
+     │                              │
+     │  <─── "ini datanya" ───────  │
+     │       (response)             │
+     ▼                              ▼
+```
+
+- **Client** = browser di HP/laptop pengunjung. Yang meminta.
+- **Server** = komputer yang menyimpan data & file, selalu menyala. Yang memberi.
+- Keduanya bicara lewat **HTTP** — semacam bahasa/protokol yang keduanya sepakati.
+
+## KENAPA ini penting diajarkan lebih dulu
+
+Karena seluruh 8 pertemuan berujung pada satu hal: **frontend (client) mengambil data dari backend (server)**. Kalau peta ini tidak jelas di P1, materi API di P6 nanti akan terasa seperti sihir.
+
+### CARA SAMPAIKAN — Analogi Restoran
+
+> "Bayangkan restoran. Kalian (client) itu pelanggan. Dapur (server) itu yang masak.
+> Kalian nggak masuk ke dapur ambil makanan sendiri. Kalian kasih **pesanan** ke pelayan (request), dapur masak, terus makanan **diantar** ke meja kalian (response).
+> Kalian nggak perlu tahu dapurnya gimana masaknya. Kalian cukup tahu cara mesan yang benar. Itu tugas frontend: tahu cara mesan data yang benar ke server."
+
+## APA — HTTP Methods (GET, POST, PUT, DELETE)
+
+Saat client meminta ke server, ada **jenis permintaan** yang berbeda:
+
+| Method | Artinya | Analogi restoran |
+|---|---|---|
+| `GET` | Ambil/baca data | "Tolong lihatkan menu" |
+| `POST` | Kirim/buat data baru | "Saya mau pesan makanan baru" |
+| `PUT` | Ubah data yang ada | "Ganti pesanan saya jadi yang ini" |
+| `DELETE` | Hapus data | "Batalkan pesanan saya" |
+
+## BANDINGKAN — Kenapa Dibedakan? Kenapa Tidak Satu Saja?
+
+Pemula bertanya: kalau semua cuma "ngobrol sama server", kenapa harus ada 4 jenis?
+
+### KENAPA
+
+Karena **niat** tiap permintaan beda, dan server perlu tahu niatnya untuk merespons dengan benar dan aman.
+
+> **CARA SAMPAIKAN:**
+> "Coba bayangkan kalau semua permintaan sama. Server nggak bisa bedain kalian mau **lihat** data atau mau **hapus** data. Bahaya kan?
+> `GET` itu cuma ngintip — aman, nggak ngubah apa-apa. `DELETE` itu menghancurkan. Dua hal ini nggak boleh dianggap sama. Method itu cara kalian bilang ke server 'niat saya apa'."
+
+Tekankan satu aturan yang akan berguna seumur hidup mereka:
+> "`GET` nggak boleh mengubah data. Dia cuma baca. Kalau kalian bikin tombol yang ngubah data pakai GET, itu salah kaprah dan bisa jadi celah keamanan."
+
+---
+
+## Praktik: buka tab Network — sekalian kenalan dengan DevTools
+
+Tekan `F12` → tab **Network** → refresh halaman apa pun. Tunjukkan daftar request yang muncul, lalu klik salah satu: ada **Status Code**, ada **Response**.
+
+> **CARA SAMPAIKAN:**
+> "Nah ini bukti obrolan tadi beneran terjadi. Tiap baris di sini itu satu permintaan ke server. Angka 200 artinya 'oke, ini barangnya'. Angka 404 artinya 'nggak nemu'.
+> Ingat tab ini. Di Pertemuan 6 nanti, waktu data kalian nggak muncul dan kalian bingung salahnya di mana, tab inilah yang bakal ngasih tahu."
+
+Ini juga menanamkan kompetensi **Debugging & Verification** sejak pertemuan pertama — salah satu dari delapan profil lulusan.
+
+---
+
+# BAGIAN 3 — HTML5 Semantic & Aksesibilitas (33–53 menit)
 > Inti pedagogis P1. Beri porsi penuh — ini contoh terbaik dari "kenapa", bukan sekadar "apa".
 
 ## APA
@@ -244,7 +317,7 @@ Satu halaman hanya boleh punya satu `<main>` — itu penanda "ini isi utamanya".
 
 ---
 
-# BAGIAN 3 — CSS: Menempelkan Gaya (40–58 menit)
+# BAGIAN 4 — CSS, Box Model & Flow Dokumen (53–67 menit)
 
 ## APA — Cara menempelkan CSS: file terpisah
 
@@ -335,7 +408,7 @@ Buka `F12` → pilih elemen → panel **Computed**. Di situ box model tampil seb
 
 ---
 
-# BAGIAN 4 — Flexbox (58–85 menit)
+# BAGIAN 5 — Flexbox (67–89 menit)
 > **PORSI TERBESAR HARI INI.** Ini alat tata letak yang mereka pakai setiap hari, termasuk nanti di React.
 
 ## APA — Satu baris yang mengatur semuanya
@@ -398,69 +471,7 @@ Lima baris menghasilkan navbar yang di era `float` butuh 20 baris plus tambalan.
 
 ---
 
-# BAGIAN 5 — Grid & Mobile-First (85–98 menit)
-> Singkat dan fokus. Tujuannya cukup satu: peserta bisa membuat grid kartu yang responsif.
-
-## BANDINGKAN — Kapan Flexbox, kapan Grid
-
-Ini pertanyaan yang pasti muncul, jadi jawab duluan:
-
-| | Flexbox | Grid |
-|---|---|---|
-| Arah | satu arah (baris **atau** kolom) | dua arah sekaligus |
-| Cocok untuk | navbar, deretan tombol, isi kartu | galeri, dashboard, tata letak halaman |
-
-> **CARA SAMPAIKAN:**
-> "Flexbox itu buat **satu barisan** — kayak orang antre. Grid itu buat **kotak-kotak** — kayak papan catur atau rak sepatu bersusun.
-> Aturan praktisnya: kalau kalian cuma mikirin kiri-kanan ATAU atas-bawah, pakai Flexbox. Kalau mikirin dua-duanya barengan, pakai Grid.
-> Dan nggak apa-apa dipakai barengan — Grid buat nyusun kartunya, Flexbox buat nyusun isi di dalam tiap kartu."
-
-## APA — Grid kartu responsif dalam tiga baris
-
-```css
-.daftar-kartu {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-```
-
-Jelaskan `auto-fit` + `minmax` pelan-pelan — ini terlihat rumit tapi hasilnya paling memuaskan:
-
-> **CARA SAMPAIKAN:**
-> "Baris tengah itu artinya: 'muat sebanyak mungkin kolom, tapi tiap kolom minimal 250px, dan kalau ada sisa ruang bagi rata.'
-> Efeknya: di laptop muncul 4 kolom, di tablet jadi 2, di HP jadi 1 — **tanpa kalian nulis aturan HP satu pun.** Coba tarik-tarik jendela browsernya sekarang."
-
-Peragakan dengan menarik-narik lebar jendela. Ini momen wow kedua hari ini.
-
-## APA — Mobile-First
-
-```css
-/* DEFAULT = tampilan HP. Ditulis paling atas, tanpa media query. */
-.kartu { width: 100%; }
-
-/* Baru naik ke layar lebih besar */
-@media (min-width: 768px) {
-  .kartu { width: 48%; }
-}
-```
-
-## KENAPA mulai dari HP, bukan dari desktop
-
-Dua alasan, dan yang kedua yang sebenarnya:
-
-**1. Mayoritas pengunjung memakai HP.** Masuk akal mendahulukan yang terbanyak.
-
-**2. Menambah lebih mudah daripada mengurangi.** Desain HP itu satu kolom, sederhana. Menambahkan kolom saat layar melebar itu gampang. Sebaliknya, membongkar desain desktop tiga kolom agar muat di HP jauh lebih menyakitkan.
-
-> **CARA SAMPAIKAN:**
-> "Ini kayak packing buat traveling. Kalau kalian mulai dari koper besar terus dipaksa pindah ke tas kecil, kalian bakal pusing milih apa yang dibuang.
-> Tapi kalau mulai dari tas kecil — cuma yang penting — terus dapat koper besar, kalian tinggal nambahin. Jauh lebih enak.
-> Mobile-first itu mulai dari tas kecilnya."
-
----
-
-# BAGIAN 6 — TailwindCSS (98–112 menit)
+# BAGIAN 6 — TailwindCSS via Play CDN (89–102 menit)
 > **Posisi bagian ini disengaja: paling akhir.** Peserta baru saja menulis CSS manual selama satu jam penuh. Sekarang mereka punya rasa sakit yang bisa diobati — dan itu satu-satunya cara Tailwind terasa masuk akal, bukan sekadar cara lain yang membingungkan.
 
 ## Kenapa Tailwind Ditaruh di Sini, Bukan di Awal
@@ -577,61 +588,92 @@ Tujuannya bukan menguasai Tailwind hari ini — tapi merasakan pemetaannya sendi
 
 ---
 
-# BAGIAN 7 — Penutup & Tugas (112–120 menit)
+# BAGIAN 7 — Penutup, Tugas & Setup Workflow Git (102–120 menit)
 
-## Rangkuman: Satu Benang Merah
+## Rangkuman: Satu Benang Merah (102–105)
 
 > "Semua yang kita pelajari hari ini punya satu tema: **kasih nama yang benar.**
 > `<nav>` menang dari `<div>` karena namanya benar. `.alert-error` menang dari `.merah` karena namanya benar. Indentasi rapi itu supaya struktur kelihatan.
 > Komputer nggak peduli — dua-duanya jalan. Yang peduli itu manusia. Dan kalian dibayar buat nulis kode yang bisa dibaca manusia."
 
-## Tugas 1 (sesuai silabus): Landing Page Responsif
+---
 
-Peserta membuat satu halaman berisi empat bagian:
+## Sistem Tugas: satu produk, empat tahap (105–108)
 
-1. **Navbar** — logo di kiri, menu di kanan (Flexbox)
-2. **Hero section** — judul besar, deskripsi, satu tombol
-3. **Cards grid** — minimal 6 kartu, responsif (Grid)
-4. **Footer** — teks hak cipta rata tengah
+**Ini beda dari kelas kebanyakan, jadi jelaskan dengan benar sekali di awal.** Peserta tidak akan mengerjakan delapan tugas terpisah yang dibuang setelah dinilai. Mereka membangun **satu produk** yang tumbuh dari minggu ke minggu.
 
-**Syarat wajib:**
-- Memakai tag semantic, bukan `div` untuk semuanya
-- Nama class menjelaskan fungsi, bukan tampilan
-- Rapi di layar HP maupun laptop
+| Tugas | Materi | Produk jadi apa |
+|:--:|---|---|
+| 1 | P1 & P2 | Halaman statis responsif → lalu dinamis dengan JavaScript |
+| 2 | P3 & P4 | Dibangun ulang dengan React + Vite + Tailwind |
+| 3 | P5 & P6 | Multi-halaman, datanya dari REST API |
+| 4 | P7 & P8 | Global state, autentikasi, terbit ke internet |
 
-**Deliverable pembeda (gaya reasoning kita):**
-
-Di file CSS, tulis komentar berisi **alasan** untuk minimal 4 keputusan. Contoh:
-
-```css
-/* pakai Grid, bukan Flexbox, karena kartu perlu tersusun dua arah —
-   ke samping DAN turun baris otomatis saat layar menyempit */
-.daftar-produk {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-```
-
-Dan di HTML, tulis komentar alasan untuk minimal 2 pilihan tag:
-
-```html
-<!-- pakai <nav> bukan <div class="nav"> supaya screen reader
-     bisa melompat langsung ke navigasi -->
-<nav>...</nav>
-```
-
-**Kriteria penilaian (umumkan di awal):**
-
-| Bobot | Aspek |
-|---|---|
-| 35% | Ketepatan pemilihan tag semantic & alasannya |
-| 30% | Kualitas alasan di komentar |
-| 20% | Layout berfungsi & responsif di HP |
-| 15% | Kerapian (indentasi, penamaan class) |
+**Minta mereka memilih tema hari ini juga** — katalog kuliner daerah, direktori UMKM, katalog buku, destinasi wisata, apa saja asal datanya berbentuk **daftar item dengan detail**. Tema ini dipakai sampai akhir kelas dan tidak boleh berganti.
 
 > **CARA SAMPAIKAN:**
-> "Perhatikan bobotnya. Tampilan cantik itu cuma 20%. Yang paling besar itu **kenapa kalian milih tag itu** dan **kenapa kalian milih cara itu**.
-> Boleh pakai AI buat bantu — tapi di breakout room saya bakal tunjuk satu baris dan tanya kenapa. Kalau kalian nggak bisa jawab, berarti itu bukan kode kalian."
+> "Tugas kalian bukan delapan PR yang dibuang setelah dinilai. Ini **satu produk** yang kalian besarkan pelan-pelan.
+> Minggu ini dia cuma halaman statis. Minggu depan dia bisa nyari dan nyaring data. Bulan depan dia narik data beneran dari server. Terakhir, dia punya login dan bisa dibuka orang sedunia lewat internet.
+> Jadi pilih temanya yang kalian beneran suka — kalian bakal hidup sama dia dua bulan. Dan ini yang nanti kalian tunjukkan pas ditanya 'pernah bikin apa?'"
+
+**Tugas 1 dikumpulkan sebelum Pertemuan 3**, mencakup materi P1 **dan** P2. Detail lengkapnya di `tugas/tugas-1-static-foundation/`.
+
+---
+
+## Setup Workflow Git & Pull Request (108–120)
+
+> Ini **bukan** materi tempelan. Seluruh tugas P1–P8 dikumpulkan lewat Pull Request, jadi kalau bagian ini gagal, peserta tidak bisa mengumpulkan apa pun.
+>
+> **Sisakan waktunya betul-betul.** Kalau Bagian 6 (Tailwind) molor, potong Tailwind — jangan potong bagian ini.
+
+### Yang dilakukan bersama, langkah demi langkah
+
+```bash
+# 1. Perkenalkan diri ke Git (sekali seumur hidup per komputer)
+git config --global user.name "Nama Lengkap"
+git config --global user.email "email@github.com"
+
+# 2. Ambil repositori kelas
+git clone https://github.com/<org-kelas>/<repo-starter>.git
+cd <repo-starter>
+
+# 3. Bikin cabang sendiri — JANGAN kerja di main
+git checkout -b tugas1-nama-anda
+
+# 4. Setelah mengerjakan
+git add .
+git commit -m "feat: halaman statis tugas 1"
+git push -u origin tugas1-nama-anda
+```
+
+Lalu buka GitHub → tombol **Compare & pull request** → isi judul → **Create pull request**.
+
+### KENAPA repot begini? Kenapa tidak kirim ZIP saja?
+
+Pertanyaan ini pasti muncul. Jawabannya bukan "karena aturan".
+
+> **CARA SAMPAIKAN — Analogi Ruang Kerja Bersama:**
+> "Kalau kalian kerja sendirian, kirim ZIP memang lebih gampang. Tapi di kantor kalian nggak pernah sendirian.
+> Bayangin satu dokumen dikerjain lima orang barengan. Kalau tiap orang ngirim salinannya sendiri lewat WhatsApp, dalam dua hari nggak ada yang tahu mana versi yang benar.
+> **Branch** itu kayak kalian ngambil salinan buat dicoret-coret sendiri, tanpa ganggu punya orang lain. **Pull Request** itu kalian ngangkat tangan: 'saya udah selesai, tolong dicek sebelum digabung.'
+> Dan ini bukan latihan pura-pura. Nanti pas Capstone, kalian satu repo bareng anak Backend. Yang nggak bisa Git bakal jadi orang yang ngerusak kerjaan tim."
+
+### Tiga hal yang pasti bikin macet — antisipasi
+
+| Masalah | Penyebab & solusi |
+|---|---|
+| `git: command not found` | Git belum terpasang. Ini harusnya sudah selesai di H-3 — makanya panduan instalasi dikirim jauh hari. |
+| Diminta *username & password* saat `push` | GitHub sudah tidak menerima password sejak 2021. Arahkan pakai **Personal Access Token**, atau install **GitHub Desktop** sebagai jalan pintas. |
+| Bingung sudah di branch mana | `git branch` menampilkan daftar, yang aktif ditandai `*`. Ajarkan ini sekarang; mereka akan sering tersesat. |
+
+> **JALAN DARURAT:** kalau ada peserta yang benar-benar buntu di CLI, izinkan pakai **GitHub Desktop** untuk sementara. Tujuan hari ini bukan menguasai Git — tapi memastikan **semua orang bisa mengumpulkan tugas**. Perintah CLI-nya diperdalam lagi di P8.
+
+### Cek sebelum kelas bubar
+
+- [ ] Semua peserta punya akun GitHub
+- [ ] Semua sudah berhasil `clone` repositori kelas
+- [ ] Minimal setengah kelas sudah berhasil membuat PR percobaan
+- [ ] Yang belum berhasil sudah dicatat namanya untuk dibantu di luar jam
 
 ---
 

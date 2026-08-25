@@ -137,30 +137,44 @@ Kalau saya minta pendapat soal keputusan pedagogis atau kurikulum:
 
 > Ringkasan cepat di bawah ini **bukan sumber kebenaran** — hanya peta agar tidak salah konteks. Detail resminya di `docs/Silabus.md` dan `docs/Timeline.md`, dan itu yang wajib dibaca sebelum bekerja.
 
-Urutan 8 pertemuan (silabus terbaru):
+Urutan 8 pertemuan (revisi rapat 25 Agustus 2026):
 
-1. **P1** — HTML5 Semantic + CSS Layout (box model, Flexbox, Grid, mobile-first) + pengenalan **TailwindCSS** via CDN di bagian penutup.
-2. **P2** — JavaScript Modern (ES6+) & Arsitektur Web (client-server, HTTP methods, arrow/destructuring/spread, `.map/.filter/.find/.some/.reduce`, modul). *Praktik di browser console.*
-3. **P3** — React Fundamentals (Vite, JSX, komponen, props, conditional & list rendering) + pemasangan **TailwindCSS** yang benar lewat Vite.
-4. **P4** — State & Lifecycle (`useState`, `useEffect`, controlled forms, immutability).
+1. **P1 — Fundamental Logika Dasar** — Arsitektur Web (client-server, HTTP methods) + HTML5 Semantic & aksesibilitas + Box Model + Flexbox + **TailwindCSS via Play CDN** + **Setup Git & Pull Request**.
+2. **P2 — Praktik Sintaksis Dasar** — CSS Grid & mobile-first + JavaScript ES6+ + `.map/.filter/.find/.some/.reduce` + modul/scope + praktik mengubah halaman P1 jadi dinamis.
+3. **P3** — React Fundamentals (Vite, JSX, komponen, props, conditional & list rendering) + Tailwind lewat build tool.
+4. **P4** — State & Lifecycle (`useState`, `useEffect`, controlled forms, immutability) + **React DevTools**.
 5. **P5** — Routing (React Router) & Custom Hooks.
-6. **P6** — Konsumsi REST API & async UI (Axios, loading/error state). *Titik risiko.*
-7. **P7** — Global State (Context/Zustand) & optimasi performa. *Titik risiko.*
-8. **P8** — Auth (JWT), protected routes, build & deploy ke Vercel.
+6. **P6** — Konsumsi REST API & async UI (Axios, 5 status antarmuka, **tab Network**). *Titik risiko.*
+7. **P7** — Global State (Context/Zustand) & optimasi performa + wawasan **TanStack Query** 15 menit. *Titik risiko.*
+8. **P8** — Auth (JWT), protected routes, build & deploy + **Git collaboration** + pengantar **TypeScript** 15 menit.
 
-**Catatan penting soal urutan (diputuskan 23 Agustus 2026):** urutan P1↔P2 sudah **ditukar** dari rencana awal. Sebelumnya JavaScript di P1, sekarang HTML/CSS yang di depan.
+### Sistem tugas: Progressive Web Project
 
-Alasan penukaran: risiko motivasi di pertemuan pertama. Dengan JS di depan, peserta tidak punya umpan balik visual sama sekali di sesi paling rawan mereka mundur. HTML/CSS memberi hasil yang terlihat dalam 10 menit.
+Ini berubah total dari sebelumnya, dan mempengaruhi cara menulis semua materi.
 
-Harga yang dibayar — **sadari ini saat menyusun P2 dan P3:** JS sekarang langsung disambung React di P3, tanpa jeda "marinasi" satu minggu seperti rencana awal. JS adalah prasyarat terberat React. Mitigasinya bukan mengubah urutan lagi, tapi: (a) P2 harus menutup dengan latihan `.map` dan `.filter` yang benar-benar nempel, dan (b) P3 harus membuka dengan pengulangan singkat `.map` sebelum masuk list rendering.
+- **Bukan 8 tugas terpisah, tapi 4 tugas gabungan** — masing-masing mencakup dua pertemuan. Tugas 1 = P1&P2, Tugas 2 = P3&P4, Tugas 3 = P5&P6, Tugas 4 = P7&P8.
+- **Satu produk yang sama** dari awal sampai akhir. Peserta memilih tema di P1 (harus berupa daftar item dengan detail) dan mempertahankannya.
+- Dikumpulkan lewat **Pull Request** ke repositori kelas.
+- Materinya ada di folder `tugas/` di root, **bukan** di dalam `P1/`–`P8/`.
 
-**TailwindCSS tetap di P1, tapi ditaruh di BAGIAN PALING AKHIR** (menit 102–115), setelah peserta menulis CSS manual satu jam penuh. Ini penerapan prinsip "shortcut diberikan SETELAH paham manual" — sama seperti Emmet di Bagian 1. Jangan pernah menaruhnya di awal: peserta akan menulis `flex justify-center` tanpa tahu itu singkatan dari apa, dan tidak punya pegangan saat hasilnya melenceng.
+**Konsekuensi saat menulis materi:** jangan membuat mini-task per pertemuan yang berdiri sendiri. Materi tiap pertemuan harus menyumbang ke tugas gabungan minggu itu. Sebutkan eksplisit bagian mana dari tugas yang bisa dikerjakan setelah pertemuan ini.
 
-Di P1 pemasangannya cukup via CDN satu baris (belum perlu Node). Pemasangan yang benar lewat Vite ada di P3. Sebut sekali bahwa CDN hanya untuk belajar, jangan dijadikan bahasan panjang.
+### Dua kompetensi lulusan yang perlu diselipkan terus
 
-**Konsekuensi yang perlu diawasi:** P1 jadi padat — tujuh bagian dalam 120 menit. Kalau waktu habis, Bagian 6 (Tailwind) yang paling aman dipotong; yang wajib nempel tetap HTML semantic dan Flexbox.
+- **Debugging & Verification** — DevTools bukan lampiran, tapi materi. Tab Network di P1, React DevTools di P4, Network untuk API di P6.
+- **Responsible AI-Assisted Development** — AI resmi diperbolehkan. Yang dinilai bukan siapa mengetik, tapi apakah bisa dipertanggungjawabkan. Kode yang tidak bisa dijelaskan penulisnya dinilai **nol**; menemukan kesalahan kode AI dinilai **positif**.
 
-**Colokan ke depan:** saat mengajar konsep di pertemuan awal, tandai eksplisit mana yang akan dipakai lagi nanti ("ini yang kalian pakai terus di React"), supaya latihan terasa relevan, bukan sia-sia.
+### Catatan penting soal P1
+
+P1 padat — delapan bagian dalam 120 menit. Kalau waktu habis, **Bagian 6 (Tailwind) yang dipotong, bukan Bagian 7 (Setup Git)**. Alasannya: seluruh tugas dikumpulkan lewat Pull Request, jadi kalau setup Git gagal, peserta tidak bisa mengumpulkan apa pun.
+
+**TailwindCSS tetap di P1 di bagian akhir** (menit 89–102), setelah CSS manual — penerapan prinsip "shortcut diberikan SETELAH paham manual". Jangan pernah menaruhnya di awal. Di P1 cukup Play CDN; pemasangan lewat Vite ada di P3.
+
+### Catatan penting soal P2
+
+P2 juga padat (lihat T-004 di `docs/Catatan-Perubahan.md`). Yang wajib nempel: `.map()` dan `.filter()`. `.reduce()` boleh tidak tuntas. Scope & hoisting cukup lewat perbandingan `var` vs `let/const`, bukan sub-bagian sendiri.
+
+**Colokan ke depan:** saat mengajar konsep di pertemuan awal, tandai eksplisit mana yang dipakai lagi nanti ("ini yang kalian pakai terus di React"), supaya latihan terasa relevan.
 
 ---
 

@@ -46,38 +46,75 @@ Jadi kemungkinan besar ini bukan angka yang tertukar, melainkan **dua versi renc
 
 ---
 
-### T-002 — Nama pertemuan di Silabus tidak lagi cocok dengan Timeline
+### T-003 — Silabus baru menyebut "dua pertemuan per minggu", Timeline menjadwalkan satu
 
-**Ditemukan:** 23 Agustus 2026
-**Status:** 🔴 Terbuka — perlu dibawa ke koordinator
-**Penyebab:** akibat langsung dari keputusan menukar urutan P1↔P2 (lihat B-001)
+**Ditemukan:** 25 Agustus 2026
+**Status:** 🔴 Terbuka — perlu konfirmasi ke Leader / Divisi Akademik
 
-[Timeline.md](Timeline.md) Fase 2 menamai tiap pertemuan, dan penamaan itu **berlaku lintas divisi** — Backend, Android, dan UI/UX memakai kode dan nama yang sama, dengan PIC Leader & Divisi Akademik.
+| Dokumen | Kata dokumen |
+|---|---|
+| [Silabus.md](Silabus.md) §3 | *"Kelas berjalan **dua pertemuan per minggu**. Tugas... satu tugas gabungan per minggu yang mencakup materi dua pertemuan sekaligus."* |
+| [Timeline.md](Timeline.md) Fase 2 | P1 = Okt W1 · P2 = Okt W2 · P3 = Okt W3 · ... · P8 = Nov W4 — **satu pertemuan per minggu selama 8 minggu** |
 
-| Kode | Nama di Timeline | Isi Frontend setelah revisi | Cocok? |
-|---|---|---|:--:|
-| **P1** | Fundamental **Logika** Dasar | HTML5 Semantic & CSS Layout | ❌ |
-| **P2** | Praktik **Sintaksis** Dasar | Modern JavaScript (ES6+) | ❌ |
+**Ini bukan detail kecil.** Seluruh sistem tugas baru dibangun di atas asumsi dua pertemuan per minggu: Tugas 1 mencakup P1 & P2 dan dikumpulkan sebelum P3, Tugas 2 mencakup P3 & P4, dan seterusnya.
 
-Nama slotnya terbalik dengan isinya: "logika" sekarang berisi tampilan, "sintaksis" berisi logika.
+Kalau **Timeline** yang benar (satu pertemuan/minggu):
 
-**Yang sudah dilakukan:** [Silabus.md](Silabus.md) — dokumen milik Divisi Frontend — judulnya disesuaikan jadi "Fundamental Struktur & Tampilan" (P1) dan "Praktik Logika Dasar" (P2), supaya nama dan isinya konsisten.
+- Program berjalan 8 minggu, bukan 4 — tetap selesai akhir November, jadi tanggalnya masih masuk
+- Pengelompokan tugas tetap jalan, tapi jeda antar pengumpulan jadi **dua minggu**, bukan satu
+- Kalimat "satu tugas gabungan **per minggu**" di Silabus jadi salah — seharusnya "per dua pertemuan"
 
-**Yang sengaja TIDAK dilakukan:** [Timeline.md](Timeline.md) tidak disentuh. Itu dokumen program lintas divisi, bukan milik Frontend — mengubahnya sepihak akan membuat kode pertemuan tidak sinkron dengan divisi lain.
+Kalau **Silabus** yang benar (dua pertemuan/minggu), Timeline perlu diperbarui — jadwal Okt W1–Nov W4 di sana tidak lagi berlaku.
 
-**Konsekuensinya:** Silabus Frontend dan Timeline sekarang berbeda nama untuk P1 dan P2. Ini disengaja dan terdokumentasi, bukan kelalaian — tapi perlu diselesaikan.
+**Dampak kalau dibiarkan:** peserta salah memperkirakan tenggat. Beda satu minggu vs dua minggu itu besar untuk tugas yang saling menumpuk.
 
-**Tindak lanjut yang disarankan:** sampaikan ke Leader / Divisi Akademik dengan nada analisis, bukan permintaan. Isi yang layak disampaikan:
+**Catatan yang meringankan:** dokumen materi ditulis **netral terhadap kadensi** — tidak ada materi yang menyebut "minggu depan" untuk merujuk pertemuan berikutnya. Apa pun keputusannya, materi tidak perlu ditulis ulang; yang perlu diperbaiki hanya kalimat di Silabus §3 dan penyebutan tenggat.
 
-> Divisi Frontend menukar urutan materi P1 dan P2 karena risiko motivasi di pertemuan pertama — dengan JavaScript di depan, peserta tidak punya hasil yang terlihat di sesi paling rawan mereka mundur. Akibatnya nama pertemuan di Timeline ("Fundamental Logika Dasar" untuk P1) tidak lagi menggambarkan isi materi Frontend.
->
-> Dua opsi yang bisa dipertimbangkan: (a) nama pertemuan di Timeline dibuat lebih netral supaya muat untuk semua divisi, misalnya "Fundamental 1" dan "Fundamental 2"; atau (b) tiap divisi boleh punya subjudul sendiri di bawah nama pertemuan bersama. Keputusan sepenuhnya di Leader.
+---
 
-**Perlu dicek juga:** apakah divisi lain memakai urutan yang sama. Kalau Backend juga menaruh logika di P1, opsi (a) mungkin merugikan mereka.
+### T-004 — P2 kemungkinan kelebihan muatan
+
+**Ditemukan:** 25 Agustus 2026
+**Status:** 🟡 Terbuka — perlu diawasi saat pelaksanaan, belum tentu perlu diubah
+
+Setelah revisi, P2 memuat dalam 120 menit: CSS Grid, Mobile-First & breakpoint, ES6+ lengkap, lima method array, modul + scope/hoisting, **dan** praktik live mengubah halaman P1 jadi dinamis.
+
+| Bagian | Menit |
+|---|:--:|
+| CSS Grid & Mobile-First | 22 |
+| let/const | 8 |
+| ES6+ Fundamentals | 20 |
+| Manipulasi Array (5 method) | 30 |
+| Modul, Scope & Hoisting | 8 |
+| Praktik live | 19 |
+
+Yang paling berisiko: **Scope & Hoisting hanya kebagian 8 menit bersama Modul**, padahal itu konsep yang sering membingungkan pemula. Dan `.reduce()` — yang menurut materi P2 sendiri adalah konsep tersulit — harus muat dalam 30 menit bersama empat method lain.
+
+**Mitigasi yang sudah tertulis di materi:** Scope & Hoisting disampaikan lewat perbandingan `var` vs `let/const`, bukan sub-bagian tersendiri. `.reduce()` boleh tidak tuntas di kelas — yang wajib nempel `.map()` dan `.filter()`.
+
+**Kalau P2 benar-benar meleset saat dijalankan**, dua opsi: CSS Grid & Mobile-First dikembalikan ke P1, atau `.reduce()` digeser ke P3 sebagai pengulangan.
 
 ---
 
 ## B. Temuan Selesai
+
+### T-002 — Nama pertemuan Silabus vs Timeline ✅
+
+**Ditemukan:** 23 Agustus 2026 · **Selesai:** 25 Agustus 2026
+
+**Masalahnya dulu:** setelah urutan P1↔P2 ditukar, judul di Silabus diubah jadi "Fundamental Struktur & Tampilan" (P1) dan "Praktik Logika Dasar" (P2), sehingga tidak lagi cocok dengan penamaan lintas divisi di Timeline.
+
+**Keputusan rapat 25 Agustus 2026:** nama resmi Timeline **dipertahankan** — P1 tetap "Fundamental Logika Dasar", P2 tetap "Praktik Sintaksis Dasar". Yang diubah adalah **subjudulnya**:
+
+| Kode | Nama resmi (Timeline) | Subjudul Frontend |
+|---|---|---|
+| P1 | Fundamental Logika Dasar | Arsitektur Web & Struktur Dokumen Responsif |
+| P2 | Praktik Sintaksis Dasar | Modern JavaScript (ES6+), Manipulasi Data & Responsive Grid |
+
+**Kenapa ini menyelesaikan masalahnya:** dengan Arsitektur Web & HTTP Methods dipindah ke P1, nama "Fundamental **Logika** Dasar" jadi masuk akal lagi — logika cara kerja web memang diajarkan di sana. Dan dengan CSS Grid turun ke P2, nama "Praktik **Sintaksis** Dasar" mencakup sintaks CSS Grid maupun sintaks JavaScript.
+
+Tidak perlu lagi membawa perubahan nama ke koordinator. Silabus dan Timeline kembali sinkron.
+
 
 ### B-001 — Urutan P1 dan P2 ditukar: HTML/CSS naik ke depan
 
@@ -111,6 +148,55 @@ Pemasangan di P1 cukup via CDN satu baris, belum perlu Node. Pemasangan yang ben
 ## C. Log Perubahan
 
 Terbaru di atas.
+
+### 25 Agustus 2026
+
+**REVISI SILABUS HASIL RAPAT — perubahan struktural**
+
+*Sumber:* silabus versi rapat yang diserahkan mentor. Ini bukan penambahan materi, melainkan perubahan susunan dan sistem penilaian.
+
+**1. Sistem tugas berubah total — Progressive Web Project**
+- Dari 8 tugas terpisah menjadi **4 tugas gabungan**, masing-masing mencakup dua pertemuan
+- Seluruh tugas adalah **satu produk yang sama**, tumbuh dari halaman statis sampai aplikasi produksi
+- Pengumpulan lewat **Pull Request**, bukan kirim berkas
+- Peserta memilih **satu tema produk di P1** dan mempertahankannya sampai akhir
+- *Alasan yang dicatat silabus:* peserta perlu mengalami bagaimana aplikasi berevolusi — pengalaman yang tidak didapat dari tugas yang berdiri sendiri
+- Folder baru `tugas/` di root; `P1/tugas/` dan `P2/tugas/` dibubarkan, isinya dilebur ke `tugas/tugas-1-static-foundation/`
+
+**2. Materi digeser antara P1 dan P2**
+- **Arsitektur Web & HTTP Methods: P2 → P1.** Ini sekaligus menyelesaikan T-002 — nama "Fundamental Logika Dasar" cocok kembali dengan isinya.
+- **CSS Grid & Mobile-First: P1 → P2.** Menjaga P1 tidak pecah setelah kemasukan arsitektur web dan setup Git.
+- P1 ditutup dengan **Setup Workflow Git & Pull Request** (15 menit terakhir). Kalau bagian ini gagal, peserta tidak bisa mengumpulkan apa pun — jadi diberi catatan tegas: potong Tailwind, jangan potong ini.
+- P2 ditutup dengan **praktik live mengubah halaman P1 jadi dinamis**; alur *data → transformasi → tampilan* ditanamkan sebagai fondasi mental menuju React.
+
+**3. Dua kompetensi lulusan baru (6 → 8)**
+- **Debugging & Verification Skill** — dijalankan dengan menyisipkan DevTools sejak P1 (tab Network di Bagian 2), React DevTools di P4, tab Network untuk API di P6
+- **Responsible AI-Assisted Development** — didukung kebijakan AI resmi di §6
+
+**4. Kebijakan AI Coding Assistant jadi bagian resmi silabus**
+- AI diperbolehkan; yang dinilai bukan siapa mengetik, melainkan apakah bisa dipertanggungjawabkan
+- Kode yang tidak bisa dijelaskan penulisnya dinilai **nol**
+- Kemampuan menemukan & memperbaiki kesalahan kode AI dinilai **positif**
+- Memperkuat pendekatan yang sudah dipegang sejak awal: tugas tertulis = pintu masuk, verifikasi lisan = kuncinya
+
+**5. Penambahan di pertemuan lain**
+- P4: debugging state dengan React DevTools
+- P6: membaca request/response di tab Network; praktik diperluas dengan **simulasi kondisi gagal**
+- P7: wawasan industri 15 menit — **TanStack Query**, memposisikan pola `useEffect` + Axios dari P6
+- P8: **Git Collaboration Workflow** (branching, merge conflict, code review) + pengantar **TypeScript** 15 menit
+- Tech stack resmi bertambah: Chrome DevTools & React DevTools
+
+**6. Berkas yang menyesuaikan**
+- `docs/Silabus.md` ditulis ulang mengikuti versi rapat
+- Materi P1: 8 bagian, alokasi menit disusun ulang, Bagian 2 (Arsitektur Web) dan Bagian 7 (Git/PR) baru
+- Materi P2: 8 bagian, Bagian 1 (CSS Grid) dan Bagian 6 (praktik live) baru
+- File demo dinomori ulang; `05-grid-responsif.html` pindah dari `P1/demo/` ke `P2/demo/01-grid-responsif.html`
+- `tugas/README.md` dan `tugas/tugas-1-static-foundation/soal.md` ditulis baru
+- `CLAUDE.md` dan `README.md` disesuaikan
+
+**Temuan yang muncul dari revisi ini:** T-003 (kadensi dua pertemuan/minggu vs Timeline) dan T-004 (P2 kemungkinan kelebihan muatan). T-002 ditutup.
+
+---
 
 ### 23 Agustus 2026
 

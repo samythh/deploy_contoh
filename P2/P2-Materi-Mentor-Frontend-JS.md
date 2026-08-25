@@ -1,9 +1,9 @@
-# PERTEMUAN 2 — JavaScript Modern & Arsitektur Web
+# PERTEMUAN 2 — Modern JavaScript, Manipulasi Data & Responsive Grid
 ### Panduan Materi & Cara Penyampaian untuk Mentor
 **Metro Institute Season 2 — Divisi Frontend**
-Durasi: 120 menit | Topik: Arsitektur Client-Server, HTTP Methods, ES6+ Fundamentals, Manipulasi Array, Modul
+Durasi: 120 menit | Topik: CSS Grid, Mobile-First, ES6+ Fundamentals, Manipulasi Array, Modul & Scope
 
-> **CATATAN VERSI:** Materi ini sebelumnya berada di Pertemuan 1. Sejak revisi 23 Agustus 2026, urutannya ditukar — HTML/CSS naik ke Pertemuan 1, JavaScript turun ke sini. Alasannya: peserta butuh umpan balik visual di pertemuan pertama. Lihat `docs/Catatan-Perubahan.md` untuk konsekuensi lengkapnya.
+> **CATATAN VERSI (hasil rapat 25 Agustus 2026):** materi Arsitektur Web & HTTP Methods **dipindah ke P1**; sebagai gantinya **CSS Grid & Mobile-First turun ke sini** dari P1. Pertemuan ditutup dengan praktik mengubah halaman statis P1 menjadi dinamis. Tugas P1 dan P2 kini digabung jadi satu — **Tugas 1: Static Foundation**, dikumpulkan lewat Pull Request sebelum P3. Lihat `docs/Catatan-Perubahan.md`.
 
 ---
 
@@ -50,7 +50,7 @@ Kalimat yang layak Anda ulang hari ini:
 
 ---
 
-# BAGIAN 0 — Pembuka & Peta Program (0–10 menit)
+# BAGIAN 0 — Pembuka & Sambungan dari P1 (0–8 menit)
 
 ## Yang Anda lakukan
 
@@ -69,68 +69,70 @@ Pertanyaan pertama penting: peserta yang belum menyelesaikan P1 akan kesulitan m
 
 ---
 
-# BAGIAN 1 — Arsitektur Web: Client & Server (10–30 menit)
-> Fondasi konseptual. Ini "peta dunia" yang membuat semua materi berikutnya masuk akal.
+# BAGIAN 1 — CSS Grid & Mobile-First (8–30 menit)
+> Lanjutan langsung dari Flexbox di P1. Selesaikan sisi tampilan dulu, baru masuk ke logika — supaya peserta punya grid yang siap diisi data di Bagian 6 nanti.
+> Singkat dan fokus. Tujuannya cukup satu: peserta bisa membuat grid kartu yang responsif.
 
-## APA
+## BANDINGKAN — Kapan Flexbox, kapan Grid
 
-Setiap kali membuka website, ada dua pihak yang bicara:
+Ini pertanyaan yang pasti muncul, jadi jawab duluan:
 
-```
-   CLIENT                          SERVER
-(browser kamu)                (komputer penyedia)
-     │                              │
-     │  ──── "minta halaman" ────>  │
-     │       (request)              │
-     │                              │
-     │  <─── "ini datanya" ───────  │
-     │       (response)             │
-     ▼                              ▼
-```
-
-- **Client** = browser di HP/laptop pengunjung. Yang meminta.
-- **Server** = komputer yang menyimpan data & file, selalu menyala. Yang memberi.
-- Keduanya bicara lewat **HTTP** — semacam bahasa/protokol yang keduanya sepakati.
-
-## KENAPA ini penting diajarkan lebih dulu
-
-Karena seluruh 8 pertemuan berujung pada satu hal: **frontend (client) mengambil data dari backend (server)**. Kalau peta ini tidak jelas di P2, materi API di P6 nanti akan terasa seperti sihir.
-
-### CARA SAMPAIKAN — Analogi Restoran
-
-> "Bayangkan restoran. Kalian (client) itu pelanggan. Dapur (server) itu yang masak.
-> Kalian nggak masuk ke dapur ambil makanan sendiri. Kalian kasih **pesanan** ke pelayan (request), dapur masak, terus makanan **diantar** ke meja kalian (response).
-> Kalian nggak perlu tahu dapurnya gimana masaknya. Kalian cukup tahu cara mesan yang benar. Itu tugas frontend: tahu cara mesan data yang benar ke server."
-
-## APA — HTTP Methods (GET, POST, PUT, DELETE)
-
-Saat client meminta ke server, ada **jenis permintaan** yang berbeda:
-
-| Method | Artinya | Analogi restoran |
+| | Flexbox | Grid |
 |---|---|---|
-| `GET` | Ambil/baca data | "Tolong lihatkan menu" |
-| `POST` | Kirim/buat data baru | "Saya mau pesan makanan baru" |
-| `PUT` | Ubah data yang ada | "Ganti pesanan saya jadi yang ini" |
-| `DELETE` | Hapus data | "Batalkan pesanan saya" |
-
-## BANDINGKAN — Kenapa Dibedakan? Kenapa Tidak Satu Saja?
-
-Pemula bertanya: kalau semua cuma "ngobrol sama server", kenapa harus ada 4 jenis?
-
-### KENAPA
-
-Karena **niat** tiap permintaan beda, dan server perlu tahu niatnya untuk merespons dengan benar dan aman.
+| Arah | satu arah (baris **atau** kolom) | dua arah sekaligus |
+| Cocok untuk | navbar, deretan tombol, isi kartu | galeri, dashboard, tata letak halaman |
 
 > **CARA SAMPAIKAN:**
-> "Coba bayangkan kalau semua permintaan sama. Server nggak bisa bedain kalian mau **lihat** data atau mau **hapus** data. Bahaya kan?
-> `GET` itu cuma ngintip — aman, nggak ngubah apa-apa. `DELETE` itu menghancurkan. Dua hal ini nggak boleh dianggap sama. Method itu cara kalian bilang ke server 'niat saya apa'."
+> "Flexbox itu buat **satu barisan** — kayak orang antre. Grid itu buat **kotak-kotak** — kayak papan catur atau rak sepatu bersusun.
+> Aturan praktisnya: kalau kalian cuma mikirin kiri-kanan ATAU atas-bawah, pakai Flexbox. Kalau mikirin dua-duanya barengan, pakai Grid.
+> Dan nggak apa-apa dipakai barengan — Grid buat nyusun kartunya, Flexbox buat nyusun isi di dalam tiap kartu."
 
-Tekankan satu aturan yang akan berguna seumur hidup mereka:
-> "`GET` nggak boleh mengubah data. Dia cuma baca. Kalau kalian bikin tombol yang ngubah data pakai GET, itu salah kaprah dan bisa jadi celah keamanan."
+## APA — Grid kartu responsif dalam tiga baris
+
+```css
+.daftar-kartu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+```
+
+Jelaskan `auto-fit` + `minmax` pelan-pelan — ini terlihat rumit tapi hasilnya paling memuaskan:
+
+> **CARA SAMPAIKAN:**
+> "Baris tengah itu artinya: 'muat sebanyak mungkin kolom, tapi tiap kolom minimal 250px, dan kalau ada sisa ruang bagi rata.'
+> Efeknya: di laptop muncul 4 kolom, di tablet jadi 2, di HP jadi 1 — **tanpa kalian nulis aturan HP satu pun.** Coba tarik-tarik jendela browsernya sekarang."
+
+Peragakan dengan menarik-narik lebar jendela. Ini momen wow kedua hari ini.
+
+## APA — Mobile-First
+
+```css
+/* DEFAULT = tampilan HP. Ditulis paling atas, tanpa media query. */
+.kartu { width: 100%; }
+
+/* Baru naik ke layar lebih besar */
+@media (min-width: 768px) {
+  .kartu { width: 48%; }
+}
+```
+
+## KENAPA mulai dari HP, bukan dari desktop
+
+Dua alasan, dan yang kedua yang sebenarnya:
+
+**1. Mayoritas pengunjung memakai HP.** Masuk akal mendahulukan yang terbanyak.
+
+**2. Menambah lebih mudah daripada mengurangi.** Desain HP itu satu kolom, sederhana. Menambahkan kolom saat layar melebar itu gampang. Sebaliknya, membongkar desain desktop tiga kolom agar muat di HP jauh lebih menyakitkan.
+
+> **CARA SAMPAIKAN:**
+> "Ini kayak packing buat traveling. Kalau kalian mulai dari koper besar terus dipaksa pindah ke tas kecil, kalian bakal pusing milih apa yang dibuang.
+> Tapi kalau mulai dari tas kecil — cuma yang penting — terus dapat koper besar, kalian tinggal nambahin. Jauh lebih enak.
+> Mobile-first itu mulai dari tas kecilnya."
 
 ---
 
-# BAGIAN 2 — Variabel Modern: let & const (30–40 menit)
+# BAGIAN 2 — Variabel Modern: let & const (30–38 menit)
 
 ## APA
 
@@ -172,7 +174,7 @@ Aturan praktis industri: **pakai `const` dulu untuk semuanya. Ganti ke `let` han
 
 ---
 
-# BAGIAN 3 — ES6+ Fundamentals (40–70 menit)
+# BAGIAN 3 — ES6+ Fundamentals (38–58 menit)
 > Inti sintaks modern. Tiap fitur diajarkan lewat pola: tunjukkan cara lama yang menyakitkan → tunjukkan obatnya.
 
 ## 3.1 Arrow Function
@@ -275,7 +277,7 @@ const [juara, ...lainnya] = [1, 2, 3, 4];
 
 ---
 
-# BAGIAN 4 — Manipulasi Array (70–100 menit)
+# BAGIAN 4 — Manipulasi Array (58–88 menit)
 > **PALING PENTING di P2.** Beri porsi terbesar. Ini jantung frontend modern — data selalu datang sebagai array, dan mengolahnya adalah pekerjaan sehari-hari.
 
 ## Konteks: Kenapa Ini Sepenting Itu
@@ -411,7 +413,7 @@ Tekankan bahwa `.map()` dan `.filter()` ini **persis** yang akan mereka pakai di
 
 ---
 
-# BAGIAN 5 — Modul: Import & Export (100–110 menit)
+# BAGIAN 5 — Modul, Scope & Hoisting (88–96 menit)
 > Singkat. Konsep saja — mereka belum punya project multi-file, jadi cukup pahami idenya.
 
 ## APA
@@ -439,7 +441,92 @@ Untuk P2 cukup sampai sini. Jangan masuk default export vs named export secara d
 
 ---
 
-# BAGIAN 6 — Penutup & Tugas (110–120 menit)
+# BAGIAN 6 — Praktik Live: Halaman P1 Jadi Hidup (96–115 menit)
+> **Puncak P2, dan jembatan mental ke React.** Semua yang diajarkan hari ini bermuara ke sini.
+
+## Kenapa bagian ini yang terpenting
+
+Sampai Bagian 5, peserta baru punya potongan-potongan: Grid, `.map()`, `.filter()`. Di bagian ini potongan itu disatukan menjadi satu alur yang akan mereka pakai **setiap hari** mulai P3:
+
+```
+DATA  →  TRANSFORMASI  →  TAMPILAN
+array of objects   .filter() / .map()   HTML di layar
+```
+
+Tanamkan alur tiga kata ini secara eksplisit. Di React nanti, alurnya persis sama — hanya bahasanya yang berubah.
+
+## Langkah, dikerjakan bersama peserta
+
+**1. Pindahkan data keluar dari HTML.** Kartu yang di P1 ditulis manual satu per satu, sekarang jadi array di file terpisah.
+
+```javascript
+// data.js
+const produk = [
+  { nama: "Rendang",   kategori: "Makanan",  harga: 35000 },
+  { nama: "Es Tebak",  kategori: "Minuman",  harga: 12000 },
+  { nama: "Sate Padang", kategori: "Makanan", harga: 28000 },
+];
+```
+
+**2. Render kartu dari array pakai `.map()`.**
+
+```javascript
+const wadah = document.querySelector(".daftar-kartu");
+
+const gambarKartu = (daftar) => {
+  wadah.innerHTML = daftar
+    .map(p => `
+      <article class="kartu">
+        <h2 class="kartu-judul">${p.nama}</h2>
+        <p class="kartu-harga">Rp ${p.harga.toLocaleString("id-ID")}</p>
+      </article>
+    `)
+    .join("");
+};
+
+gambarKartu(produk);
+```
+
+> **CARA SAMPAIKAN — momen yang harus Anda tunggu:**
+> "Perhatikan HTML kalian sekarang. Kartunya **hilang** dari file HTML — tinggal satu wadah kosong. Tapi di browser, kartunya tetap muncul.
+> Sekarang coba tambah satu item di array. Refresh. Muncul sendiri.
+> **Itu** bedanya halaman mati sama halaman hidup. Minggu lalu, nambah satu produk artinya kalian nyalin 8 baris HTML. Sekarang cukup nambah satu baris data."
+
+**3. Tambahkan filter interaktif.**
+
+```javascript
+document.querySelector("#filter").addEventListener("change", (e) => {
+  const pilihan = e.target.value;
+  const hasil = pilihan === "Semua"
+    ? produk
+    : produk.filter(p => p.kategori === pilihan);
+  gambarKartu(hasil);   // data disaring, lalu digambar ulang
+});
+```
+
+> **CARA SAMPAIKAN:**
+> "Lihat pola yang barusan terjadi: **data berubah → tampilan digambar ulang.** Kita nggak nyentuh HTML-nya satu per satu, kita cuma ganti datanya terus suruh gambar ulang.
+> Ingat baik-baik pola ini. Di React nanti kalian bahkan nggak perlu manggil `gambarKartu()` — React yang otomatis gambar ulang tiap datanya berubah. Tapi cara berpikirnya persis yang barusan kalian tulis."
+
+## Colokan ke depan — sebut eksplisit
+
+Tulis di papan atau slide, dan tinggalkan sampai kelas selesai:
+
+| Yang kalian tulis hari ini | Namanya di React (P3–P4) |
+|---|---|
+| `array.map()` menghasilkan HTML | *List rendering* |
+| `gambarKartu(hasil)` dipanggil manual | *Re-render* otomatis |
+| Variabel `produk` yang berubah | `state` |
+
+> "Kalian bukan lagi belajar hal baru minggu depan. Kalian cuma belajar **nama yang lebih pendek** buat yang barusan kalian kerjain sendiri."
+
+## Kalau waktu tidak cukup
+
+Langkah 1 dan 2 (`.map()` untuk render) **wajib selesai di kelas** — itu inti Tugas 1. Langkah 3 (filter) boleh jadi pekerjaan rumah, karena polanya sudah terlihat dari langkah 2.
+
+---
+
+# BAGIAN 7 — Penutup & Tugas (115–120 menit)
 
 ## Rangkuman: Satu Benang Merah
 
