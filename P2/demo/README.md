@@ -10,11 +10,12 @@ Urutan file mengikuti urutan bagian di [dokumen materi](../P2-Materi-Mentor-Fron
 
 | File | Bagian di materi | Menit |
 |---|---|:--:|
+| [01-grid-responsif.html](01-grid-responsif.html) | Bagian 1 — CSS Grid & Mobile-First | 8–30 |
 | [00-data-demo.js](00-data-demo.js) | Data + momen wow `console.table()` | — |
-| [01-var-let-const.js](01-var-let-const.js) | Bagian 2 — Variabel Modern | 30–40 |
-| [02-es6-fundamentals.js](02-es6-fundamentals.js) | Bagian 3 — ES6+ Fundamentals | 40–70 |
-| [03-array-methods.js](03-array-methods.js) | Bagian 4 — Manipulasi Array | 70–100 |
-| [04-modul/](04-modul/) | Bagian 5 — Import & Export | 100–110 |
+| [02-var-let-const.js](02-var-let-const.js) | Bagian 2 — Variabel Modern | 30–40 |
+| [03-es6-fundamentals.js](03-es6-fundamentals.js) | Bagian 3 — ES6+ Fundamentals | 40–70 |
+| [04-array-methods.js](04-array-methods.js) | Bagian 4 — Manipulasi Array | 70–100 |
+| [05-modul/](05-modul/) | Bagian 5 — Import & Export | 100–110 |
 
 ---
 
@@ -44,11 +45,11 @@ Kalau terlanjur kena: tekan `F5`, console bersih lagi. Bisa juga dijadikan bahan
 
 **`00-data-demo.js`** — Jangan tambah atau ubah isi array `produk`. Angka-angka di dokumen materi (`[8000000, 150000, 300000]`, "Mouse hilang karena stok 0", total 8.450.000) mengacu persis ke tiga item ini. Kalau datanya berubah, contoh di materi tidak lagi cocok dengan yang muncul di layar peserta.
 
-**`01-var-let-const.js`** — Blok `const` yang error sengaja dikomentari. Buka komentarnya saat mau ditunjukkan, jalankan terpisah dari blok `var` di atasnya. File ini juga memuat jebakan `const` pada array — pertanyaan yang hampir pasti muncul dari peserta yang jeli, lengkap dengan analogi lemari yang dipaku.
+**`02-var-let-const.js`** — Blok `const` yang error sengaja dikomentari. Buka komentarnya saat mau ditunjukkan, jalankan terpisah dari blok `var` di atasnya. File ini juga memuat jebakan `const` pada array — pertanyaan yang hampir pasti muncul dari peserta yang jeli, lengkap dengan analogi lemari yang dipaku.
 
-**`03-array-methods.js`** — File terpenting, porsi waktu terbesar. Memuat versi `.reduce()` yang mencetak isi amplop tiap putaran; jalankan itu kalau ada yang bingung. Jangan memaksakan `reduce` sampai semua paham — lihat Lampiran D di dokumen materi.
+**`04-array-methods.js`** — File terpenting, porsi waktu terbesar. Memuat versi `.reduce()` yang mencetak isi amplop tiap putaran; jalankan itu kalau ada yang bingung. Jangan memaksakan `reduce` sampai semua paham — lihat Lampiran D di dokumen materi.
 
-**`04-modul/`** — Satu-satunya bagian yang butuh setup. ES module tidak jalan lewat `file://`, harus pakai **Live Server** di VS Code. Kalau tidak sempat menyiapkan, lewati saja dan sampaikan konsepnya lewat analogi lemari berlaci — materi P2 memang hanya menuntut idenya, bukan praktiknya.
+**`05-modul/`** — Satu-satunya bagian yang butuh setup. ES module tidak jalan lewat `file://`, harus pakai **Live Server** di VS Code. Kalau tidak sempat menyiapkan, lewati saja dan sampaikan konsepnya lewat analogi lemari berlaci — materi P2 memang hanya menuntut idenya, bukan praktiknya.
 
 ---
 
