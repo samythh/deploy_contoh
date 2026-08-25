@@ -1,7 +1,7 @@
-# PERTEMUAN 2 — Modern JavaScript, Manipulasi Data & Responsive Grid
+# PERTEMUAN 2 — Modern JavaScript, Manipulasi Data & Layout Multi-Kolom
 ### Panduan Materi & Cara Penyampaian untuk Mentor
 **Metro Institute Season 2 — Divisi Frontend**
-Durasi: 120 menit | Topik: CSS Grid, Mobile-First, ES6+ Fundamentals, Manipulasi Array, Modul & Scope
+Durasi: 120 menit | Topik: CSS Grid, Breakpoint Multi-Kolom, ES6+ Fundamentals, Manipulasi Array, Modul & Scope
 
 > **CATATAN VERSI (hasil rapat 25 Agustus 2026):** materi Arsitektur Web & HTTP Methods **dipindah ke P1**; sebagai gantinya **CSS Grid & Mobile-First turun ke sini** dari P1. Pertemuan ditutup dengan praktik mengubah halaman statis P1 menjadi dinamis. Tugas P1 dan P2 kini digabung jadi satu — **Tugas 1: Static Foundation**, dikumpulkan lewat Pull Request sebelum P3. Lihat `docs/Catatan-Perubahan.md`.
 
@@ -69,8 +69,10 @@ Pertanyaan pertama penting: peserta yang belum menyelesaikan P1 akan kesulitan m
 
 ---
 
-# BAGIAN 1 — CSS Grid & Mobile-First (8–30 menit)
+# BAGIAN 1 — CSS Grid & Layout Multi-Kolom (8–30 menit)
 > Lanjutan langsung dari Flexbox di P1. Selesaikan sisi tampilan dulu, baru masuk ke logika — supaya peserta punya grid yang siap diisi data di Bagian 6 nanti.
+>
+> **Mobile-first sudah diajarkan di P1** (Bagian 7), termasuk prefiks `sm:` `md:` `lg:`. Hari ini tinggal **menerapkannya pada layout multi-kolom** — jangan ulangi teorinya dari nol, cukup panggil ulang analogi packing dan langsung praktik.
 > Singkat dan fokus. Tujuannya cukup satu: peserta bisa membuat grid kartu yang responsif.
 
 ## BANDINGKAN — Kapan Flexbox, kapan Grid

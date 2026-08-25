@@ -20,14 +20,15 @@ Buka file ini di layar kedua saat kelas berlangsung. Isinya cuma **gerakan**, bu
 |:--:|---|---|
 | 0–8 | Pembuka & peta program | — |
 | 8–20 | Anatomi HTML + **kemenangan pertama** | `01-kerangka.html` |
-| 20–33 | **Arsitektur Web** — client-server, HTTP, tab Network | — |
-| 33–53 | **HTML5 Semantic & Aksesibilitas** | `02-semantic/` |
-| 53–67 | CSS, Box Model & Flow Dokumen | `03-box-model.html` |
-| 67–89 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
-| 89–102 | TailwindCSS via Play CDN | `05-tailwind.html` |
-| 102–120 | Penutup, tugas & **Setup Git + PR** | [`../tugas/`](../tugas/) |
+| 20–31 | **Arsitektur Web** — client-server, HTTP, tab Network | — |
+| 31–50 | **HTML5 Semantic & Aksesibilitas** | `02-semantic/` |
+| 50–63 | CSS, Box Model & Flow Dokumen | `03-box-model.html` |
+| 63–83 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
+| 83–95 | TailwindCSS via Play CDN | `05-tailwind.html` |
+| 95–104 | **Mobile-First & Breakpoint** | `05-tailwind.html` |
+| 104–120 | Penutup, tugas & **Setup Git + PR** | [`../tugas/`](../tugas/) |
 
-> **CSS Grid & Mobile-First sekarang di P2**, bukan di sini. Jangan mengajarkannya hari ini — peserta akan memakainya untuk grid kartu di pertemuan berikutnya.
+> **CSS Grid sekarang di P2**, tapi **Mobile-First tetap di sini**. Breakpoint diajarkan lewat prefiks `md:` `lg:` Tailwind dan langsung diterapkan pada navbar & hero yang baru dibangun — tidak perlu menulis satu pun `@media` manual hari ini.
 
 ---
 
@@ -62,7 +63,7 @@ Buka file ini di layar kedua saat kelas berlangsung. Isinya cuma **gerakan**, bu
 
 ---
 
-## 20–33 · Arsitektur Web
+## 20–31 · Arsitektur Web
 
 **Jembatannya dari yang barusan mereka lakukan:**
 > "Kalian barusan buka file dari komputer sendiri. Sekarang — gimana kalau file-nya ada di komputer orang lain, di negara lain?"
@@ -81,7 +82,7 @@ Ini menanamkan kompetensi **Debugging & Verification** sejak pertemuan pertama.
 
 ---
 
-## 33–53 · Semantic — `02-semantic/`
+## 31–50 · Semantic — `02-semantic/`
 
 > Ini **satu-satunya** bagian yang masih memakai perbandingan cara lama. Batasi **2 menit**, bukan latihan.
 
@@ -97,7 +98,7 @@ Ini menanamkan kompetensi **Debugging & Verification** sejak pertemuan pertama.
 
 ---
 
-## 53–67 · CSS, Box Model & Flow — `03-box-model.html`
+## 50–63 · CSS, Box Model & Flow — `03-box-model.html`
 
 1. Langsung ajarkan `<link rel="stylesheet">`. **Jangan** peragakan tiga cara. → *selingan #1*
 2. Selector: `p` · `.class` · `#id` · `nav a`. Tekankan `class` lebih sering dipakai.
@@ -110,7 +111,7 @@ Ini menanamkan kompetensi **Debugging & Verification** sejak pertemuan pertama.
 
 ---
 
-## 67–89 · Flexbox — `04-flexbox.html`
+## 63–83 · Flexbox — `04-flexbox.html`
 
 > Porsi terbesar. Bangun bersama peserta, jangan ditunjukkan jadi.
 
@@ -133,7 +134,7 @@ Ini menanamkan kompetensi **Debugging & Verification** sejak pertemuan pertama.
 
 ---
 
-## 89–102 · TailwindCSS — `05-tailwind.html`
+## 83–95 · TailwindCSS — `05-tailwind.html`
 
 **Buka dengan mengakui keribetan tadi:**
 > "Satu jam terakhir kalian nulis CSS manual dan mikir 'kok ribet banget'. Bagus — itu memang ribet. Sekarang saya kasih obatnya. Tapi saya kasih SETELAH kalian ngerasain sakitnya."
@@ -146,12 +147,31 @@ Ini menanamkan kompetensi **Debugging & Verification** sejak pertemuan pertama.
 
 ---
 
-## 102–120 · Penutup, Tugas & Setup Git
+## 95–104 · Mobile-First & Breakpoint
 
-### 102–105 · Benang merah
+**Lihat dulu, jelaskan belakangan.**
+
+1. Pakai **navbar & hero yang mereka bangun sendiri** di Bagian 5 — jangan bikin contoh baru.
+2. Tambahkan satu perubahan saja:
+   ```html
+   <nav class="flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
+   ```
+3. **Peragakan:** `F12` → `Ctrl+Shift+M` → geser lebar layar pelan-pelan. Navbar berubah sendiri di 768px. **Momen wow kedua hari ini.**
+4. **Setelah** mereka bereaksi, baru jelaskan: class tanpa prefiks = HP · `md:` mulai 768px · `lg:` mulai 1024px.
+
+**Analogi packing:**
+> "Kalau mulai dari koper besar terus dipaksa pindah ke tas kecil, kalian pusing milih apa yang dibuang. Tapi kalau mulai dari tas kecil terus dapat koper besar, tinggal nambahin. Mobile-first itu mulai dari tas kecilnya."
+
+**Cek sebelum lanjut:** peserta bisa menjawab *"kenapa class tanpa prefiks itu buat HP, bukan desktop?"* Jangan lanjut ke Git dengan ini masih menggantung — Tugas 1 mensyaratkan minimal dua breakpoint.
+
+---
+
+## 104–120 · Penutup, Tugas & Setup Git
+
+### 104–106 · Benang merah
 > "Semua hari ini temanya satu — **kasih nama yang benar.** `<nav>` menang karena namanya benar. `.alert-error` menang karena namanya benar."
 
-### 105–108 · Sistem tugas & pilih tema
+### 106–109 · Sistem tugas & pilih tema
 
 Jelaskan sekali dengan benar: **bukan 8 tugas terpisah, tapi satu produk yang tumbuh lewat 4 tahap.**
 
@@ -160,14 +180,17 @@ Jelaskan sekali dengan benar: **bukan 8 tugas terpisah, tapi satu produk yang tu
 
 **Minta mereka pilih tema hari ini juga.** Syarat: datanya berbentuk **daftar item dengan detail**.
 
-### 108–120 · Setup Git & Pull Request
+### 109–120 · Setup Git & Pull Request
 
 ⛔ **Kalau waktu mepet, potong Tailwind — jangan potong bagian ini.** Semua tugas dikumpulkan lewat PR; kalau ini gagal, peserta tidak bisa mengumpulkan apa pun.
 
 ```bash
 git config --global user.name "Nama Lengkap"
 git config --global user.email "email@github.com"
-git clone <repo-starter>
+# Repo dibuat dari TEMPLATE kelas lewat tombol "Use this template" di
+# GitHub, bukan clone repo bersama. Tiap peserta punya repo atas namanya
+# sendiri, dan menambahkan mentor sebagai collaborator.
+git clone https://github.com/<username-peserta>/<repo-baru>.git
 git checkout -b tugas1-nama-anda
 git add . && git commit -m "feat: halaman statis tugas 1"
 git push -u origin tugas1-nama-anda
@@ -226,9 +249,11 @@ Potong dalam urutan ini:
 | 2 | Box model contoh 4–5 (`content-box`/`border-box`) | Simpan jadi bahan P2 |
 | 3 | Tab Network di Bagian 2 | Cukup diagram client-server; Network dibuka lagi di P6 |
 
+> **Bagian 7 (Mobile-First) jangan dipotong habis** — Tugas 1 mensyaratkan minimal dua breakpoint. Kalau mepet, cukup peragakan satu perubahan pada navbar (langkah 2–3), lewati penjelasan angkanya.
+
 > ⛔ **JANGAN PERNAH DIPOTONG:**
 > - **Bagian 3 (Semantic)** dan **Bagian 5 (Flexbox)** — semua pertemuan berikutnya bergantung padanya
-> - **Bagian 7 (Setup Git & PR)** — tanpa ini peserta tidak bisa mengumpulkan tugas sama sekali
+> - **Bagian 8 (Setup Git & PR)** — tanpa ini peserta tidak bisa mengumpulkan tugas sama sekali
 
 ---
 

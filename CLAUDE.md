@@ -139,14 +139,14 @@ Kalau saya minta pendapat soal keputusan pedagogis atau kurikulum:
 
 Urutan 8 pertemuan (revisi rapat 25 Agustus 2026):
 
-1. **P1 — Fundamental Logika Dasar** — Arsitektur Web (client-server, HTTP methods) + HTML5 Semantic & aksesibilitas + Box Model + Flexbox + **TailwindCSS via Play CDN** + **Setup Git & Pull Request**.
-2. **P2 — Praktik Sintaksis Dasar** — CSS Grid & mobile-first + JavaScript ES6+ + `.map/.filter/.find/.some/.reduce` + modul/scope + praktik mengubah halaman P1 jadi dinamis.
+1. **P1 — Fundamental Logika Dasar** — Arsitektur Web (client-server, HTTP methods) + HTML5 Semantic & aksesibilitas + Box Model + Flexbox + **TailwindCSS via Play CDN** + **Mobile-First & breakpoint** + **Setup Git & Pull Request**.
+2. **P2 — Praktik Sintaksis Dasar** — CSS Grid & breakpoint multi-kolom + JavaScript ES6+ + `.map/.filter/.find/.some/.reduce` + modul/scope + praktik mengubah halaman P1 jadi dinamis.
 3. **P3** — React Fundamentals (Vite, JSX, komponen, props, conditional & list rendering) + Tailwind lewat build tool.
 4. **P4** — State & Lifecycle (`useState`, `useEffect`, controlled forms, immutability) + **React DevTools**.
-5. **P5** — Routing (React Router) & Custom Hooks.
-6. **P6** — Konsumsi REST API & async UI (Axios, 5 status antarmuka, **tab Network**). *Titik risiko.*
-7. **P7** — Global State (Context/Zustand) & optimasi performa + wawasan **TanStack Query** 15 menit. *Titik risiko.*
-8. **P8** — Auth (JWT), protected routes, build & deploy + **Git collaboration** + pengantar **TypeScript** 15 menit.
+5. **P5** — Routing (**React Router v8**, `react-router` declarative mode) & Custom Hooks + wawasan **SSR/Next.js** 10 menit.
+6. **P6** — Konsumsi REST API & async UI (Axios, 5 status antarmuka, **tab Network**) + **pengantar TypeScript 25 menit yang langsung dipakai**. *Titik risiko.*
+7. **P7** — Global State (Context/Zustand) + **React Compiler** sebagai default optimasi + wawasan **TanStack Query** 15 menit. *Titik risiko.*
+8. **P8** — Auth (JWT + **kejujuran soal risiko XSS LocalStorage**), protected routes, build & deploy + audit **Lighthouse** + **Git collaboration** + wawasan **Testing** 15 menit.
 
 ### Sistem tugas: Progressive Web Project
 
@@ -154,21 +154,30 @@ Ini berubah total dari sebelumnya, dan mempengaruhi cara menulis semua materi.
 
 - **Bukan 8 tugas terpisah, tapi 4 tugas gabungan** — masing-masing mencakup dua pertemuan. Tugas 1 = P1&P2, Tugas 2 = P3&P4, Tugas 3 = P5&P6, Tugas 4 = P7&P8.
 - **Satu produk yang sama** dari awal sampai akhir. Peserta memilih tema di P1 (harus berupa daftar item dengan detail) dan mempertahankannya.
-- Dikumpulkan lewat **Pull Request** ke repositori kelas.
+- Tiap peserta bikin repo **dari template kelas**, mentor jadi **collaborator**. Dikumpulkan lewat **Pull Request** per branch.
 - Materinya ada di folder `tugas/` di root, **bukan** di dalam `P1/`–`P8/`.
 
 **Konsekuensi saat menulis materi:** jangan membuat mini-task per pertemuan yang berdiri sendiri. Materi tiap pertemuan harus menyumbang ke tugas gabungan minggu itu. Sebutkan eksplisit bagian mana dari tugas yang bisa dikerjakan setelah pertemuan ini.
 
-### Dua kompetensi lulusan yang perlu diselipkan terus
+### Tiga kompetensi lulusan yang perlu diselipkan terus
 
 - **Debugging & Verification** — DevTools bukan lampiran, tapi materi. Tab Network di P1, React DevTools di P4, Network untuk API di P6.
 - **Responsible AI-Assisted Development** — AI resmi diperbolehkan. Yang dinilai bukan siapa mengetik, tapi apakah bisa dipertanggungjawabkan. Kode yang tidak bisa dijelaskan penulisnya dinilai **nol**; menemukan kesalahan kode AI dinilai **positif**.
+- **Type-Safe API Consumption** — TypeScript bukan lagi wawasan penutup. Diajarkan 25 menit di P6, langsung dipakai di praktik, dan **diwajibkan minimal satu `interface` di Tugas 3**.
+
+### Materi yang harus ditulis sesuai standar 2026, bukan kebiasaan lama
+
+Tiga hal ini gampang salah kalau ditulis dari ingatan:
+
+- **P7 — React Compiler, bukan memoization manual.** Sejak React 19, `useMemo`/`useCallback`/`React.memo` adalah **pengecualian**, bukan kebiasaan. Tulis compiler sebagai default; manual hanya untuk kasus yang tidak tertangani (kode di `try/catch`, library yang bergantung pada *referential equality*). Selalu sertakan prinsip: **ukur dengan Profiler sebelum mengoptimasi.**
+- **P8 — jujur soal LocalStorage.** Token disimpan di LocalStorage **hanya untuk kesederhanaan kelas**, dan itu harus disebut eksplisit rentan XSS. Standar industri (access token di memori + refresh token di cookie `HttpOnly`) diperkenalkan sebagai wawasan supaya peserta tidak membawa pola salah ke tempat kerja.
+- **P5 — React Router v8**, paket `react-router` dalam *declarative mode*. Bukan `react-router-dom` v6.
 
 ### Catatan penting soal P1
 
-P1 padat — delapan bagian dalam 120 menit. Kalau waktu habis, **Bagian 6 (Tailwind) yang dipotong, bukan Bagian 7 (Setup Git)**. Alasannya: seluruh tugas dikumpulkan lewat Pull Request, jadi kalau setup Git gagal, peserta tidak bisa mengumpulkan apa pun.
+P1 padat — sembilan bagian dalam 120 menit. Kalau waktu habis, **Bagian 6 (Tailwind) yang dipotong, bukan Bagian 8 (Setup Git)**. Alasannya: seluruh tugas dikumpulkan lewat Pull Request, jadi kalau setup Git gagal, peserta tidak bisa mengumpulkan apa pun.
 
-**TailwindCSS tetap di P1 di bagian akhir** (menit 89–102), setelah CSS manual — penerapan prinsip "shortcut diberikan SETELAH paham manual". Jangan pernah menaruhnya di awal. Di P1 cukup Play CDN; pemasangan lewat Vite ada di P3.
+**TailwindCSS tetap di P1 di bagian akhir** (menit 83–95), setelah CSS manual — penerapan prinsip "shortcut diberikan SETELAH paham manual". Jangan pernah menaruhnya di awal. Di P1 cukup Play CDN; pemasangan lewat Vite ada di P3.
 
 ### Catatan penting soal P2
 

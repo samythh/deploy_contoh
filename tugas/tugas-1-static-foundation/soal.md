@@ -30,7 +30,7 @@ Dua alat berbeda untuk dua pekerjaan berbeda. Kalau tertukar, jelaskan alasannya
 
 **3. Responsif dengan pendekatan mobile-first, minimal dua breakpoint.**
 
-Tulis tampilan HP lebih dulu tanpa media query, baru naik ke layar lebih besar.
+Tulis tampilan HP lebih dulu, baru naik ke layar lebih besar. Kalau memakai Tailwind: class tanpa prefiks untuk HP, `md:` dan `lg:` untuk layar yang lebih lebar.
 
 ### Dari Pertemuan 2 — Data & Logika
 
@@ -108,6 +108,10 @@ const hasil = produk.filter(p => p.kategori === pilihan);
 
 ## Cara Mengumpulkan — Pull Request
 
+Kalau belum punya repositori sendiri: buka repositori template kelas → tombol **Use this template** → **Create a new repository** → tambahkan mentor sebagai **collaborator** di Settings → Collaborators.
+
+Lalu:
+
 ```bash
 git checkout -b tugas1-nama-anda
 git add .
@@ -116,6 +120,8 @@ git push -u origin tugas1-nama-anda
 ```
 
 Lalu di GitHub: **Compare & pull request** → isi judul → **Create pull request**.
+
+> Repositori ini dipakai sampai akhir kelas. Tugas 2 nanti dikerjakan di **repositori yang sama**, bukan bikin repo baru.
 
 > Macet di Git? Boleh pakai **GitHub Desktop** dulu. Yang penting tugasnya masuk — perintah CLI-nya diperdalam di Pertemuan 8.
 

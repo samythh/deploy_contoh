@@ -1,11 +1,11 @@
 # PERTEMUAN 1 — Arsitektur Web & Struktur Dokumen Responsif
 ### Panduan Materi & Cara Penyampaian untuk Mentor
 **Metro Institute Season 2 — Divisi Frontend**
-Durasi: 120 menit | Topik: Client-Server & HTTP, Struktur Dokumen, Semantic & Aksesibilitas, Box Model, Flexbox, TailwindCSS, Setup Git & Pull Request
+Durasi: 120 menit | Topik: Client-Server & HTTP, Struktur Dokumen, Semantic & Aksesibilitas, Box Model, Flexbox, TailwindCSS, Mobile-First, Setup Git & Pull Request
 
-> **CATATAN VERSI (hasil rapat 25 Agustus 2026):** **Arsitektur Web & HTTP Methods masuk ke sini** dari P2. **CSS Grid & Mobile-First pindah ke P2** supaya P1 tidak pecah. Pertemuan ditutup dengan **Setup Workflow Git & Pull Request** — seluruh tugas P1–P8 dikumpulkan lewat PR, jadi bagian ini tidak boleh gagal. TailwindCSS tetap di Bagian 6, via Play CDN, setelah CSS manual. Lihat `docs/Catatan-Perubahan.md`.
+> **CATATAN VERSI (hasil rapat 25 Agustus 2026):** **Arsitektur Web & HTTP Methods masuk ke sini** dari P2. **CSS Grid pindah ke P2**, tapi **Mobile-First & breakpoint tetap di sini** (Bagian 7) dan diterapkan langsung pada navbar & hero yang baru dibangun. Pertemuan ditutup dengan **Setup Workflow Git & Pull Request** — seluruh tugas P1–P8 dikumpulkan lewat PR, jadi bagian ini tidak boleh gagal. TailwindCSS tetap di Bagian 6, via Play CDN, setelah CSS manual. Lihat `docs/Catatan-Perubahan.md`.
 
-> **CARA PENYAMPAIAN — BACA INI SEBELUM MENGAJAR:** materi ini **langsung ke cara modern**. Cara lama (float, inline style, margin-tambalan) **tidak diperagakan** — cukup disebut sebagai selingan satu-dua kalimat sambil lewat, dan kalimatnya sudah disiapkan di tiap bagian. Alasannya waktu: 120 menit untuk tujuh bagian tidak cukup untuk mendemonstrasikan dua cara.
+> **CARA PENYAMPAIAN — BACA INI SEBELUM MENGAJAR:** materi ini **langsung ke cara modern**. Cara lama (float, inline style, margin-tambalan) **tidak diperagakan** — cukup disebut sebagai selingan satu-dua kalimat sambil lewat, dan kalimatnya sudah disiapkan di tiap bagian. Alasannya waktu: 120 menit untuk sembilan bagian tidak cukup untuk mendemonstrasikan dua cara.
 >
 > Yang tetap wajib: lapisan **KENAPA**. Peserta harus tahu alasan tiap pilihan, hanya saja alasannya disampaikan lewat kalimat, bukan lewat peragaan.
 
@@ -149,7 +149,7 @@ Peserta akan menemukan sendiri bahwa mengetik kerangka ini melelahkan. Bagus —
 
 ---
 
-# BAGIAN 2 — Arsitektur Web: Client & Server (20–33 menit)
+# BAGIAN 2 — Arsitektur Web: Client & Server (20–31 menit)
 > Jembatan dari yang barusan mereka lakukan. Mereka baru saja membuka file dari komputer sendiri — sekarang: bagaimana kalau file-nya ada di komputer orang lain?
 
 ## APA
@@ -222,7 +222,7 @@ Ini juga menanamkan kompetensi **Debugging & Verification** sejak pertemuan pert
 
 ---
 
-# BAGIAN 3 — HTML5 Semantic & Aksesibilitas (33–53 menit)
+# BAGIAN 3 — HTML5 Semantic & Aksesibilitas (31–50 menit)
 > Inti pedagogis P1. Beri porsi penuh — ini contoh terbaik dari "kenapa", bukan sekadar "apa".
 
 ## APA
@@ -317,7 +317,7 @@ Satu halaman hanya boleh punya satu `<main>` — itu penanda "ini isi utamanya".
 
 ---
 
-# BAGIAN 4 — CSS, Box Model & Flow Dokumen (53–67 menit)
+# BAGIAN 4 — CSS, Box Model & Flow Dokumen (50–63 menit)
 
 ## APA — Cara menempelkan CSS: file terpisah
 
@@ -408,7 +408,7 @@ Buka `F12` → pilih elemen → panel **Computed**. Di situ box model tampil seb
 
 ---
 
-# BAGIAN 5 — Flexbox (67–89 menit)
+# BAGIAN 5 — Flexbox (63–83 menit)
 > **PORSI TERBESAR HARI INI.** Ini alat tata letak yang mereka pakai setiap hari, termasuk nanti di React.
 
 ## APA — Satu baris yang mengatur semuanya
@@ -471,7 +471,7 @@ Lima baris menghasilkan navbar yang di era `float` butuh 20 baris plus tambalan.
 
 ---
 
-# BAGIAN 6 — TailwindCSS via Play CDN (89–102 menit)
+# BAGIAN 6 — TailwindCSS via Play CDN (83–95 menit)
 > **Posisi bagian ini disengaja: paling akhir.** Peserta baru saja menulis CSS manual selama satu jam penuh. Sekarang mereka punya rasa sakit yang bisa diobati — dan itu satu-satunya cara Tailwind terasa masuk akal, bukan sekadar cara lain yang membingungkan.
 
 ## Kenapa Tailwind Ditaruh di Sini, Bukan di Awal
@@ -588,9 +588,64 @@ Tujuannya bukan menguasai Tailwind hari ini — tapi merasakan pemetaannya sendi
 
 ---
 
-# BAGIAN 7 — Penutup, Tugas & Setup Workflow Git (102–120 menit)
+# BAGIAN 7 — Mobile-First & Breakpoint (95–104 menit)
+> Ditaruh **setelah** Tailwind, dan itu disengaja: breakpoint paling murah diajarkan lewat prefiks `sm:` `md:` `lg:` yang barusan mereka lihat. Tidak perlu menulis satu pun `@media` manual hari ini.
 
-## Rangkuman: Satu Benang Merah (102–105)
+## APA
+
+```html
+<!-- default = tampilan HP. Prefiks dipakai saat layar MELEBAR. -->
+<nav class="flex flex-col md:flex-row md:justify-between">
+```
+
+| Prefiks | Aktif mulai lebar |
+|---|---|
+| *(tanpa prefiks)* | semua ukuran — ini tampilan HP |
+| `sm:` | 640px |
+| `md:` | 768px |
+| `lg:` | 1024px |
+
+## KENAPA mulai dari HP, bukan dari desktop
+
+Dua alasan, dan yang kedua yang sebenarnya.
+
+**1. Mayoritas pengunjung memakai HP.** Masuk akal mendahulukan yang terbanyak.
+
+**2. Menambah lebih mudah daripada mengurangi.** Desain HP itu satu kolom, sederhana. Menambahkan kolom saat layar melebar itu gampang. Sebaliknya, membongkar desain desktop tiga kolom agar muat di HP jauh lebih menyakitkan.
+
+> **CARA SAMPAIKAN — Analogi Packing:**
+> "Ini kayak packing buat traveling. Kalau kalian mulai dari koper besar terus dipaksa pindah ke tas kecil, kalian bakal pusing milih apa yang dibuang.
+> Tapi kalau mulai dari tas kecil — cuma yang penting — terus dapat koper besar, kalian tinggal nambahin. Jauh lebih enak.
+> Mobile-first itu mulai dari tas kecilnya. Makanya class tanpa prefiks itu buat HP, dan prefiks `md:` baru nyala pas layarnya melebar."
+
+## Praktik: terapkan pada navbar & hero yang sudah jadi
+
+**Jangan bikin contoh baru.** Pakai navbar dan hero yang mereka bangun sendiri di Bagian 5 — itu yang membuat materi ini terasa nyambung, bukan tempelan.
+
+Satu perubahan saja sudah cukup untuk memperlihatkan idenya:
+
+```html
+<!-- HP: menu menumpuk ke bawah. Tablet ke atas: berjajar dan terpisah -->
+<nav class="flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
+```
+
+**Lalu peragakan:** `F12` → `Ctrl+Shift+M` → geser lebar layar pelan-pelan di depan kelas. Navbar-nya berubah sendiri di 768px.
+
+> Ini **momen wow kedua** hari ini. Lakukan peragaannya sebelum menjelaskan angkanya — lihat dulu, paham belakangan.
+
+## Cek sebelum lanjut
+
+Peserta bisa menjawab: *"kenapa class tanpa prefiks itu buat HP, bukan buat desktop?"* Kalau belum bisa, ulangi analogi packing — jangan lanjut ke Git dengan konsep ini masih menggantung, karena Tugas 1 mensyaratkan minimal dua breakpoint.
+
+## Colokan ke depan
+
+Sebut eksplisit: prefiks `md:` dan `lg:` ini **persis** yang mereka pakai di P3 saat Tailwind dipasang lewat Vite, dan di P2 saat menyusun grid kartu multi-kolom. Bukan materi sekali pakai.
+
+---
+
+# BAGIAN 8 — Penutup, Tugas & Setup Workflow Git (104–120 menit)
+
+## Rangkuman: Satu Benang Merah (104–106)
 
 > "Semua yang kita pelajari hari ini punya satu tema: **kasih nama yang benar.**
 > `<nav>` menang dari `<div>` karena namanya benar. `.alert-error` menang dari `.merah` karena namanya benar. Indentasi rapi itu supaya struktur kelihatan.
@@ -598,7 +653,7 @@ Tujuannya bukan menguasai Tailwind hari ini — tapi merasakan pemetaannya sendi
 
 ---
 
-## Sistem Tugas: satu produk, empat tahap (105–108)
+## Sistem Tugas: satu produk, empat tahap (106–109)
 
 **Ini beda dari kelas kebanyakan, jadi jelaskan dengan benar sekali di awal.** Peserta tidak akan mengerjakan delapan tugas terpisah yang dibuang setelah dinilai. Mereka membangun **satu produk** yang tumbuh dari minggu ke minggu.
 
@@ -620,7 +675,7 @@ Tujuannya bukan menguasai Tailwind hari ini — tapi merasakan pemetaannya sendi
 
 ---
 
-## Setup Workflow Git & Pull Request (108–120)
+## Setup Workflow Git & Pull Request (109–120)
 
 > Ini **bukan** materi tempelan. Seluruh tugas P1–P8 dikumpulkan lewat Pull Request, jadi kalau bagian ini gagal, peserta tidak bisa mengumpulkan apa pun.
 >

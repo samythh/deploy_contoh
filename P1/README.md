@@ -2,9 +2,9 @@
 ### Arsitektur Web & Struktur Dokumen Responsif
 
 **Durasi:** 120 menit · **Jadwal:** Oktober W1 (1–7 Okt 2026)
-**Topik:** Client-Server & HTTP, Struktur Dokumen, Semantic & Aksesibilitas, Box Model, Flexbox, TailwindCSS, Setup Git & Pull Request
+**Topik:** Client-Server & HTTP, Struktur Dokumen, Semantic & Aksesibilitas, Box Model, Flexbox, TailwindCSS, Mobile-First, Setup Git & Pull Request
 
-> **Catatan revisi (rapat 25 Agustus 2026):** Arsitektur Web & HTTP Methods **masuk ke sini** dari P2. CSS Grid & Mobile-First **pindah ke P2**. Pertemuan ditutup dengan **Setup Workflow Git & Pull Request** — seluruh tugas P1–P8 dikumpulkan lewat PR.
+> **Catatan revisi (rapat 25 Agustus 2026):** Arsitektur Web & HTTP Methods **masuk ke sini** dari P2. CSS Grid **pindah ke P2**, tapi **Mobile-First & breakpoint tetap di sini** (Bagian 7), diterapkan langsung pada navbar & hero. Pertemuan ditutup dengan **Setup Workflow Git & Pull Request** — seluruh tugas P1–P8 dikumpulkan lewat PR.
 
 > **CARA PENYAMPAIAN:** materi ini **langsung ke cara modern**. Cara lama (float, inline style, margin-tambalan) tidak diperagakan — cukup disebut sebagai **selingan** satu-dua kalimat sambil lewat. Kalimatnya sudah disiapkan di tiap bagian materi dan di komentar file demo. Satu-satunya pengecualian: perbandingan div soup di Bagian 2, karena di situ perbandingannya *adalah* argumennya.
 
@@ -49,18 +49,19 @@ Semua file berdiri sendiri — cukup double-click, tidak perlu server atau insta
 |:--:|---|---|
 | 0–8 | Pembuka & peta program | — |
 | 8–20 | Anatomi HTML + **kemenangan pertama** | `01-kerangka.html` |
-| 20–33 | **Arsitektur Web** — client-server, HTTP, tab Network | — |
-| 33–53 | **HTML5 Semantic & Aksesibilitas** | `02-semantic/` |
-| 53–67 | CSS, Box Model & Flow Dokumen | `03-box-model.html` |
-| 67–89 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
-| 89–102 | **TailwindCSS** via Play CDN — sebagai hadiah | `05-tailwind.html` |
-| 102–120 | Penutup, tugas & **Setup Git + Pull Request** | `../tugas/` |
+| 20–31 | **Arsitektur Web** — client-server, HTTP, tab Network | — |
+| 31–50 | **HTML5 Semantic & Aksesibilitas** | `02-semantic/` |
+| 50–63 | CSS, Box Model & Flow Dokumen | `03-box-model.html` |
+| 63–83 | **Flexbox** — porsi terbesar | `04-flexbox.html` |
+| 83–95 | **TailwindCSS** via Play CDN — sebagai hadiah | `05-tailwind.html` |
+| 95–104 | **Mobile-First & Breakpoint** | `05-tailwind.html` |
+| 104–120 | Penutup, tugas & **Setup Git + Pull Request** | `../tugas/` |
 
 ---
 
 ## Situasi Khusus P1
 
-**Padat — delapan bagian dalam 120 menit.** Kalau waktu habis, **Bagian 6 (Tailwind) yang dipotong — bukan Bagian 7.** Seluruh tugas dikumpulkan lewat Pull Request, jadi kalau setup Git gagal, peserta tidak bisa mengumpulkan apa pun. Yang wajib nempel hari ini: HTML semantic, Flexbox, dan Git/PR.
+**Padat — sembilan bagian dalam 120 menit.** Kalau waktu habis, **Bagian 6 (Tailwind) yang dipotong — bukan Bagian 8.** Seluruh tugas dikumpulkan lewat Pull Request, jadi kalau setup Git gagal, peserta tidak bisa mengumpulkan apa pun. Yang wajib nempel hari ini: HTML semantic, Flexbox, dan Git/PR.
 
 **Ini pertemuan pertama, dan taruhannya motivasi.** Sebagian peserta belum pernah menulis satu baris kode, dan sebagian sedang diam-diam bertanya apakah mereka salah masuk kelas.
 
@@ -106,7 +107,7 @@ Tampilan cantik sengaja cuma 20%. Detailnya di [soal.md](../tugas/tugas-1-static
 - [ ] Latih demo navbar Flexbox sampai lancar tanpa catatan
 - [ ] Hafalkan tiga kalimat **selingan** cara lama (Bagian 3, 4, dan `gap`) — cukup sekali sebut, jangan sampai malah jadi bahasan panjang
 - [ ] Uji `demo/05-tailwind.html` — pastikan CDN Tailwind termuat (butuh internet di ruang kelas)
-- [ ] Siapkan repositori starter kelas di GitHub, uji `clone` dari komputer lain
+- [ ] Siapkan **repositori template** kelas di GitHub (Settings → centang *Template repository*), uji tombol *Use this template* dari akun lain
 - [ ] Buka [kunci jawaban Tugas 1](../tugas/tugas-1-static-foundation/kunci-jawaban/index.html), pastikan tampil benar
 - [ ] Siapkan peragaan `<meta charset>` yang dihapus
 
@@ -114,5 +115,5 @@ Tampilan cantik sengaja cuma 20%. Detailnya di [soal.md](../tugas/tugas-1-static
 - [ ] VS Code font minimal 18pt, **tema terang** — tema gelap sering tidak terbaca lewat proyektor
 - [ ] Browser + DevTools terbuka berdampingan dengan editor
 - [ ] Sediakan 10 menit di awal khusus membantu instalasi yang gagal
-- [ ] Siapkan tautan repositori kelas + folder tugas untuk dibagikan di menit ke-105
+- [ ] Siapkan tautan repositori template + folder tugas untuk dibagikan di menit ke-106
 - [ ] Pastikan semua peserta sudah punya akun GitHub (cek di grup H-1)

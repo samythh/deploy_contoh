@@ -72,10 +72,16 @@ Kalau **Silabus** yang benar (dua pertemuan/minggu), Timeline perlu diperbarui �
 
 ---
 
-### T-004 — P2 kemungkinan kelebihan muatan
+### T-004 — P1 dan P2 sama-sama padat; bebannya bergeser, tidak berkurang
 
-**Ditemukan:** 25 Agustus 2026
+**Ditemukan:** 25 Agustus 2026 · **Diperbarui:** 25 Agustus 2026 (revisi kedua)
 **Status:** 🟡 Terbuka — perlu diawasi saat pelaksanaan, belum tentu perlu diubah
+
+> **Pembaruan revisi kedua:** strategi Mobile-First dipindah dari P2 ke P1. P2 memang jadi sedikit lebih longgar (CSS Grid sekarang hanya *menerapkan* breakpoint, tidak lagi mengajarkan konsepnya dari nol), tapi **P1 jadi sembilan bagian dalam 120 menit** — dan P1 adalah pertemuan pertama, dengan peserta yang belum pernah menulis kode.
+>
+> Yang meringankan: mobile-first di P1 diajarkan lewat prefiks `md:` `lg:` Tailwind yang baru saja diperkenalkan di bagian sebelumnya, dan diterapkan pada navbar yang sudah jadi — bukan konsep baru dari nol. Alokasinya 9 menit.
+>
+> Yang perlu diawasi: **Bagian 8 (Setup Git & PR) kebagian 16 menit**, dan Git selalu memakan waktu lebih lama dari perkiraan. Kalau di lapangan Bagian 7 molor, Bagian 8 yang terdesak — padahal Bagian 8 justru yang tidak boleh gagal. Urutan potong sudah ditulis di RUNDOWN: Tailwind dulu yang dikorbankan, bukan Git.
 
 Setelah revisi, P2 memuat dalam 120 menit: CSS Grid, Mobile-First & breakpoint, ES6+ lengkap, lima method array, modul + scope/hoisting, **dan** praktik live mengubah halaman P1 jadi dinamis.
 
@@ -149,7 +155,70 @@ Pemasangan di P1 cukup via CDN satu baris, belum perlu Node. Pemasangan yang ben
 
 Terbaru di atas.
 
-### 25 Agustus 2026
+### 25 Agustus 2026 — Revisi Kedua
+
+**PEMUTAKHIRAN SILABUS KE STANDAR 2026**
+
+*Sumber:* silabus versi rapat kedua yang diserahkan mentor. Fokusnya bukan menambah materi, tapi **memutakhirkan materi yang sudah ada agar tidak mengajarkan pola yang sudah ditinggalkan industri.**
+
+**1. TypeScript naik kelas — dari wawasan penutup jadi materi terapan**
+- Sebelumnya: pengantar 15 menit di P8, sekadar wawasan.
+- Sekarang: **25 menit di P6**, langsung dipakai di praktik live, dan **diwajibkan minimal satu `interface` di Tugas 3**.
+- Kompetensi lulusan baru: **Type-Safe API Consumption** (kompetensi ke-2 dari sembilan).
+- *Alasannya masuk akal:* TypeScript paling terasa gunanya saat berhadapan dengan data API yang bentuknya tidak pasti — dan itu tepat materi P6. Di P8 dia cuma jadi tempelan penutup.
+
+**2. React Compiler menggantikan memoization manual di P7**
+- `useMemo`, `useCallback`, `React.memo` kini **pengecualian, bukan kebiasaan** — dipakai hanya untuk kasus yang tidak tertangani compiler (`try/catch`, library yang bergantung pada *referential equality*).
+- Prinsip yang ditekankan: **ukur dengan React DevTools Profiler sebelum mengoptimasi.**
+- *Kenapa ini penting dicatat:* ini pembalikan kebiasaan. Materi yang ditulis dari ingatan hampir pasti akan mengajarkan memoization manual sebagai default — itu sudah bukan standar untuk project baru sejak React 19.
+
+**3. Kejujuran soal penyimpanan token di P8**
+- Token tetap disimpan di LocalStorage **untuk kesederhanaan kelas**, tapi sekarang wajib disertai penjelasan eksplisit bahwa pola ini **rentan XSS dan tidak dipakai di produksi**.
+- Standar industri 2026 (*access token* di memori + *refresh token* di cookie `HttpOnly`/`Secure`/`SameSite`) diperkenalkan sebagai wawasan.
+- *Alasannya:* mengajarkan pola tanpa menyebut risikonya berarti melepas lulusan yang membawa kebiasaan salah ke tempat kerja. Kompetensi ke-6 diubah dari "penyimpanan sesi" menjadi "**trade-off keamanan antar metode penyimpanan token**".
+
+**4. React Router v8**
+- Dari `react-router-dom` v6+ menjadi paket **`react-router` v8 dalam declarative mode**.
+
+**5. Mobile-First kembali ke P1**
+- Sebelumnya ikut CSS Grid turun ke P2. Sekarang **tetap di P1** (Bagian 7 baru, menit 95–104), diterapkan langsung pada navbar & hero yang baru dibangun.
+- Diajarkan lewat prefiks `md:` `lg:` Tailwind yang baru diperkenalkan di bagian sebelumnya — tidak perlu satu pun `@media` manual.
+- P2 kini hanya **menerapkan** breakpoint pada layout multi-kolom; judulnya berubah dari "Responsive Grid" jadi "**Layout Multi-Kolom**".
+- Konsekuensinya P1 jadi sembilan bagian — lihat pembaruan T-004.
+
+**6. Tiga wawasan industri baru**
+- **P5 (10 menit):** keterbatasan SPA dari sisi SEO & waktu muat pertama, dan bagaimana Next.js menjawabnya lewat SSR.
+- **P8 (15 menit):** Vitest & React Testing Library — kenapa tim produksi mensyaratkan test sebelum PR digabung. Peserta cukup **melihat** satu contoh, tidak diminta menulis.
+- Menggantikan slot pengantar TypeScript di P8 yang sudah pindah ke P6.
+
+**7. Audit Lighthouse jadi kriteria terukur**
+- P8 praktik live ditambah **audit Lighthouse** (Performance, Accessibility, Best Practices).
+- Tugas 4 mensyaratkan **skor Accessibility minimal 90** pada halaman utama.
+- *Kenapa ini bagus:* ini satu-satunya kriteria penilaian di seluruh silabus yang **terukur objektif**, bukan penilaian subjektif mentor. Sekaligus membuat materi aksesibilitas di P1 punya konsekuensi nyata di akhir.
+
+**8. Repositori dari template, bukan clone bersama**
+- Tiap peserta bikin repo **sendiri** lewat tombol *Use this template*, lalu menambahkan **mentor sebagai collaborator**.
+- Tiap tahap dikerjakan di branch terpisah dan diajukan lewat PR.
+- Tugas 2 ditegaskan dikerjakan **di repositori yang sama**, bukan bikin baru.
+- *Keuntungannya:* riwayat commit utuh milik peserta sendiri, bisa dipamerkan di CV, dan tidak bercampur dengan puluhan peserta lain di satu repo.
+
+**9. Penyelarasan kontrak data API digeser ke Capstone**
+- Dari P8 ke **Sprint 1 Capstone** — tempat yang lebih tepat, karena di situlah tim multidisiplin benar-benar terbentuk.
+
+**10. Berkas yang menyesuaikan**
+- `docs/Silabus.md` — kompetensi jadi sembilan, seluruh perubahan P1/P2/P5/P6/P7/P8, §3, Tugas 2/3/4, Capstone Sprint 1
+- Materi P1 — **Bagian 7 (Mobile-First) baru**, penutup jadi Bagian 8, alokasi menit seluruh bagian dirapatkan
+- Materi P2 — judul & Bagian 1 disesuaikan (mobile-first tidak diulang dari nol)
+- `P1/RUNDOWN.md`, `P1/README.md`, `P1/demo/README.md` — alur baru sembilan bagian
+- `tugas/README.md` & `tugas/tugas-1-static-foundation/soal.md` — alur template repo & collaborator
+- `CLAUDE.md` — ringkasan kurikulum, tiga kompetensi yang diselipkan, dan **daftar tiga hal yang gampang salah kalau ditulis dari ingatan** (React Compiler, LocalStorage/XSS, React Router v8)
+- `README.md` — tabel progres & tech stack
+
+**Temuan yang diperbarui:** T-004 — beban bergeser dari P2 ke P1, tidak berkurang. P1 kini sembilan bagian, dan Bagian 8 (Setup Git) yang paling berisiko terdesak.
+
+---
+
+### 25 Agustus 2026 — Revisi Pertama
 
 **REVISI SILABUS HASIL RAPAT — perubahan struktural**
 

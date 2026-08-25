@@ -10,7 +10,9 @@ Kelas berjalan **dua pertemuan per minggu**. Tugas **tidak** diberikan per perte
 
 Seluruh tugas adalah **satu produk web yang sama**, dikembangkan terus dari minggu pertama sampai minggu terakhir. Peserta tidak membuat empat proyek terpisah — mereka menumbuhkan satu proyek melalui empat tahap.
 
-Seluruh tugas dikumpulkan lewat **Pull Request** ke repositori kelas.
+Setiap peserta **membuat repositori sendiri dari template kelas** di awal program, lalu mengembangkan produk yang sama di repositori itu sepanjang kelas. Tiap tahap dikerjakan di **branch terpisah** dan diajukan lewat **Pull Request**; **mentor terdaftar sebagai collaborator** untuk melakukan review.
+
+> **Kenapa dari template, bukan clone repo bersama:** dengan template, tiap peserta punya repositori atas namanya sendiri — bisa dipamerkan di CV, riwayat commit-nya utuh miliknya, dan tidak bercampur dengan 30 peserta lain di satu repo. Yang di-clone bersama hanya cocok untuk kerja tim, dan itu baru relevan di fase Capstone.
 
 ---
 
@@ -19,9 +21,9 @@ Seluruh tugas dikumpulkan lewat **Pull Request** ke repositori kelas.
 | Tugas | Materi | Dikumpulkan sebelum | Produk jadi apa |
 |:--:|:--:|---|---|
 | **1** — Static Foundation | P1 & P2 | Pertemuan 3 | Halaman statis responsif → lalu dinamis dengan JavaScript |
-| **2** — React Migration | P3 & P4 | Pertemuan 5 | Dibangun ulang dengan React + Vite + Tailwind |
-| **3** — Multi-Page & Live Data | P5 & P6 | Pertemuan 7 | Multi-halaman, data dari REST API |
-| **4** — Production Ready | P7 & P8 | Demo Day | Global state, autentikasi, terbit ke internet |
+| **2** — React Migration | P3 & P4 | Pertemuan 5 | Dibangun ulang dengan React + Vite + Tailwind, **di repositori yang sama** |
+| **3** — Multi-Page & Live Data | P5 & P6 | Pertemuan 7 | Multi-halaman, data dari REST API, **+ minimal satu `interface` TypeScript** |
+| **4** — Production Ready | P7 & P8 | **1 minggu setelah P8** | Global state, autentikasi, terbit ke internet, **Lighthouse Accessibility ≥ 90** |
 
 ---
 
@@ -56,7 +58,9 @@ Sampaikan ini di Pertemuan 1, jangan menunggu ada yang tertinggal.
 
 ## Cara Mengumpulkan — Pull Request
 
-Sama untuk keempat tugas:
+Sekali di awal program: **Use this template** di repositori template kelas → bikin repo sendiri → tambahkan mentor sebagai **collaborator**.
+
+Lalu untuk tiap tugas:
 
 ```bash
 git checkout -b tugas1-nama-anda      # cabang baru, jangan kerja di main
@@ -67,7 +71,7 @@ git push -u origin tugas1-nama-anda
 
 Lalu di GitHub: **Compare & pull request** → isi judul → **Create pull request**.
 
-Setup awalnya diajarkan di **Pertemuan 1 Bagian 7**. Strategi branching yang lebih dalam dan penyelesaian *merge conflict* diajarkan di **Pertemuan 8**.
+Setup awalnya diajarkan di **Pertemuan 1 Bagian 8**. Strategi branching yang lebih dalam dan penyelesaian *merge conflict* diajarkan di **Pertemuan 8**.
 
 ---
 

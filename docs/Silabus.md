@@ -4,7 +4,7 @@
 
 **Metro Institute Season 2 — PT Metro Indonesian Software**
 
-> **Versi hasil rapat, 25 Agustus 2026.** Perubahan utama: sistem tugas menjadi satu produk berkelanjutan (4 tugas gabungan, bukan 8 tugas terpisah), pengumpulan lewat Pull Request, penambahan kompetensi Debugging & AI-Assisted Development, dan penggeseran materi antar P1–P2. Riwayat lengkapnya di [Catatan-Perubahan.md](Catatan-Perubahan.md).
+> **Versi hasil rapat, 25 Agustus 2026 (revisi kedua).** Perubahan utama pada revisi ini: **TypeScript naik dari wawasan penutup di P8 menjadi materi terapan di P6** (25 menit, langsung dipakai di praktik dan diwajibkan di Tugas 3), **React Compiler** menggantikan memoization manual sebagai pendekatan default di P7, **React Router v8** menggantikan React Router DOM v6+, penambahan wawasan industri (SSR di P5, Testing di P8), kebijakan penyimpanan token yang jujur soal risiko XSS, audit **Lighthouse** dengan ambang Accessibility ≥ 90, dan repositori peserta dibuat **dari template kelas** dengan mentor sebagai collaborator. Riwayat lengkapnya di [Catatan-Perubahan.md](Catatan-Perubahan.md).
 
 ---
 
@@ -16,7 +16,7 @@
 | **Target Peserta** | Mahasiswa / Talenta Pemula hingga Menengah |
 | **Durasi Kelas Teori & Praktik** | 8 Sesi Pertemuan Intensif (Oktober – November 2026) |
 | **Fase Proyek Lanjutan** | 6 Sprint Bimbingan Capstone (Desember – Januari) + 24-Hour Hackathon |
-| **Tech Stack & Tools Utama** | HTML5/CSS3, JavaScript (ES6+), React.js, Vite, TailwindCSS, Axios, Git/GitHub, Vercel, Chrome DevTools & React DevTools |
+| **Tech Stack & Tools Utama** | HTML5/CSS3, JavaScript (ES6+), **TypeScript (pengantar)**, React.js, Vite, TailwindCSS, Axios, Git/GitHub, Vercel, Chrome DevTools & React DevTools |
 | **Output Utama** | Aplikasi Web Responsif Terintegrasi API, Web Capstone Production, & MVP Web Hackathon |
 
 ---
@@ -39,13 +39,14 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 | # | Kompetensi | Deskripsi |
 |:--:|---|---|
 | 1 | **Modern JavaScript Mastery** | Menguasai JavaScript modern (ES6+) dan paradigma *asynchronous programming* (Promises, Async/Await). |
-| 2 | **Responsive Component-Driven UI** | Menerjemahkan desain Figma menjadi antarmuka web yang rapi, responsif (*mobile-first*), dan modular menggunakan React.js & TailwindCSS. |
-| 3 | **Robust State & Route Management** | Menguasai pengelolaan *state* (lokal & global) dan navigasi multi-halaman (React Router DOM). |
-| 4 | **Seamless API Integration** | Mengonsumsi dan mengintegrasikan RESTful API dari tim Backend secara efisien dengan penanganan status *loading* dan *error* yang baik. |
-| 5 | **Client-Side Security & Auth** | Memahami alur autentikasi berbasis token (JWT), penyimpanan sesi (session/local storage), dan rute terproteksi (*Protected Routes*). |
-| 6 | **Deployment & Git Collaboration** | Menguasai alur kerja Git *branch*, integrasi *pull request*, dan proses *deployment* web ke server cloud. |
-| 7 | **Debugging & Verification Skill** | Membaca pesan error di console, menelusuri *request/response* lewat tab Network, dan menginspeksi state komponen lewat React DevTools untuk menemukan akar masalah secara mandiri. |
-| 8 | **Responsible AI-Assisted Development** | Memanfaatkan AI *coding assistant* secara produktif sekaligus memverifikasi, menjelaskan, dan mempertanggungjawabkan setiap baris kode yang dihasilkan. |
+| 2 | **Type-Safe API Consumption** | Menuliskan `interface` TypeScript untuk mendeskripsikan bentuk data dari API sebagai **kontrak formal** dengan tim Backend. |
+| 3 | **Responsive Component-Driven UI** | Menerjemahkan desain Figma menjadi antarmuka web yang rapi, responsif (*mobile-first*), dan modular menggunakan React.js & TailwindCSS. |
+| 4 | **Robust State & Route Management** | Menguasai pengelolaan *state* (lokal & global) dan navigasi multi-halaman (React Router). |
+| 5 | **Seamless API Integration** | Mengonsumsi dan mengintegrasikan RESTful API dari tim Backend secara efisien dengan penanganan status *loading* dan *error* yang baik. |
+| 6 | **Client-Side Security & Auth** | Memahami alur autentikasi berbasis token (JWT), rute terproteksi (*Protected Routes*), serta **trade-off keamanan antar metode penyimpanan token**. |
+| 7 | **Deployment & Git Collaboration** | Menguasai alur kerja Git *branch*, integrasi *pull request*, dan proses *deployment* web ke server cloud. |
+| 8 | **Debugging & Verification Skill** | Membaca pesan error di console, menelusuri *request/response* lewat tab Network, dan menginspeksi state komponen lewat React DevTools untuk menemukan akar masalah secara mandiri. |
+| 9 | **Responsible AI-Assisted Development** | Memanfaatkan AI *coding assistant* secara produktif sekaligus memverifikasi, menjelaskan, dan mempertanggungjawabkan setiap baris kode yang dihasilkan. |
 
 ---
 
@@ -64,6 +65,7 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 - **Box Model & Flow Dokumen** sebagai dasar seluruh perilaku layout CSS.
 - **Deep-dive Flexbox:** Main Axis vs Cross Axis, Alignment, Justify, dan Wrapping.
 - Pengenalan **TailwindCSS** (via Play CDN) dan pemetaan *utility class* terhadap properti CSS aslinya.
+- **Strategi Mobile-First & breakpoint responsif** (`sm`, `md`, `lg`) diterapkan langsung pada Navbar dan Hero Section yang baru dibangun.
 
 **Praktik Live**
 
@@ -71,20 +73,20 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 
 **Setup Workflow (15 menit terakhir)**
 
-- Konfigurasi Git, *clone* repositori starter kelas, *branch*, *commit*, *push*, dan Pull Request pertama.
+- Konfigurasi Git, **pembuatan repositori dari template kelas**, *branch*, *commit*, *push*, dan Pull Request pertama.
 - Seluruh tugas Pertemuan 1–8 dikumpulkan melalui Pull Request.
 
 ---
 
 ### Pertemuan 2 — Praktik Sintaksis Dasar
 
-**Modern JavaScript (ES6+), Manipulasi Data & Responsive Grid**
+**Modern JavaScript (ES6+), Manipulasi Data & Layout Multi-Kolom**
 
 > **Fokus Pembelajaran:** Sintaks JavaScript Modern, Transformasi Data, & Layout Multi-Kolom.
 
 **Materi**
 
-- **CSS Grid** (Template Columns/Rows, Gap) dan strategi *Mobile-First* dengan breakpoint responsif (`sm`, `md`, `lg`, `xl`).
+- **CSS Grid** (Template Columns/Rows, Gap) dan penerapan **breakpoint responsif pada layout multi-kolom** — melanjutkan strategi mobile-first yang sudah dipakai di P1.
 - **ES6+ Fundamentals:** Arrow Functions, Template Literals, Destructuring Object/Array, Spread & Rest Operators.
 - **Manipulasi Array Esensial:** `.map()`, `.filter()`, `.find()`, `.some()`, dan `.reduce()`.
 - Konsep dasar modul JavaScript (Import/Export) dan Scope/Hoisting.
@@ -143,9 +145,14 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 
 **Materi**
 
-- *Single Page Application* (SPA) Routing menggunakan React Router DOM v6+ (`BrowserRouter`, `Routes`, `Route`, `Link`).
+- *Single Page Application* (SPA) Routing menggunakan **React Router v8** — paket `react-router` dalam *declarative mode* (`BrowserRouter`, `Routes`, `Route`, `Link`).
 - Dinamisasi URL: URL Params (`useParams`) dan Query Strings (`useSearchParams`).
 - *Programmatic Navigation* menggunakan `useNavigate`.
+
+**Wawasan Industri (10 menit)**
+
+- Keterbatasan SPA dari sisi **SEO** dan **waktu muat pertama**, serta bagaimana framework seperti **Next.js** menjawabnya lewat *server-side rendering*.
+- Peserta memahami posisi arsitektur yang mereka pelajari dalam peta ekosistem yang lebih luas.
 - Pembuatan *Custom Hooks* untuk enkapsulasi logika bisnis berulang (`useLocalStorage`, `useWindowSize`).
 
 **Praktik Live**
@@ -167,6 +174,11 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 - Menangani status antarmuka: Initial, Loading Skeleton/Spinner, Success Data, Empty State, dan Error Alert.
 - **Membaca alur request/response melalui tab Network di DevTools** — status code, payload, response time.
 
+**Pengantar TypeScript (25 menit)**
+
+- Mengapa data dari API perlu tipe eksplisit; menulis `interface` untuk mendeskripsikan bentuk *response* API.
+- Peserta menerapkan **minimal satu `interface`** pada data yang diambil di praktik live — bukan sekadar wawasan, tapi langsung dipakai.
+
 **Praktik Live**
 
 - Menghubungkan aplikasi React dengan REST API publik, dengan penekanan pada penanganan **lima status antarmuka** secara lengkap (Initial, Loading, Success, Empty, Error) dan **simulasi kondisi gagal** untuk menguji error handling.
@@ -183,7 +195,9 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 
 - Kapan membutuhkan *Global State* vs *Local State*.
 - Implementasi Global State modern: React Context API vs Zustand (ringan dan mudah digunakan).
-- Optimasi performa: `useMemo`, `useCallback`, dan `React.memo` untuk mencegah *re-render* berlebihan.
+- **Optimasi performa modern: React Compiler** sebagai penanganan *memoization* otomatis di tingkat build — standar untuk project baru sejak React 19.
+  - `useMemo`, `useCallback`, dan `React.memo` kini menjadi **pengecualian, bukan kebiasaan** — dipakai hanya untuk kasus yang tidak tertangani compiler (kode di dalam `try/catch`, library yang bergantung pada *referential equality*).
+  - Prinsip yang ditekankan: **ukur dengan React DevTools Profiler sebelum mengoptimasi.**
 - *Code Splitting* & *Lazy Loading* komponen menggunakan `React.lazy()` dan `Suspense`.
 
 **Wawasan Industri (15 menit)**
@@ -205,19 +219,22 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 
 **Materi**
 
-- Alur Autentikasi Client-Side: Login, Register, simpan JWT Token di LocalStorage/Cookie, & Logout.
+- Alur Autentikasi Client-Side: Login, Register, penyimpanan token, & Logout.
+  - **Untuk keperluan kelas, token disimpan di LocalStorage** karena kesederhanaannya — disertai penjelasan eksplisit bahwa pola ini **rentan terhadap serangan XSS** dan tidak digunakan di sistem produksi.
+  - **Standar industri 2026** (*access token* di memori + *refresh token* dalam cookie `HttpOnly`/`Secure`/`SameSite`) diperkenalkan sebagai wawasan, agar peserta tidak membawa pola yang salah ke dunia kerja.
 - Membangun *Protected Route Component* — mencegah akses halaman dashboard jika belum login.
 - Manajemen Environment Variables (`.env.local` vs `.env.production`).
-- *Production Build* (`npm run build`), analisis *bundle size*, dan deployment ke platform cloud (Vercel / Netlify).
+- *Production Build* (`npm run build`) dan deployment ke platform cloud (Vercel / Netlify).
 - **Git Collaboration Workflow:** strategi branching (`main` / `dev` / `feature`), penyelesaian *merge conflict*, dan budaya *code review* lewat Pull Request — melanjutkan praktik yang dijalankan sejak Pertemuan 1.
 
-**Pengantar TypeScript (15 menit)**
+**Wawasan Testing (15 menit)**
 
-- Mengapa tim dengan backend membutuhkan tipe data eksplisit; contoh `interface` untuk kontrak data API sebagai bekal menghadapi standar industri.
+- Pengenalan **Vitest & React Testing Library** — mengapa tim produksi mensyaratkan test sebelum Pull Request digabung.
+- Peserta melihat **satu contoh test komponen sederhana** tanpa diminta menulisnya sendiri.
 
 **Praktik Live**
 
-- Deploy aplikasi ke Vercel dan uji coba integrasi alur login-logout terlindungi.
+- Deploy aplikasi ke Vercel, uji coba integrasi alur login-logout terlindungi, dan menjalankan **audit Lighthouse** pada hasil deployment (Performance, Accessibility, Best Practices).
 
 ---
 
@@ -227,7 +244,7 @@ Kelas berjalan **dua pertemuan per minggu**. Tugas tidak diberikan per pertemuan
 
 Seluruh tugas merupakan **satu produk web yang sama** dan terus dikembangkan dari minggu pertama hingga minggu terakhir. Peserta tidak membuat empat proyek terpisah, melainkan menumbuhkan satu proyek melalui empat tahap. Pendekatan ini dipilih agar peserta mengalami langsung bagaimana sebuah aplikasi berevolusi dari halaman statis menjadi aplikasi produksi — pengalaman yang tidak bisa didapat dari tugas-tugas yang berdiri sendiri.
 
-Seluruh tugas dikumpulkan melalui **Pull Request** ke repositori kelas.
+Setiap peserta **membuat repositori sendiri dari template kelas** di awal program, dan mengembangkan produk yang sama di repositori tersebut sepanjang kelas. Setiap tahap tugas dikerjakan di **branch terpisah** dan diajukan lewat **Pull Request**; **mentor terdaftar sebagai collaborator** untuk melakukan review.
 
 ### Tema Produk
 
@@ -262,7 +279,7 @@ Membangun ulang produk Tugas 1 menggunakan React + Vite + TailwindCSS, lalu mena
 
 **Ketentuan**
 
-- Project diinisialisasi dengan Vite; **TailwindCSS dipasang melalui build tool** (tidak lagi memakai Play CDN).
+- Project diinisialisasi dengan Vite **di dalam repositori yang sama** (bukan repositori baru); **TailwindCSS dipasang melalui build tool**.
 - UI dipecah menjadi **minimal empat komponen** terpisah dengan tanggung jawab yang jelas.
 - Data dikirim antar komponen melalui props; daftar dirender dengan `.map()` disertai `key` yang **unik dan stabil** (bukan index array).
 - Minimal satu fitur interaktif menggunakan `useState` (pencarian, filter, atau favorit).
@@ -284,9 +301,10 @@ Mengubah produk menjadi aplikasi multi-halaman yang datanya berasal dari REST AP
 - Routing minimal tiga halaman: Beranda (`/`), Detail Item (`/item/:id`), dan halaman 404.
 - Halaman detail mengambil parameter melalui `useParams`.
 - Minimal satu **custom hook** untuk logika yang berulang.
+- Minimal satu **`interface` TypeScript** untuk mendeskripsikan bentuk data yang diterima dari API.
 - Data diambil dari REST API publik atau mock API menggunakan Axios dengan konfigurasi base URL.
 - **Wajib:** kelima status antarmuka ditangani lengkap — Initial, Loading, Success, Empty, dan Error, masing-masing dengan tampilan yang berbeda.
-- Fitur pencarian dan pagination diimplementasikan secara mandiri berdasarkan *starter code* dan panduan mentor.
+- Fitur pencarian dan pagination diimplementasikan secara mandiri berdasarkan panduan mentor.
 
 **Kriteria penilaian:** kelengkapan penanganan lima status antarmuka (bobot terbesar), kebenaran routing dinamis, dan kualitas custom hook.
 
@@ -296,7 +314,7 @@ Mengubah produk menjadi aplikasi multi-halaman yang datanya berasal dari REST AP
 
 ### Tugas 4 — Production Ready
 
-**Materi Pertemuan 7 & 8** · Dikumpulkan sebelum Demo Day
+**Materi Pertemuan 7 & 8** · Dikumpulkan **paling lambat satu minggu setelah Pertemuan 8**, sebelum fase Capstone dimulai
 
 Menyelesaikan produk dengan state global, autentikasi, dan menerbitkannya ke internet.
 
@@ -311,7 +329,7 @@ Menyelesaikan produk dengan state global, autentikasi, dan menerbitkannya ke int
 
 **Yang dikumpulkan:** URL aplikasi yang dapat diakses publik, tautan repositori GitHub dengan riwayat commit yang rapi, dan `README` berisi deskripsi produk beserta cara menjalankannya secara lokal.
 
-**Kriteria penilaian:** aplikasi berjalan tanpa error di lingkungan produksi, alur autentikasi berfungsi utuh, dan kerapian repositori.
+**Kriteria penilaian:** aplikasi berjalan tanpa error di lingkungan produksi, alur autentikasi berfungsi utuh, **skor Lighthouse untuk Accessibility minimal 90** pada halaman utama, dan kerapian repositori.
 
 ---
 
@@ -322,7 +340,7 @@ Setelah menyelesaikan 8 pertemuan kelas, peserta Frontend berkolaborasi dalam **
 
 | Sprint / Minggu | Agenda Bimbingan Mentor & Tim Capstone | Target Output Frontend |
 |---|---|---|
-| **Sprint 1**<br>*(W1 Des)* | Analisis User Flow & inisialisasi repo GitHub, setup Vite + TailwindCSS + Router. | Struktur Folder & Setup Project Siap |
+| **Sprint 1**<br>*(W1 Des)* | Analisis User Flow, **penyelarasan format kontrak data API bersama tim Backend & komponen UI dari tim UI/UX**, inisialisasi repo GitHub, setup Vite + TailwindCSS + Router. | Struktur Folder & Setup Project Siap |
 | **Sprint 2**<br>*(W2 Des)* | Slicing layout dasar dari Wireframe/Design System UI/UX & menyusun komponen UI inti. | Komponen Atom & Halaman Statis Siap |
 | **Sprint 3**<br>*(W3 Des)* | Integrasi halaman utama dengan REST API autentikasi & data master dari tim Backend. | Integrasi Login & Read Data API |
 | **Sprint 4**<br>*(W4 Des)* | Penyelesaian seluruh fitur CRUD web, form transaksi, dan implementasi Global State. | Fitur Utama Berfungsi Penuh |

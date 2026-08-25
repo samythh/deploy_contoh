@@ -71,8 +71,8 @@ Bukan 8 tugas terpisah, melainkan **4 tugas gabungan** yang membangun **satu pro
 |:--:|:--:|---|
 | 1 | P1 & P2 | Halaman statis responsif → dinamis dengan JavaScript |
 | 2 | P3 & P4 | Dibangun ulang dengan React + Vite + Tailwind |
-| 3 | P5 & P6 | Multi-halaman, data dari REST API |
-| 4 | P7 & P8 | Global state, autentikasi, terbit ke internet |
+| 3 | P5 & P6 | Multi-halaman, data dari REST API, + `interface` TypeScript |
+| 4 | P7 & P8 | Global state, autentikasi, terbit ke internet, Lighthouse A11y ≥ 90 |
 
 Detailnya di [tugas/README.md](tugas/README.md).
 
@@ -82,14 +82,14 @@ Detailnya di [tugas/README.md](tugas/README.md).
 
 | Kode | Pertemuan | Topik | Status |
 |:--:|---|---|:--:|
-| **P1** | Fundamental Logika Dasar | Arsitektur Web, HTML5 Semantic, Box Model, Flexbox, Tailwind CDN, Setup Git & PR | ✅ Selesai |
-| **P2** | Praktik Sintaksis Dasar | CSS Grid, Mobile-First, JavaScript ES6+, Manipulasi Data | ✅ Selesai |
+| **P1** | Fundamental Logika Dasar | Arsitektur Web, HTML5 Semantic, Box Model, Flexbox, Tailwind CDN, Mobile-First, Setup Git & PR | ✅ Selesai |
+| **P2** | Praktik Sintaksis Dasar | CSS Grid & Layout Multi-Kolom, JavaScript ES6+, Manipulasi Data | ✅ Selesai |
 | **P3** | Studi Kasus & Latihan Terbimbing | React.js Fundamentals, Component Architecture, Tailwind via Vite | ⬜ Belum |
 | **P4** | Pengembangan Fitur Dasar | State, Lifecycle Hooks & Controlled Forms | ⬜ Belum |
-| **P5** | Integrasi Konsep Lanjutan | Routing & Custom Hooks | ⬜ Belum |
-| **P6** | Studi Kasus Tingkat Menengah | REST API Consumption & Async UI | ⬜ Belum |
-| **P7** | Advanced Framework | Global State & Performance Optimization | ⬜ Belum |
-| **P8** | Materi Lanjutan & Final Progress | Auth (JWT), Production Build & Deployment | ⬜ Belum |
+| **P5** | Integrasi Konsep Lanjutan | React Router v8, Custom Hooks, wawasan SSR | ⬜ Belum |
+| **P6** | Studi Kasus Tingkat Menengah | REST API Consumption, Async UI, **pengantar TypeScript** | ⬜ Belum |
+| **P7** | Advanced Framework | Global State, **React Compiler**, wawasan TanStack Query | ⬜ Belum |
+| **P8** | Materi Lanjutan & Final Progress | Auth (JWT), Deployment, Lighthouse, wawasan Testing | ⬜ Belum |
 
 ---
 
@@ -135,7 +135,7 @@ Contoh: `P1/P1-Materi-Mentor-Frontend-HTML-CSS.md`, `P2/P2-Materi-Mentor-Fronten
 
 ## Tech Stack Program
 
-`HTML5/CSS3` · `JavaScript ES6+` · `React.js` · `Vite` · `TailwindCSS` · `Axios` · `Git/GitHub` · `Vercel` · `Chrome DevTools` · `React DevTools`
+`HTML5/CSS3` · `JavaScript ES6+` · `TypeScript` · `React.js` · `Vite` · `TailwindCSS` · `Axios` · `Git/GitHub` · `Vercel` · `Chrome DevTools` · `React DevTools`
 
 ---
 

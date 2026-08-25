@@ -13,14 +13,15 @@ Semua file berdiri sendiri — cukup double-click, tidak perlu server atau insta
 | File | Bagian di materi | Menit |
 |---|---|:--:|
 | [01-kerangka.html](01-kerangka.html) | Bagian 1 — Anatomi Dokumen HTML | 8–20 |
-| [02-semantic/](02-semantic/) | Bagian 3 — HTML5 Semantic & Aksesibilitas | 33–53 |
-| [03-box-model.html](03-box-model.html) | Bagian 4 — CSS, Box Model & Flow | 53–67 |
-| [04-flexbox.html](04-flexbox.html) | Bagian 5 — Flexbox | 67–89 |
-| [05-tailwind.html](05-tailwind.html) | Bagian 6 — TailwindCSS via Play CDN | 89–102 |
+| [02-semantic/](02-semantic/) | Bagian 3 — HTML5 Semantic & Aksesibilitas | 31–50 |
+| [03-box-model.html](03-box-model.html) | Bagian 4 — CSS, Box Model & Flow | 50–63 |
+| [04-flexbox.html](04-flexbox.html) | Bagian 5 — Flexbox | 63–83 |
+| [05-tailwind.html](05-tailwind.html) | Bagian 6 — TailwindCSS via Play CDN | 83–95 |
+| [05-tailwind.html](05-tailwind.html) | Bagian 7 — Mobile-First & Breakpoint | 95–104 |
 
-> **Bagian 2 (Arsitektur Web)** dan **Bagian 7 (Setup Git & PR)** tidak punya file demo — keduanya dijalankan lewat penjelasan, tab Network browser, dan terminal.
+> **Bagian 2 (Arsitektur Web)** dan **Bagian 8 (Setup Git & PR)** tidak punya file demo — keduanya dijalankan lewat penjelasan, tab Network browser, dan terminal.
 >
-> **CSS Grid & Mobile-First sudah pindah ke P2** ([P2/demo/01-grid-responsif.html](../../P2/demo/01-grid-responsif.html)). Jangan diajarkan hari ini.
+> **CSS Grid sudah pindah ke P2** ([P2/demo/01-grid-responsif.html](../../P2/demo/01-grid-responsif.html)). Jangan diajarkan hari ini.
 
 ---
 
@@ -55,7 +56,7 @@ Yang paling penting di file ini: **petakan tabel CSS → Tailwind satu per satu 
 
 Jangan lewati contoh nomor 4 (class yang panjangnya sebelas). Kelemahan Tailwind harus Anda sebut duluan — peserta akan melihatnya sendiri dalam 5 menit, dan kalau Anda diam, kredibilitas Anda yang turun.
 
-**Ini bagian yang paling aman dipotong** kalau waktu habis — tapi **jangan potong Bagian 7 (Setup Git)** untuk mengejarnya. Tanpa Git, peserta tidak bisa mengumpulkan tugas sama sekali.
+**Ini bagian yang paling aman dipotong** kalau waktu habis — tapi **jangan potong Bagian 8 (Setup Git)** untuk mengejarnya. Tanpa Git, peserta tidak bisa mengumpulkan tugas sama sekali.
 
 ---
 
