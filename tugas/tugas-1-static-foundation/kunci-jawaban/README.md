@@ -1,7 +1,7 @@
-# Kunci Jawaban — Pertemuan 1
+# Kunci Jawaban — Tugas 1 (Static Foundation)
 
 > ⚠️ **UNTUK MENTOR SAJA.** Jangan bagikan folder ini ke peserta.
-> Saat membagikan tugas, kirim isi folder [`../tugas/`](../tugas/) saja.
+> Saat membagikan tugas, kirim isi folder [`../tugas/`](../) saja.
 
 ---
 
@@ -67,4 +67,4 @@ Biarkan mereka menjawab sendiri. Pertanyaan ini lebih efektif daripada koreksi t
 
 Alasan di komentar (**30%**) lebih besar daripada layout berfungsi (**20%**). Jawaban yang tampilannya rapi tapi tanpa penalaran nilainya lebih rendah daripada jawaban yang sedikit meleset tapi alasannya jelas.
 
-Ini sejalan dengan prinsip di [CLAUDE.md](../../CLAUDE.md): tugas menulis itu pintu masuk, **tanya-jawab lisan di breakout room yang jadi kuncinya.**
+Ini sejalan dengan prinsip di [CLAUDE.md](../../../CLAUDE.md): tugas menulis itu pintu masuk, **tanya-jawab lisan di breakout room yang jadi kuncinya.**

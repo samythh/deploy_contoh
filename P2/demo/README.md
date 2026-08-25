@@ -55,5 +55,5 @@ Kalau terlanjur kena: tekan `F5`, console bersih lagi. Bisa juga dijadikan bahan
 
 ## Terkait
 
-- [Tugas untuk peserta](../tugas/) — yang ini dibagikan
-- [Kunci jawaban](../kunci-jawaban/) — mentor saja
+- [Tugas 1 — Static Foundation](../../tugas/tugas-1-static-foundation/) — mencakup P1 **dan** P2
+- [Sistem tugas & kebijakan AI](../../tugas/README.md)

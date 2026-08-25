@@ -86,7 +86,7 @@ Hanya demo modul (`04-modul/`) yang butuh **Live Server** — dan itu untuk ment
 | 20% | Kode jalan & benar hasilnya |
 | 10% | Kerapian |
 
-Alasan (30%) sengaja diberi bobot lebih besar daripada kode jalan (20%). Boleh pakai AI, tapi verifikasi lisan acak di breakout room yang jadi penentu — detailnya di [soal.md](tugas/soal.md).
+Alasan (30%) sengaja diberi bobot lebih besar daripada kode jalan (20%). Boleh pakai AI, tapi verifikasi lisan acak di breakout room yang jadi penentu — detailnya di [soal.md](../tugas/tugas-1-static-foundation/soal.md).
 
 ---
 
@@ -99,7 +99,7 @@ Alasan (30%) sengaja diberi bobot lebih besar daripada kode jalan (20%). Boleh p
 **H-1**
 - [ ] Latih demo chaining `.filter().map()` di console sampai lancar
 - [ ] Coba `console.table()` — pastikan tampil rapi (momen wow)
-- [ ] Uji [kunci jawaban](kunci-jawaban/tugas-2-kunci.js), pastikan semua hasilnya cocok
+- [ ] Uji [kunci jawaban](../tugas/tugas-1-static-foundation/kunci-jawaban/), pastikan semua hasilnya cocok
 - [ ] Kalau mau memakai demo modul: pasang Live Server, uji `04-modul/index.html`
 
 **Hari-H**

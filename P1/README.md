@@ -91,7 +91,7 @@ Ada **bonus opsional +10 poin**: konversi satu kartu saja ke Tailwind, disertai 
 | 20% | Layout berfungsi & responsif di HP |
 | 15% | Kerapian (indentasi, penamaan class) |
 
-Tampilan cantik sengaja cuma 20%. Detailnya di [soal.md](tugas/soal.md).
+Tampilan cantik sengaja cuma 20%. Detailnya di [soal.md](../tugas/tugas-1-static-foundation/soal.md).
 
 ---
 
