@@ -56,7 +56,7 @@ Buka file ini di layar kedua saat kelas berlangsung. Isinya cuma **gerakan**, bu
 1. Ketik kerangka HTML **manual** bersama peserta. Melelahkan, itu maksudnya.
 2. `<head>` vs `<body>` — analogi amplop surat.
 3. **Peragakan:** hapus `<meta charset>`, ketik "Ekonomi Indonesia — 2026" → karakter rusak.
-4. **Peragakan:** pindahkan `<h1>` ke `<head>` → teksnya hilang.
+4. **Peragakan:** pindahkan `<h1>` ke `<head>` → **tulisannya tetap muncul.** Buka `F12` → Elements: `<h1>` ternyata dipindah browser ke `<body>`. Pelajarannya: *yang kalian tulis bukan yang dibaca browser.*
 5. **Baru kasih Emmet:** *"Sekarang saya kasih hadiah. Ketik `!` lalu Tab."*
 
 **Cek sebelum lanjut:** semua punya file dengan kerangka lengkap.

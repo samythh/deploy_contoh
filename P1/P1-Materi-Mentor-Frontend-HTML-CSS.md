@@ -111,7 +111,7 @@ Setiap halaman web punya kerangka baku yang selalu sama:
 
 ## BANDINGKAN — `<head>` vs `<body>`
 
-Ini pembagian pertama yang harus nempel, karena pemula sering menaruh konten di `<head>` lalu bingung kenapa tidak muncul.
+Ini pembagian pertama yang harus nempel, karena pemula sering menaruh konten di `<head>` — lalu bingung kenapa tetap muncul.
 
 | | `<head>` | `<body>` |
 |---|---|---|
@@ -121,8 +121,26 @@ Ini pembagian pertama yang harus nempel, karena pemula sering menaruh konten di 
 
 > **CARA SAMPAIKAN — Analogi Amplop Surat:**
 > "`<head>` itu bagian luar amplop — nama penerima, alamat, perangko. Penting banget, tapi bukan isi suratnya.
-> `<body>` itu surat di dalamnya. Yang dibaca orang.
-> Makanya kalau kalian nulis teks di `<head>`, dia nggak muncul. Bukan error — memang bukan tempatnya."
+> `<body>` itu surat di dalamnya. Yang dibaca orang."
+
+### PERAGAAN — browser menambal kesalahan Anda diam-diam
+
+> ⚠️ **JANGAN bilang "kalau ditaruh di `<head>` tulisannya hilang".** Itu tidak benar, dan peserta yang iseng mencoba akan langsung menemukan Anda salah.
+
+Taruh `<h1>` di dalam `<head>`, simpan, refresh. **Tulisannya tetap muncul.**
+
+Yang sebenarnya terjadi: parser HTML tahu `<h1>` tidak sah di `<head>`, lalu diam-diam menutup `<head>`, membuka `<body>`, dan memindahkan `<h1>` ke sana. Di **DOM** — struktur yang benar-benar dipakai browser — `<h1>` itu anak `<body>`.
+
+**Buktikan di layar:** `F12` → tab **Elements**. Terlihat `<h1>` duduk di dalam `<body>`, padahal di file ditulis di `<head>`.
+
+> **CARA SAMPAIKAN — Analogi Editor Naskah:**
+> "HTML itu kayak editor yang baik hati banget. Kalian kasih naskah berantakan, dia rapikan diam-diam, terus terbit kelihatan bagus.
+> Enak? Enak. Masalahnya: kalian jadi nggak pernah tahu naskah kalian berantakan.
+> Makanya kita butuh tab Elements. Itu buat lihat **naskah yang udah diedit** — bukan yang kalian tulis. Kalau dua-duanya beda, berarti ada yang salah di tulisan kalian."
+
+Ini pelajaran yang lebih berharga daripada aturan head/body itu sendiri: **yang Anda tulis di file bukan yang dibaca browser.** HTML gagal tanpa suara — tidak ada pesan error, cuma hasil yang diam-diam berbeda. Karena itu **tab Elements adalah pengganti pesan error di HTML**, dan itu sudah menanamkan kompetensi *Debugging & Verification* di menit ke-13.
+
+**Demo head-vs-body yang jujur** kalau tetap ingin menunjukkan "isi `<head>` tidak tampil di halaman": pakai `<title>`. Teksnya muncul di tab browser, tidak pernah di badan halaman — dan `<title>` memang elemen `<head>` yang sah, jadi tidak dipindahkan parser.
 
 ## KENAPA tiga baris di `<head>` itu wajib
 

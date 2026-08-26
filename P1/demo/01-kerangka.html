@@ -37,9 +37,25 @@
       Semua yang KELIHATAN ada di sini.
 
       PERAGAAN <head> vs <body>: pindahkan <h1> di bawah ke dalam <head>,
-      simpan, refresh. Tulisannya hilang. Tidak ada error — memang
-      bukan tempatnya. Analogi amplop: head itu luar amplop, body itu
-      suratnya.
+      simpan, refresh.
+
+      TULISANNYA TETAP MUNCUL. Jangan bilang ke kelas bahwa dia hilang —
+      itu keliru, dan peserta yang iseng mencoba akan langsung tahu.
+
+      Yang terjadi: parser tahu <h1> tidak sah di <head>, lalu diam-diam
+      menutup <head>, membuka <body>, dan memindahkan <h1> ke sana.
+
+      BUKA F12 -> tab Elements. Terlihat <h1> duduk di dalam <body>,
+      padahal di file ditulis di <head>.
+
+      ITU pelajarannya, dan lebih berharga daripada aturan head/body
+      sendiri: yang kalian tulis di file BUKAN yang dibaca browser.
+      HTML gagal tanpa suara. Makanya tab Elements adalah pengganti
+      pesan error di HTML.
+
+      Kalau tetap ingin menunjukkan "isi <head> tidak tampil di
+      halaman", pakai <title> — teksnya cuma muncul di tab browser,
+      dan <title> memang elemen <head> yang sah jadi tidak dipindahkan.
     -->
     <h1>Halo, saya peserta Metro Institute</h1>
 

@@ -155,6 +155,19 @@ Pemasangan di P1 cukup via CDN satu baris, belum perlu Node. Pemasangan yang ben
 
 Terbaru di atas.
 
+### 26 Agustus 2026
+
+**KOREKSI FAKTA — peragaan `<head>` vs `<body>` di P1 salah**
+
+- *Ditemukan oleh mentor* saat menguji sendiri: materi menyatakan bahwa `<h1>` yang ditaruh di dalam `<head>` akan membuat tulisannya **hilang**. Itu **tidak benar** — tulisannya tetap muncul.
+- *Yang sebenarnya terjadi:* parser HTML tahu `<h1>` tidak sah di `<head>`, lalu diam-diam menutup `<head>`, membuka `<body>`, dan memindahkan `<h1>` ke sana. Di DOM, `<h1>` itu anak `<body>`.
+- *Kenapa ini berbahaya kalau dibiarkan:* peserta yang iseng mencoba akan langsung menemukan mentornya salah, di pertemuan pertama — tepat saat kredibilitas sedang dibangun.
+- **Peragaan diganti, bukan dihapus.** Versi barunya justru lebih berharga: buka `F12` → tab **Elements**, tunjukkan `<h1>` duduk di `<body>` padahal ditulis di `<head>`. Pelajarannya: **yang ditulis di file bukan yang dibaca browser** — HTML gagal tanpa suara, dan tab Elements adalah pengganti pesan error di HTML. Ini menanamkan kompetensi *Debugging & Verification* di menit ke-13, bukan menunggu P6.
+- Ditambahkan juga demo head-vs-body yang jujur kalau tetap ingin menunjukkan "isi `<head>` tidak tampil": pakai `<title>` — teksnya cuma muncul di tab browser, dan `<title>` memang elemen `<head>` yang sah sehingga tidak dipindahkan parser.
+- Diperbaiki di empat berkas: materi P1 Bagian 1, `P1/RUNDOWN.md`, `P1/demo/README.md`, `P1/demo/01-kerangka.html` — ketiganya kini memuat peringatan eksplisit **jangan** mengatakan tulisannya hilang.
+
+---
+
 ### 25 Agustus 2026 — Revisi Kedua
 
 **PEMUTAKHIRAN SILABUS KE STANDAR 2026**

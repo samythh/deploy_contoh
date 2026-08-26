@@ -34,7 +34,9 @@ Bangun bersama peserta, jangan ditunjukkan jadi. Lima baris CSS menghasilkan nav
 
 ## Catatan per File
 
-**`01-kerangka.html`** — Ketik ulang dari nol bersama peserta, jangan langsung dibuka. Mengetik manual sekali adalah syarat sebelum Emmet diberikan sebagai hadiah di akhir bagian. File ini memuat dua peragaan: hapus `<meta charset>` lalu lihat karakter `—` rusak, dan pindahkan `<h1>` ke `<head>` lalu lihat teksnya hilang.
+**`01-kerangka.html`** — Ketik ulang dari nol bersama peserta, jangan langsung dibuka. Mengetik manual sekali adalah syarat sebelum Emmet diberikan sebagai hadiah di akhir bagian. File ini memuat dua peragaan: hapus `<meta charset>` lalu lihat karakter `—` rusak, dan pindahkan `<h1>` ke `<head>` lalu buka tab **Elements**.
+
+> ⚠️ **Jangan bilang "kalau di `<head>` tulisannya hilang"** — itu keliru, dan peserta yang iseng mencoba akan langsung menemukannya. Browser menambal kesalahan itu diam-diam: `<h1>` dipindah ke `<body>` di DOM, jadi tetap tampil. Justru itu pelajarannya — **yang ditulis di file bukan yang dibaca browser**, dan tab Elements adalah pengganti pesan error di HTML.
 
 **`02-semantic/`** — **Buka `divsoup.html` dan `semantic.html` berdampingan.** Keduanya memakai `style.css` yang sama dan tampilannya identik — itu inti demonstrasinya. Peserta perlu melihat sendiri bahwa `div` tidak salah dan tidak error, supaya argumen semantic tidak terdengar sewenang-wenang.
 
@@ -65,7 +67,7 @@ Jangan lewati contoh nomor 4 (class yang panjangnya sebelas). Kelemahan Tailwind
 - Perbesar font editor minimal **18pt**, pakai **tema terang** — tema gelap sering tidak terbaca lewat proyektor
 - Buka browser dan DevTools berdampingan dengan VS Code
 - Uji `05-tailwind.html` — CDN Tailwind butuh internet
-- Siapkan repositori starter kelas di GitHub, uji `clone` dari komputer lain
+- Siapkan **repositori template** kelas di GitHub (Settings → centang *Template repository*), uji tombol *Use this template* dari akun lain
 
 ---
 
