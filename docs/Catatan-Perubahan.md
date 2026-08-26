@@ -83,11 +83,11 @@ Kalau **Silabus** yang benar (dua pertemuan/minggu), Timeline perlu diperbarui �
 >
 > Yang perlu diawasi: **Bagian 8 (Setup Git & PR) kebagian 16 menit**, dan Git selalu memakan waktu lebih lama dari perkiraan. Kalau di lapangan Bagian 7 molor, Bagian 8 yang terdesak — padahal Bagian 8 justru yang tidak boleh gagal. Urutan potong sudah ditulis di RUNDOWN: Tailwind dulu yang dikorbankan, bukan Git.
 
-Setelah revisi, P2 memuat dalam 120 menit: CSS Grid, Mobile-First & breakpoint, ES6+ lengkap, lima method array, modul + scope/hoisting, **dan** praktik live mengubah halaman P1 jadi dinamis.
+Isi P2 dalam 120 menit: CSS Grid & layout multi-kolom, ES6+ lengkap, lima method array, modul + scope/hoisting, **dan** praktik live mengubah halaman P1 jadi dinamis.
 
 | Bagian | Menit |
 |---|:--:|
-| CSS Grid & Mobile-First | 22 |
+| CSS Grid & layout multi-kolom | 22 |
 | let/const | 8 |
 | ES6+ Fundamentals | 20 |
 | Manipulasi Array (5 method) | 30 |
@@ -98,7 +98,7 @@ Yang paling berisiko: **Scope & Hoisting hanya kebagian 8 menit bersama Modul**,
 
 **Mitigasi yang sudah tertulis di materi:** Scope & Hoisting disampaikan lewat perbandingan `var` vs `let/const`, bukan sub-bagian tersendiri. `.reduce()` boleh tidak tuntas di kelas — yang wajib nempel `.map()` dan `.filter()`.
 
-**Kalau P2 benar-benar meleset saat dijalankan**, dua opsi: CSS Grid & Mobile-First dikembalikan ke P1, atau `.reduce()` digeser ke P3 sebagai pengulangan.
+**Kalau P2 benar-benar meleset saat dijalankan**, dua opsi: CSS Grid dikembalikan ke P1, atau `.reduce()` digeser ke P3 sebagai pengulangan.
 
 ---
 
