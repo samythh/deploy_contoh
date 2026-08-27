@@ -72,6 +72,27 @@ Kalau **Silabus** yang benar (dua pertemuan/minggu), Timeline perlu diperbarui �
 
 ---
 
+### T-005 — Silabus P3 tidak menyebut TailwindCSS, tapi Tugas 2 mensyaratkannya
+
+**Ditemukan:** 26 Agustus 2026
+**Status:** 🟢 Terbuka — kemungkinan besar cuma kelalaian penulisan, konfirmasi ringan saja
+
+| Dokumen | Kata dokumen |
+|---|---|
+| [Silabus.md](Silabus.md) §2 P3 | Empat butir materi: ekosistem React & Vite · anatomi component, JSX, Virtual DOM · props · conditional & list rendering. **Tailwind tidak disebut.** |
+| [Silabus.md](Silabus.md) §3 Tugas 2 | *"TailwindCSS dipasang melalui build tool"* — jadi syarat pengumpulan |
+| Materi P1 Bagian 6 | *"Pemasangan yang benar lewat Vite ada di P3"* — janji ke peserta |
+
+Tugas 2 mensyaratkan sesuatu yang tidak tercantum sebagai materi di pertemuan mana pun.
+
+**Yang sudah dilakukan:** materi P3 tetap memuatnya di Bagian 2 (setup Vite + Tailwind, 16 menit), karena tanpa itu peserta tidak bisa mengerjakan Tugas 2.
+
+**Yang perlu dikonfirmasi:** apakah butir Tailwind memang sengaja dihilangkan dari daftar materi P3, atau terlewat saat penyusunan. Kalau terlewat, tambahkan satu butir di Silabus supaya materi dan tugas sinkron.
+
+**Kenapa statusnya hijau, bukan merah:** dampaknya kecil dan sudah tertangani. Ini dicatat supaya tidak ditemukan ulang sebagai "temuan baru" di kemudian hari.
+
+---
+
 ### T-004 — P1 dan P2 sama-sama padat; bebannya bergeser, tidak berkurang
 
 **Ditemukan:** 25 Agustus 2026 · **Diperbarui:** 25 Agustus 2026 (revisi kedua)
@@ -156,6 +177,24 @@ Pemasangan di P1 cukup via CDN satu baris, belum perlu Node. Pemasangan yang ben
 Terbaru di atas.
 
 ### 26 Agustus 2026
+
+**Materi P3 dibuat — React Fundamentals**
+
+- Struktur mengikuti pola P1: materi lengkap + `RUNDOWN.md` + `demo/`, masing-masing dengan kalimat siap-ucap.
+- **Delapan bagian dalam 120 menit.** Alokasi terbesar: Setup Vite (16 menit) dan Props (20 menit).
+- *Keputusan alokasi:* Setup diberi porsi besar bukan karena sulit, tapi karena **paling rawan**. P3 adalah pertemuan pertama yang memakai terminal, `node_modules`, dan server — peserta bisa kehilangan pijakan hanya karena `npm run dev` gagal, bukan karena React-nya sulit. Materi mewajibkan mentor berkeliling mengecek layar, karena peserta yang macet cenderung diam.
+- **Bagian 1 (Kenapa React Ada) memperagakan cacat cara P2 lebih dulu** lewat `demo/01-kenapa-react.html` — file yang sengaja memakai `innerHTML`, bukan React. Ketik di input, klik filter, ketikan hilang. Tanpa ini React terasa cuma sintaks ribet tanpa alasan.
+- **Peragaan `key={index}` dibuatkan komponen khusus** (`demo/komponen/KeyJebakan.jsx`) dengan tombol untuk menukar `index` ↔ `id` secara langsung. Alasannya ditulis eksplisit di materi: kalau `key` cuma diajarkan sebagai "biar tidak ada warning", semua peserta akan memakai `key={index}`, warningnya hilang, dan masalahnya baru meledak di Tugas 2 saat ada penghapusan item.
+- **Jebakan `{stok && ...}` yang menampilkan angka nol** disebut eksplisit di materi dan di komentar `ProductCard.jsx` — peserta hampir pasti terkena ini di Tugas 2.
+- Materi berulang kali menyambungkan ke P1–P2 (`.map()`, destructuring, import/export, prefiks `md:`). Yang benar-benar baru cuma komponen, props, dan `key`.
+
+**Catatan versi yang perlu diawasi:** setup Vite & Tailwind adalah bagian materi yang paling cepat basi. Dokumen ditulis untuk **Tailwind v4** (plugin `@tailwindcss/vite`, tanpa `tailwind.config.js`, tanpa PostCSS) dan **React 19**. Checklist H-1 mewajibkan mentor menjalankan seluruh langkah setup dari nol sebelum mengajar, dan memperbaiki dokumen kalau perintahnya berubah — bukan improvisasi di depan kelas.
+
+**Kekosongan silabus yang perlu dilaporkan:** daftar materi P3 di `docs/Silabus.md` **tidak menyebut TailwindCSS**, padahal Tugas 2 mensyaratkan "TailwindCSS dipasang melalui build tool" dan materi P1 menjanjikan "pemasangan yang benar lewat Vite ada di P3". Materi P3 tetap memuatnya (Bagian 2). Lihat T-005.
+
+---
+
+
 
 **KOREKSI FAKTA — peragaan `<head>` vs `<body>` di P1 salah**
 

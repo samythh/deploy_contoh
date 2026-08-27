@@ -84,7 +84,7 @@ Detailnya di [tugas/README.md](tugas/README.md).
 |:--:|---|---|:--:|
 | **P1** | Fundamental Logika Dasar | Arsitektur Web, HTML5 Semantic, Box Model, Flexbox, Tailwind CDN, Mobile-First, Setup Git & PR | ✅ Selesai |
 | **P2** | Praktik Sintaksis Dasar | CSS Grid & Layout Multi-Kolom, JavaScript ES6+, Manipulasi Data | ✅ Selesai |
-| **P3** | Studi Kasus & Latihan Terbimbing | React.js Fundamentals, Component Architecture, Tailwind via Vite | ⬜ Belum |
+| **P3** | Studi Kasus & Latihan Terbimbing | React.js Fundamentals, Component Architecture, Tailwind via Vite | ✅ Selesai |
 | **P4** | Pengembangan Fitur Dasar | State, Lifecycle Hooks & Controlled Forms | ⬜ Belum |
 | **P5** | Integrasi Konsep Lanjutan | React Router v8, Custom Hooks, wawasan SSR | ⬜ Belum |
 | **P6** | Studi Kasus Tingkat Menengah | REST API Consumption, Async UI, **pengantar TypeScript** | ⬜ Belum |

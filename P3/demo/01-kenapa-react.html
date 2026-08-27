@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+  BAGIAN 1 — KENAPA REACT ADA  (8–20 menit)
+
+  File ini SENGAJA memakai cara P2 (innerHTML), bukan React.
+  Tujuannya memperlihatkan cacatnya sebelum obatnya diperkenalkan.
+
+  Berdiri sendiri — cukup double-click. Belum butuh Vite.
+
+  ------------------------------------------------------------
+  CARA MEMAKAI DI KELAS — 60 detik, dan sangat berkesan:
+
+  1. Buka file ini.
+  2. Ketik sesuatu di kotak "Catatan" pada kartu MANA SAJA.
+  3. Klik salah satu tombol filter.
+  4. Ketikannya HILANG. Semua kartu dibongkar dan dibangun ulang.
+
+  Lalu tanyakan ke kelas:
+  "Menurut kalian kenapa ketikannya hilang?"
+
+  Biarkan mereka menebak sebentar. Jawabannya ada di baris
+  innerHTML di bawah — seluruh isi wadah dihapus, lalu dibuat lagi
+  dari nol. Elemen input yang lama sudah tidak ada.
+
+  ------------------------------------------------------------
+  CARA SAMPAIKAN setelah peragaan:
+
+  "Kode ini jalan. Kalian yang nulis minggu lalu, dan nggak ada yang
+   salah secara logika. Tapi lihat: satu klik filter, ketikan orang
+   hilang.
+
+   Bayangin ini kejadian di form checkout, pas orang udah ngisi
+   alamat. Mereka bakal langsung nutup tab kalian.
+
+   Nah, INI masalah yang diselesaikan React."
+  ------------------------------------------------------------
+-->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kenapa React Ada — Demo P3</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        max-width: 46rem;
+        margin: 2.5rem auto;
+        padding: 0 1.5rem;
+        line-height: 1.6;
+        color: #1a1a1a;
+        background: #fafafa;
+      }
+      .filter { display: flex; gap: 0.5rem; margin: 1.5rem 0; }
+      button {
+        padding: 0.5rem 1rem;
+        border: 1px solid #d1d5db;
+        background: #fff;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.95rem;
+      }
+      button:hover { background: #f3f4f6; }
+      .daftar { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+      .kartu { padding: 1rem; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; }
+      .kartu h3 { margin: 0 0 0.25rem; font-size: 1rem; }
+      .kartu p { margin: 0 0 0.75rem; color: #6b7280; font-size: 0.9rem; }
+      .kartu input { width: 100%; padding: 0.4rem; border: 1px solid #d1d5db; border-radius: 4px; }
+      .petunjuk { background: #fef3c7; border-left: 3px solid #f59e0b; padding: 0.85rem 1.1rem; border-radius: 0 4px 4px 0; }
+    </style>
+  </head>
+
+  <body>
+    <h1>Cara Pertemuan 2 — dan cacatnya</h1>
+
+    <div class="petunjuk">
+      <strong>Coba ini:</strong> ketik sesuatu di kotak "Catatan" salah satu kartu,
+      lalu klik tombol filter mana saja. Perhatikan apa yang terjadi pada ketikan Anda.
+    </div>
+
+    <div class="filter">
+      <button data-kategori="Semua">Semua</button>
+      <button data-kategori="Makanan">Makanan</button>
+      <button data-kategori="Minuman">Minuman</button>
+    </div>
+
+    <div class="daftar" id="daftar"></div>
+
+    <script>
+      const produk = [
+        { id: 1, nama: "Rendang",     kategori: "Makanan", harga: 35000 },
+        { id: 2, nama: "Sate Padang", kategori: "Makanan", harga: 28000 },
+        { id: 3, nama: "Es Tebak",    kategori: "Minuman", harga: 12000 },
+        { id: 4, nama: "Teh Talua",   kategori: "Minuman", harga: 15000 },
+      ];
+
+      const wadah = document.querySelector("#daftar");
+
+      /* ============================================================
+         INI SUMBER MASALAHNYA.
+
+         innerHTML menghapus SELURUH isi wadah, lalu membangunnya
+         kembali dari nol. Elemen <input> yang lama — beserta apa pun
+         yang sudah diketik di dalamnya — ikut terhapus.
+
+         Datanya benar. Tampilannya benar. Tapi pekerjaan pengguna
+         hilang.
+         ============================================================ */
+      const gambarKartu = (daftar) => {
+        wadah.innerHTML = daftar
+          .map(
+            (p) => `
+          <article class="kartu">
+            <h3>${p.nama}</h3>
+            <p>Rp ${p.harga.toLocaleString("id-ID")}</p>
+            <input placeholder="Catatan..." />
+          </article>`
+          )
+          .join("");
+      };
+
+      gambarKartu(produk);
+
+      document.querySelectorAll(".filter button").forEach((tombol) => {
+        tombol.addEventListener("click", () => {
+          const pilihan = tombol.dataset.kategori;
+          const hasil =
+            pilihan === "Semua"
+              ? produk
+              : produk.filter((p) => p.kategori === pilihan);
+          gambarKartu(hasil);
+        });
+      });
+    </script>
+
+    <!--
+      ============================================================
+      CATATAN UNTUK MENTOR — dua cacat lain yang cukup DISEBUT,
+      tidak perlu diperagakan (hemat waktu):
+
+      2. Tampilan gampang tidak sinkron dengan data.
+         Anda harus INGAT memanggil gambarKartu() tiap kali data
+         berubah. Lupa sekali, layar menampilkan data lama, dan
+         tidak ada yang memberi tahu.
+
+      3. Tidak ada potongan yang bisa dipakai ulang.
+         Kartu produk itu string di dalam .map(). Mau dipakai di
+         halaman lain? Salin-tempel.
+
+      Ketiganya bermuara ke satu kalimat penutup Bagian 1:
+
+      "Kalian nggak lagi nyuruh browser ngapain. Kalian cuma bilang
+       tampilannya harus kayak gimana. Sisanya urusan React."
+      ============================================================
+    -->
+  </body>
+</html>
