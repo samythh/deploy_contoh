@@ -178,6 +178,29 @@ Terbaru di atas.
 
 ### 26 Agustus 2026
 
+**Materi P4 dibuat — State, Forms & Effects**
+
+- Struktur sama dengan P1 dan P3: materi lengkap + `RUNDOWN.md` + `demo/`.
+- **Delapan bagian dalam 120 menit.** Alokasi terbesar: Immutability (20 menit), Controlled Components (22 menit), `useEffect` (18 menit).
+- *Keputusan alokasi:* Immutability diberi porsi besar karena **kegagalannya diam-diam**. Peserta menulis `.push()` — yang benar di JavaScript biasa dan memang mereka pelajari di P2 — lalu layar tidak berubah tanpa error apa pun. Mereka akan mengira React-nya rusak. Kalau konsep ini tidak nempel, seluruh sisa program terasa seperti sihir yang kadang jalan kadang tidak.
+- **`demo/komponen/MutasiJebakan.jsx`** memperagakan kegagalan itu, dengan tombol "Paksa gambar ulang" yang membuat semua item "hilang" muncul sekaligus — bukti paling kuat bahwa datanya memang selalu ada, React cuma tidak pernah diberi tahu. Analoginya: **satpam yang cuma mengecek nomor seri kotak, tidak membuka isinya.**
+
+**Keputusan penting: cara `useEffect` diajarkan**
+
+Ini masuk kategori "materi yang harus ditulis sesuai standar 2026, bukan kebiasaan lama" — sejajar dengan React Compiler di P7.
+
+- `useEffect` **tidak** diajarkan sebagai *"kode yang jalan saat komponen muncul"*. Definisi itu terdengar benar dan mudah diingat, tapi menghasilkan peserta yang membungkus semuanya dengan effect.
+- Diajarkan sebagai **alat sinkronisasi dengan sesuatu di luar React** — LocalStorage, server, timer, event listener.
+- Materi memuat **tabel "butuh vs tidak butuh effect"**, dengan contoh eksplisit yang **tidak** butuh: menghitung total, menyaring daftar, mengubah state saat tombol diklik.
+- `demo/komponen/TodoApp.jsx` sengaja memuat **dua contoh berlawanan di satu file**: `useEffect` untuk LocalStorage (benar) dan `const terlihat = todos.filter(...)` yang sengaja **tidak** dibungkus effect, disertai komentar alasannya.
+- Peserta diperingatkan bahwa **AI coding assistant sering menyarankan `useEffect` yang tidak perlu** — dan kemampuan mengenali itu dinilai positif, sesuai kebijakan AI di silabus §6.
+- StrictMode yang menjalankan effect dua kali di mode pengembangan disebut eksplisit di Lampiran A, karena pertanyaan ini pasti muncul.
+
+**Catatan lain**
+- React DevTools diperlakukan sebagai materi, bukan lampiran — sesuai kompetensi *Debugging & Verification*. Checklist H-1 mewajibkan tautan pemasangannya dikirim sehari sebelumnya karena ini extension yang butuh unduh.
+- Materi berulang kali menyambungkan ke P2 (`spread`, `.filter()`, `.map()`) dan P3 (`key`, ternary, `&&`). Yang benar-benar baru cuma `useState`, immutability sebagai aturan, dan `useEffect`.
+- Setelah P4, **seluruh syarat Tugas 2 sudah tercakup** — tabel pemetaan syarat ke pertemuan ditulis di Bagian 7 supaya mentor bisa menyampaikannya eksplisit.
+
 **Materi P3 dibuat — React Fundamentals**
 
 - Struktur mengikuti pola P1: materi lengkap + `RUNDOWN.md` + `demo/`, masing-masing dengan kalimat siap-ucap.
