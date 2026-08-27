@@ -96,7 +96,7 @@ Detailnya di [tugas/README.md](tugas/README.md).
 | **P5** | Integrasi Konsep Lanjutan | React Router v8, URL Params, Custom Hooks, wawasan SSR | ✅ Selesai |
 | **P6** | Studi Kasus Tingkat Menengah | Axios, Lima Status Antarmuka, tab Network, pengantar TypeScript | ✅ Selesai |
 | **P7** | Advanced Framework | Context, Zustand, React Compiler, wawasan TanStack Query | ✅ Selesai |
-| **P8** | Materi Lanjutan & Final Progress | Auth (JWT), Deployment, Lighthouse, wawasan Testing | ⬜ Belum |
+| **P8** | Materi Lanjutan & Final Progress | Auth JWT, Protected Route, Env Var, Deploy, Lighthouse, Git Collab | ✅ Selesai |
 
 ---
 

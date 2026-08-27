@@ -253,6 +253,42 @@ Terbaru di atas.
 
 ### 26 Agustus 2026
 
+**Materi P8 dibuat — Auth, Deploy & Penutup Program**
+
+Dengan ini **seluruh materi P1–P8 selesai.**
+
+- **Sembilan bagian dalam 120 menit.** Berbeda dari pertemuan lain, tidak ada bagian yang butuh 25 menit — risikonya bukan kehabisan waktu, tapi **melompat terlalu cepat** sehingga tidak ada yang menempel.
+
+**Keputusan penyampaian utama: tiga momen kejujuran**
+
+P8 memuat tiga hal yang semuanya berbunyi sama — *"yang barusan kalian bikin itu bukan keamanan"*:
+
+| Yang dibuat | Kenapa bukan keamanan | Peragaan |
+|---|---|---|
+| Token di LocalStorage | Bisa dibaca script mana pun di halaman itu | Console → `localStorage.getItem("token")`, 30 detik |
+| Protected Route | Cuma menyembunyikan tampilan, data tetap bisa diminta | Salin URL API dari Network, buka tanpa login, 1 menit |
+| Environment variable | Ikut terkirim ke browser dalam teks biasa | `npm run build` → cari nilainya di `dist/`, 2 menit |
+
+Ketiganya disatukan oleh satu prinsip besar: **frontend tidak bisa menyimpan rahasia.** Ini bukan cacat yang bisa diperbaiki — itu sifat kode yang berjalan di komputer orang lain.
+
+*Kenapa ini dicatat sebagai keputusan, bukan sekadar isi materi:* akibat melewatinya **tidak terlihat di kelas**. Peserta yang lulus mengira Protected Route itu keamanan akan membangun sistem yang bocor di kantor pertamanya. Karena itu ketiganya masuk daftar "tidak boleh dipotong" di RUNDOWN, sementara deploy dan testing justru boleh.
+
+**LocalStorage tidak dibuat terdengar seperti kesalahan**
+
+Materi mengambil posisi tengah yang eksplisit: ini **versi kelas yang sadar**, dipilih karena cara yang benar (*access token* di memori + *refresh token* di cookie `HttpOnly`) **butuh kerja sama backend** yang di luar kendali frontend. Peserta diberi satu kalimat yang bisa langsung dipakai di kantor: *"refresh token-nya di cookie HttpOnly kan?"*
+
+**Lighthouse menutup lingkaran dari P1**
+
+Lima temuan aksesibilitas yang hampir pasti muncul — `lang`, `alt`, tombol tanpa nama terbaca, kontras, urutan heading — **semuanya materi Pertemuan 1**. Materi memanfaatkan ini secara sengaja:
+
+> *"Waktu itu sebagian dari kalian mikir 'ngapain sih ribet nulis lang="id"'. Delapan minggu kemudian, itu yang jadi angka di nilai tugas kalian."*
+
+Ini juga menjawab kenapa Accessibility yang dijadikan syarat, bukan Performance: **Performance banyak dipengaruhi hal di luar kendali peserta, Accessibility murni hasil keputusan mereka sendiri** — dan itu satu-satunya kriteria penilaian di seluruh kelas yang terukur objektif.
+
+**Penutup program ditulis sebagai penutup, bukan sekadar rangkuman P8**
+
+Bagian 8 memuat benang merah delapan minggu yang kembali ke kalimat pembuka di P1: peserta tidak dibayar untuk mengetik kode, tapi untuk mempertanggungjawabkannya. Seluruh materi program diikat ke situ — semantic supaya orang lain bisa membaca, komentar alasan supaya orang lain paham, lima status supaya pengguna tidak bingung, ukur sebelum optimasi supaya tidak menebak.
+
 **Materi P7 dibuat — Global State & Optimasi**
 
 - **Delapan bagian dalam 120 menit.** Alokasi terbesar: Context (24 menit), Zustand (20 menit), React Compiler (20 menit).
