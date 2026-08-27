@@ -87,7 +87,7 @@ Detailnya di [tugas/README.md](tugas/README.md).
 | **P3** | Studi Kasus & Latihan Terbimbing | React.js Fundamentals, Component Architecture, Tailwind via Vite | ✅ Selesai |
 | **P4** | Pengembangan Fitur Dasar | useState, Immutability, React DevTools, Controlled Forms, useEffect | ✅ Selesai |
 | **P5** | Integrasi Konsep Lanjutan | React Router v8, URL Params, Custom Hooks, wawasan SSR | ✅ Selesai |
-| **P6** | Studi Kasus Tingkat Menengah | REST API Consumption, Async UI, **pengantar TypeScript** | ⬜ Belum |
+| **P6** | Studi Kasus Tingkat Menengah | Axios, Lima Status Antarmuka, tab Network, pengantar TypeScript | ✅ Selesai |
 | **P7** | Advanced Framework | Global State, **React Compiler**, wawasan TanStack Query | ⬜ Belum |
 | **P8** | Materi Lanjutan & Final Progress | Auth (JWT), Deployment, Lighthouse, wawasan Testing | ⬜ Belum |
 

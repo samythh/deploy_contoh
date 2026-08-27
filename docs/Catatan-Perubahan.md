@@ -178,6 +178,27 @@ Terbaru di atas.
 
 ### 26 Agustus 2026
 
+**Materi P6 dibuat — API, Lima Status Antarmuka & TypeScript**
+
+- **Tujuh bagian dalam 120 menit** — pertemuan terpadat di seluruh program. Alokasi terbesar: **lima status antarmuka (28 menit)** dan **pengantar TypeScript (25 menit, sesuai silabus)**.
+- *Keputusan alokasi:* lima status diberi porsi terbesar karena itu **bobot terbesar Tugas 3** menurut kriteria penilaian di silabus. Kalau bagian itu tidak tuntas, nilai tugas peserta yang jadi korban — bukan sekadar pemahaman mereka.
+- **RUNDOWN memuat urutan potong yang eksplisit**, dan materinya mewajibkan mentor membacanya *sebelum* mengajar, bukan saat sudah kepepet. Urutan potong: interceptor → teori Promise → fitur pencarian → detail TypeScript. Yang tidak boleh dipotong: lima status, tiga simulasi gagal, dan kejujuran soal batas `interface`.
+- Ditambahkan **alarm di menit ke-40** sebagai penanda: kalau Bagian 1–2 belum selesai, langsung potong.
+
+**Tiga keputusan penyampaian**
+
+1. **Analogi restoran dari P1 dipakai ulang untuk lima status.** Ini bukan penghematan — pemetaannya memang tepat: Empty = *"pesanan berhasil sampai dapur, dapurnya menjawab, jawabannya 'tidak ada'"*; Error = *"tidak dapat jawaban sama sekali"*. Pembedaan Empty vs Error adalah yang paling sering tertukar, dan analogi ini membuatnya jelas tanpa penjelasan teknis.
+
+2. **TypeScript diajarkan sebagai alat, bukan bahasa.** Dalam 25 menit peserta cukup bisa satu hal: menulis `interface` untuk data API. Generics, union, dan utility types sengaja tidak disentuh — dan materi menyebut eksplisit bahwa itu tidak diajarkan, supaya peserta tidak merasa tertinggal. Pemasangannya juga sengaja tanpa konfigurasi: cukup ubah `.jsx` → `.tsx`, karena Vite sudah mendukungnya.
+
+3. **Batas TypeScript disampaikan apa adanya.** Materi mewajibkan mentor menyebut bahwa `interface` **tidak** memeriksa data yang sungguhan dikirim server — tipe hilang saat kode dijalankan. Tanpa kalimat ini peserta pulang dengan **rasa aman palsu**, mengira TypeScript melindungi mereka dari data server yang aneh. Alat yang benar untuk itu (*runtime validation*, mis. Zod) disebut sebagai wawasan.
+
+**Simulasi gagal jadi bagian materi, bukan latihan tambahan**
+
+Silabus mensyaratkan *"simulasi kondisi gagal"*, dan Tugas 3 akan diuji dengan mematikan koneksi. Materi memuat tiga simulasi konkret memakai tab Network — Slow 3G, Offline, dan pencarian kosong — dengan kalimat: *"ini persis yang saya lakuin pas ngoreksi Tugas 3."*
+
+**Catatan tentang API demo:** memakai `https://dummyjson.com` karena publik, tanpa kunci, dan mendukung pencarian serta pagination yang dibutuhkan Tugas 3. Response-nya **bukan** langsung array melainkan `{ products, total, skip, limit }` — ini justru dimanfaatkan sebagai contoh nyata bahwa bentuk data harus dicek di tab Network, bukan ditebak. Checklist H-1 mewajibkan pengujian API dari nol beserta cadangannya.
+
 **Materi P5 dibuat — Routing & Custom Hooks**
 
 - Struktur sama dengan P1, P3, P4: materi lengkap + `RUNDOWN.md` + `demo/`.
