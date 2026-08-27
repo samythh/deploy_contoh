@@ -72,6 +72,81 @@ Kalau **Silabus** yang benar (dua pertemuan/minggu), Timeline perlu diperbarui �
 
 ---
 
+### T-006 — Tugas 2, 3, dan 4 belum punya berkas soal
+
+**Ditemukan:** 26 Agustus 2026
+**Status:** 🟠 Terbuka — pekerjaan yang belum dilakukan, bukan pertentangan dokumen
+
+Folder `tugas/` baru berisi **Tugas 1** lengkap (soal, kerangka, kunci jawaban). Tugas 2–4 baru ada **ringkasannya** di `tugas/README.md` dan di masing-masing materi pertemuan.
+
+| Tugas | Materi | Berkas soal |
+|:--:|:--:|---|
+| 1 — Static Foundation | P1 & P2 | ✅ Ada |
+| 2 — React Migration | P3 & P4 | ❌ Belum |
+| 3 — Multi-Page & Live Data | P5 & P6 | ❌ Belum |
+| 4 — Production Ready | P7 & P8 | ❌ Belum |
+
+**Kenapa dibiarkan sementara:** `tugas/README.md` sendiri menulis *"Tugas 2–4 ditambahkan menjelang minggu masing-masing."* Ini keputusan yang sah — tapi perlu dicatat supaya tidak terlupa, karena tenggat Tugas 2 jatuh sebelum P5.
+
+**Yang perlu diputuskan:** apakah keempatnya dibuat sekaligus sekarang, atau tetap dibuat menjelang minggunya.
+
+---
+
+### T-007 — Materi bergantung pada versi tool yang berubah cepat
+
+**Ditemukan:** 26 Agustus 2026
+**Status:** 🟠 Terbuka — risiko berjalan, perlu jadwal pemeriksaan
+
+Empat bagian materi ditulis untuk versi tool tertentu, dan semuanya termasuk yang **paling sering berubah**:
+
+| Materi | Ditulis untuk | Risiko |
+|---|---|---|
+| P3 Bagian 2 | **Tailwind v4** (plugin `@tailwindcss/vite`, tanpa `tailwind.config.js`) | Cara pasang berubah total dari v3 |
+| P5 Bagian 2 | **React Router v8**, paket `react-router` | Nama paket berubah sejak v7 |
+| P6 Bagian 4 | TypeScript lewat Vite tanpa konfigurasi | Relatif stabil |
+| P7 Bagian 4 | **React Compiler** via `babel-plugin-react-compiler` | Paling cepat basi |
+
+**Mitigasi yang sudah dipasang:** tiap materi memuat catatan versi di bagian atas, dan checklist H-1 mewajibkan mentor **menjalankan seluruh langkah setup dari nol** sebelum mengajar — serta memperbaiki dokumennya kalau berbeda, bukan improvisasi di depan kelas.
+
+**Yang perlu diputuskan:** apakah perlu satu pemeriksaan menyeluruh di **akhir September 2026** (sebelum program mulai) untuk memastikan keempatnya masih berlaku — daripada mengandalkan pemeriksaan H-1 per pertemuan.
+
+---
+
+### T-008 — Demo P6 bergantung pada API pihak ketiga
+
+**Ditemukan:** 26 Agustus 2026
+**Status:** 🟢 Terbuka — dampak kecil, sudah ada cadangan
+
+Materi P6 dan seluruh demonya memakai `https://dummyjson.com` — publik, tanpa kunci, mendukung pencarian & pagination yang dibutuhkan Tugas 3.
+
+**Risikonya:** layanan itu bisa mati, berubah bentuk response, atau membatasi akses tanpa pemberitahuan. Kalau itu terjadi tepat di hari mengajar, seluruh Bagian 2–5 P6 tidak bisa diperagakan.
+
+**Mitigasi yang sudah dipasang:** checklist H-1 mewajibkan pengujian API dari nol, dengan cadangan `https://jsonplaceholder.typicode.com`.
+
+**Yang perlu dipertimbangkan:** menyiapkan **mock API lokal** (`json-server` atau berkas JSON statis) sebagai cadangan yang tidak bergantung internet sama sekali. Ini juga berguna kalau WiFi ruang kelas bermasalah.
+
+---
+
+### T-009 — Alokasi waktu belum teruji di kelas sungguhan
+
+**Ditemukan:** 26 Agustus 2026
+**Status:** 🟡 Terbuka — perlu dikoreksi berdasarkan pelaksanaan
+
+Seluruh alokasi menit di P1–P7 disusun berdasarkan perkiraan, **belum pernah diuji dengan peserta sungguhan**. Beberapa yang paling berisiko meleset:
+
+| Pertemuan | Bagian berisiko | Kenapa |
+|---|---|---|
+| P1 | Bagian 8 — Setup Git (16 menit) | Git selalu makan waktu lebih lama dari perkiraan |
+| P3 | Bagian 2 — Setup Vite (16 menit) | Bergantung kecepatan internet ruang kelas |
+| P6 | Seluruhnya | Pertemuan terpadat; tujuh bagian |
+| P7 | Bagian 4 — React Compiler | Konsepnya berlawanan dengan yang peserta temukan di internet |
+
+**Mitigasi yang sudah dipasang:** tiap RUNDOWN memuat **urutan potong** yang eksplisit beserta daftar yang tidak boleh dipotong.
+
+**Yang perlu dilakukan:** setelah tiap pertemuan berjalan, catat **menit sebenarnya** tiap bagian dan koreksi dokumennya. Angka hasil pelaksanaan jauh lebih berharga daripada perkiraan.
+
+---
+
 ### T-005 — Silabus P3 tidak menyebut TailwindCSS, tapi Tugas 2 mensyaratkannya
 
 **Ditemukan:** 26 Agustus 2026
@@ -177,6 +252,32 @@ Pemasangan di P1 cukup via CDN satu baris, belum perlu Node. Pemasangan yang ben
 Terbaru di atas.
 
 ### 26 Agustus 2026
+
+**Materi P7 dibuat — Global State & Optimasi**
+
+- **Delapan bagian dalam 120 menit.** Alokasi terbesar: Context (24 menit), Zustand (20 menit), React Compiler (20 menit).
+- *Keputusan penyampaian utama:* materi ini ditulis untuk mengatasi **dua godaan yang tarikannya berlawanan** — memindahkan semua state ke global, dan mengoptimasi tanpa mengukur. Keduanya diselesaikan dengan satu kalimat yang sama: *"jangan pakai alat sebelum kalian bisa nunjukin masalahnya."*
+
+**Bagian 4 (React Compiler) ditulis dengan perlakuan khusus**
+
+Ini materi yang **paling gampang salah diajarkan di seluruh program**, dan alasannya bukan karena sulit — melainkan karena **hampir semua sumber yang akan ditemukan peserta masih mengajarkan cara lama.**
+
+- Sejak React 19, `useMemo`/`useCallback`/`React.memo` adalah **pengecualian**, bukan kebiasaan.
+- Materi menyebut eksplisit bahwa *"kalau kalian nyari di internet atau nanya AI, kalian bakal dikasih cara lama — bukan karena mereka bohong, tapi karena tulisan yang mereka pelajari kebanyakan dari sebelum React 19."* Ini menyambung langsung ke kebijakan AI di silabus §6.
+- `useMemo` diposisikan sebagai **turun pangkat**, bukan dihapus — dengan dua kasus konkret yang tidak tertangani compiler (`try/catch`, library yang butuh *referential equality*).
+- **Prinsip yang ditekankan sebagai bawaan pulang utama:** ukur dengan Profiler sebelum mengoptimasi. Materi bahkan menyebut apa adanya bahwa *"di aplikasi sebesar tugas kalian, hampir pasti nggak ada yang perlu dioptimasi — itu jawaban yang benar, bukan jawaban yang malas."*
+
+**Tiga peragaan yang menentukan**
+
+1. **Highlight updates — Context vs Zustand.** `demo/komponen/ContextVsZustand.jsx` menampilkan dua kolom berdampingan, masing-masing punya "pengamat" yang tidak memakai nilai yang berubah. Di kolom Context, pengamat itu **tetap berkedip**; di kolom Zustand, tidak. Tanpa peragaan ini peserta akan menaruh keranjang belanja di Context dan tidak akan tahu kenapa aplikasinya berat.
+2. **Profiler sebelum optimasi** — menegakkan prinsip "ukur dulu".
+3. **Race condition dengan Slow 3G** — ketik `a` lalu cepat `ab`; kalau permintaan pertama sampai belakangan, layar menampilkan hasil `a` sementara kotak pencarian bertulis `ab`. Materi menyebutnya *"nampilin yang salah dengan penuh percaya diri — yang paling serem dari bug jaringan: dia nggak keliatan rusak."*
+
+**Wawasan TanStack Query ditulis dengan pola yang sama seperti SSR di P5:** jangan sampai peserta merasa yang mereka pelajari di P6 itu salah. Ditekankan bahwa `useEffect` + Axios adalah fondasinya, dan bahwa TanStack Query mengurus **jenis state yang berbeda** — server state, bukan client state. Disebut eksplisit bahwa ini **tidak diwajibkan** di Tugas 3 maupun 4.
+
+**Tiga jenis state, bukan dua.** Materi menambahkan kategori **state URL** (dari P5) di antara lokal dan global, karena itu yang paling sering salah tempat — peserta cenderung memindahkan filter kategori ke Zustand, padahal itu menghilangkan kemampuan berbagi link dan tombol Back.
+
+**Empat temuan baru dicatat** — hasil audit menyeluruh atas hal-hal yang selama ini hanya disebut di log, bukan sebagai temuan yang bisa ditindaklanjuti: T-006 (berkas Tugas 2–4 belum dibuat), T-007 (ketergantungan versi tool), T-008 (API pihak ketiga di P6), T-009 (alokasi waktu belum teruji).
 
 **Materi P6 dibuat — API, Lima Status Antarmuka & TypeScript**
 

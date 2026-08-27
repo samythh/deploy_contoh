@@ -55,11 +55,18 @@ Bootcamp_Metro_S2/
 
 Kalau ada pertentangan: **fakta** (tanggal, item materi, bobot nilai) mengikuti `docs/`; **cara menyampaikan** mengikuti `CLAUDE.md`.
 
-> ⚠️ **Dua temuan terbuka yang perlu dibawa ke koordinator:**
-> - **T-001** — Silabus dan Timeline berbeda soal jadwal Demo Day (selisih ~2 minggu)
-> - **T-003** — Silabus baru menyebut *dua pertemuan per minggu*, sedangkan Timeline menjadwalkan *satu per minggu* selama 8 minggu. Ini mempengaruhi seluruh tenggat tugas.
+> ⚠️ **Temuan terbuka yang menunggu keputusan** — semuanya beserta bukti dan analisisnya di [docs/Catatan-Perubahan.md](docs/Catatan-Perubahan.md):
 >
-> Bukti dan analisisnya di [docs/Catatan-Perubahan.md](docs/Catatan-Perubahan.md).
+> | Kode | Temuan | Perlu |
+> |---|---|---|
+> | **T-001** | Silabus vs Timeline berbeda soal jadwal Demo Day (~2 minggu) | Konfirmasi koordinator |
+> | **T-003** | Silabus menyebut *dua pertemuan/minggu*, Timeline menjadwalkan *satu* | Konfirmasi koordinator |
+> | **T-005** | Silabus P3 tidak menyebut TailwindCSS, tapi Tugas 2 mensyaratkannya | Konfirmasi ringan |
+> | **T-006** | Berkas soal Tugas 2–4 belum dibuat | Keputusan mentor |
+> | **T-007** | Materi bergantung versi tool yang berubah cepat | Jadwal pemeriksaan |
+> | **T-008** | Demo P6 bergantung API pihak ketiga | Pertimbangan |
+> | **T-009** | Alokasi waktu belum teruji di kelas sungguhan | Koreksi setelah pelaksanaan |
+> | **T-004** | P1 & P2 padat — beban bergeser, tidak berkurang | Awasi saat pelaksanaan |
 
 ---
 
@@ -88,7 +95,7 @@ Detailnya di [tugas/README.md](tugas/README.md).
 | **P4** | Pengembangan Fitur Dasar | useState, Immutability, React DevTools, Controlled Forms, useEffect | ✅ Selesai |
 | **P5** | Integrasi Konsep Lanjutan | React Router v8, URL Params, Custom Hooks, wawasan SSR | ✅ Selesai |
 | **P6** | Studi Kasus Tingkat Menengah | Axios, Lima Status Antarmuka, tab Network, pengantar TypeScript | ✅ Selesai |
-| **P7** | Advanced Framework | Global State, **React Compiler**, wawasan TanStack Query | ⬜ Belum |
+| **P7** | Advanced Framework | Context, Zustand, React Compiler, wawasan TanStack Query | ✅ Selesai |
 | **P8** | Materi Lanjutan & Final Progress | Auth (JWT), Deployment, Lighthouse, wawasan Testing | ⬜ Belum |
 
 ---
