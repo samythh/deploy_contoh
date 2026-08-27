@@ -178,6 +178,27 @@ Terbaru di atas.
 
 ### 26 Agustus 2026
 
+**Materi P5 dibuat — Routing & Custom Hooks**
+
+- Struktur sama dengan P1, P3, P4: materi lengkap + `RUNDOWN.md` + `demo/`.
+- **Delapan bagian dalam 120 menit.** Alokasi terbesar: Setup Router (20 menit) dan Custom Hooks (20 menit).
+- *Keputusan alokasi:* Custom Hooks sengaja dijaga tetap 20 menit dan dicatat sebagai "jangan diburu-buru" di RUNDOWN. Alasannya: routing lebih visual dan lebih memuaskan diajarkan, jadi godaannya besar untuk memakan waktunya — padahal **Custom Hooks yang diwajibkan di Tugas 3**, sedangkan routing hanya salah satu syarat.
+- **`demo/komponen/LinkJebakan.jsx`** memperagakan `<a>` vs `<Link>` memakai state yang hilang — versi P5 dari peragaan yang selalu menentukan. Disertai catatan: kalau kedipnya tidak terlihat di proyektor, pakai throttling *Slow 3G* di tab Network.
+- **`data.js` sengaja memakai `id` bertipe angka**, supaya jebakan `useParams` yang selalu mengembalikan string benar-benar terjadi saat diperagakan — bukan cuma disebut sebagai peringatan.
+- Materi berulang kali menyambungkan ke P2 (destructuring, `.find()`), P4 (isi `useLocalStorage` persis sama, cleanup `useEffect`), dan P1 (aksesibilitas `<Link>` yang dirender jadi `<a>` beneran).
+
+**Tiga keputusan penyampaian yang perlu diketahui**
+
+1. **Nama paket berganti — disebut dua kali.** `react-router`, bukan `react-router-dom`. Mayoritas tutorial di internet masih memakai nama lama, dan peserta yang mencari sendiri akan bingung. RUNDOWN mewajibkan menyebutnya di awal Bagian 2 dan lagi di penutup.
+
+2. **Aturan `useState` vs `useSearchParams` diberi tes satu kalimat:** *"kalau kalian kirim link ini ke temen, dia harus lihat yang sama nggak?"* Ini juga yang membuat tombol Back browser berfungsi — diperagakan langsung.
+
+3. **Wawasan SSR ditulis agar SPA tidak terdengar seperti pilihan yang salah.** Ini risiko nyata: kalau disampaikan sebagai "sebenarnya Next.js lebih bagus", peserta pulang merasa baru saja belajar teknologi usang. Materi menekankan dua hal — **Next.js itu React**, dan SPA memang tepat untuk aplikasi di balik login, di mana SEO tidak ada gunanya sama sekali. Pertanyaannya bukan "mana yang lebih bagus" tapi "aplikasi kalian jenis yang mana".
+
+**Peringatan Tugas 3 ditulis eksplisit di penutup.** Tugas 3 punya syarat terbanyak dari keempat tugas, dan bobot terbesarnya (lima status antarmuka) baru diajarkan di P6. Materi mewajibkan mentor menyampaikan bahwa bagian routing harus selesai minggu itu juga — kalau ditunda, peserta akan mengerjakan routing sambil belajar API sambil belajar TypeScript dalam satu minggu.
+
+**Perbaikan `docs/Silabus.md`:** butir "Pembuatan Custom Hooks" sebelumnya masuk ke dalam blok "Wawasan Industri (10 menit)" akibat sisipan revisi kedua yang salah tempat. Dikembalikan ke daftar **Materi**.
+
 **Materi P4 dibuat — State, Forms & Effects**
 
 - Struktur sama dengan P1 dan P3: materi lengkap + `RUNDOWN.md` + `demo/`.

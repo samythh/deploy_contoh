@@ -148,12 +148,12 @@ Setelah menyelesaikan 8 pertemuan kelas dan rangkaian proyek, peserta ditargetka
 - *Single Page Application* (SPA) Routing menggunakan **React Router v8** — paket `react-router` dalam *declarative mode* (`BrowserRouter`, `Routes`, `Route`, `Link`).
 - Dinamisasi URL: URL Params (`useParams`) dan Query Strings (`useSearchParams`).
 - *Programmatic Navigation* menggunakan `useNavigate`.
+- Pembuatan *Custom Hooks* untuk enkapsulasi logika bisnis berulang (`useLocalStorage`, `useWindowSize`).
 
 **Wawasan Industri (10 menit)**
 
 - Keterbatasan SPA dari sisi **SEO** dan **waktu muat pertama**, serta bagaimana framework seperti **Next.js** menjawabnya lewat *server-side rendering*.
 - Peserta memahami posisi arsitektur yang mereka pelajari dalam peta ekosistem yang lebih luas.
-- Pembuatan *Custom Hooks* untuk enkapsulasi logika bisnis berulang (`useLocalStorage`, `useWindowSize`).
 
 **Praktik Live**
 
