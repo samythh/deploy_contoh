@@ -1,0 +1,73 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "nama": "Rendang",
+      "kategori": "Makanan",
+      "harga": 35000,
+      "tersedia": true,
+      "deskripsi": "Daging sapi dimasak berjam-jam dengan santan dan rempah sampai kering dan berwarna cokelat gelap."
+    },
+    {
+      "id": 2,
+      "nama": "Es Tebak",
+      "kategori": "Minuman",
+      "harga": 12000,
+      "tersedia": true,
+      "deskripsi": "Minuman dingin berisi tebak (mirip cendol, dari tepung beras), santan, sirup merah, dan es serut."
+    },
+    {
+      "id": 3,
+      "nama": "Sate Padang",
+      "kategori": "Makanan",
+      "harga": 28000,
+      "tersedia": false,
+      "deskripsi": "Sate daging sapi dengan kuah kental berbumbu rempah, disajikan bersama ketupat."
+    },
+    {
+      "id": 4,
+      "nama": "Soto",
+      "kategori": "Makanan",
+      "harga": 18000,
+      "tersedia": true,
+      "deskripsi": "Soto Padang berkuah bening dengan daging goreng kering, soun, dan perkedel."
+    },
+    {
+      "id": 5,
+      "nama": "Teh Talua",
+      "kategori": "Minuman",
+      "harga": 9000,
+      "tersedia": true,
+      "deskripsi": "Teh panas yang dikocok dengan kuning telur dan gula sampai berbusa, lalu diberi perasan jeruk nipis."
+    },
+    {
+      "id": 6,
+      "nama": "Gulai",
+      "kategori": "Makanan",
+      "harga": 30000,
+      "tersedia": false,
+      "deskripsi": "Gulai ayam berkuah santan kuning dengan rempah khas Minang."
+    },
+    {
+      "nama": "Dendeng ",
+      "kategori": "Makanan",
+      "harga": 40000,
+      "tersedia": true,
+      "id": 7
+    },
+    {
+      "nama": "Dendeng Lambok",
+      "kategori": "Makanan",
+      "harga": 25000,
+      "tersedia": true,
+      "id": 8
+    }
+  ],
+  "users": [
+    {
+      "email": "pemilik@warung.id",
+      "password": "$2a$10$9OZzSnQY1D5.J3xtMEQbOuc6HKY2MOYsLnOvnLfSzAdzrWj7MpX46",
+      "id": 1
+    }
+  ]
+}
